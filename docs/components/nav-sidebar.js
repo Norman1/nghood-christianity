@@ -78,9 +78,10 @@ class NavSidebar extends HTMLElement {
                 },
                 ...(isLoggedIn ? [{
                     id: 'account',
-                    title: 'Account',
+                    title: 'Authorized Only',
                     pages: [
-                        { href: '#/profile', title: 'My Profile' }
+                        { href: '#/profile', title: 'My Profile' },
+                        { href: '#/backend-test', title: 'Backend Test' }
                     ],
                     subcategories: []
                 }] : [])

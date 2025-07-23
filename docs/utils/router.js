@@ -16,6 +16,7 @@ const routes = {
     
     // Account
     '#/profile': 'user-profile',
+    '#/backend-test': 'backend-test',
     
     // Standalone pages
     '#/privacy': 'privacy-policy',
