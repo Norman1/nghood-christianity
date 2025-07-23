@@ -1,0 +1,75 @@
+/* Essential layout styles - DO NOT MODIFY */
+/* These styles are required for the Holy Grail layout and basic functionality */
+
+/* Base reset and layout foundation */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f1419;
+    color: #f0f6fc;
+    line-height: 1.6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Essential typography foundation */
+h1, h2, h3, h4, h5, h6 {
+    color: #f0f6fc;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #f0f6fc;
+    margin-bottom: 1rem;
+}
+
+/* Scrollbar styling - critical for layout consistency */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(45, 55, 72, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(99, 179, 237, 0.6);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 179, 237, 0.8);
+}
+
+/* Content width optimization - layout critical */
+.content-area {
+    max-width: 1000px;
+    line-height: 1.6;
+}
+
+/* Essential spacing for layout stability */
+p {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+/* Compact spacing - prevents layout shifts */
+ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+li {
+    margin-bottom: 0.25rem;
+    line-height: 1.5;
+}
+
+/* Better spacing for documentation content - layout critical */
+p + h2, p + h3, ul + h2, ul + h3, ol + h2, ol + h3 {
+    margin-top: 1.5rem;
+}

@@ -1,0 +1,156 @@
+<h1>Getting Started Guide</h1>
+
+<div class="intro-section">
+    <p>Welcome to the Learning Hub framework. This guide will help you understand the core concepts and get your first project up and running quickly.</p>
+</div>
+
+<h2>Prerequisites</h2>
+<p>Before you begin, ensure you have the following installed:</p>
+<ul>
+    <li><strong>Modern web browser</strong> (Chrome 90+, Firefox 88+, Safari 14+)</li>
+    <li><strong>Local web server</strong> (Python, Node.js, or VS Code Live Server)</li>
+    <li><strong>Text editor</strong> (VS Code, WebStorm, or similar)</li>
+</ul>
+
+<div class="callout callout-info">
+    <strong>💡 Tip:</strong> This framework uses modern Web Components and ES6 modules, so a local server is required due to CORS restrictions.
+</div>
+
+<h2>Quick Setup</h2>
+<p>Get started in under 5 minutes with these simple steps:</p>
+
+<h3>1. Download the Template</h3>
+<p>Clone or download the Learning Hub template from the repository:</p>
+<pre><code>git clone https://github.com/your-repo/learning-hub.git
+cd learning-hub</code></pre>
+
+<h3>2. Start a Local Server</h3>
+<p>Choose one of these methods to serve your files:</p>
+
+<div class="code-tabs">
+    <div class="tab-content">
+        <strong>Python:</strong>
+        <pre><code>python -m http.server 8080</code></pre>
+    </div>
+    <div class="tab-content">
+        <strong>Node.js:</strong>
+        <pre><code>npx http-server -p 8080</code></pre>
+    </div>
+    <div class="tab-content">
+        <strong>VS Code:</strong>
+        <pre><code>Right-click index.html → "Open with Live Server"</code></pre>
+    </div>
+</div>
+
+<h3>3. Open in Browser</h3>
+<p>Navigate to <code>http://localhost:8080</code> to see your site running.</p>
+
+<div class="callout callout-success">
+    <strong>✅ Success!</strong> You should now see the Learning Hub homepage with navigation, header, and content areas.
+</div>
+
+<h2>Project Structure</h2>
+<p>Understanding the file organization will help you customize and extend the framework:</p>
+
+<pre><code>learning-hub/
+├── components/          # Web Components
+│   ├── app-header.js    # Site header with auth
+│   ├── app-footer.js    # Site footer
+│   ├── nav-sidebar.js   # Left navigation
+│   └── main-layout.js   # Page layout container
+├── pages/              # Page components
+│   ├── page-one.js     # This page
+│   ├── page-two.js     # Second example
+│   └── page-about.js   # About page
+├── templates/          # HTML content
+│   ├── page-one.html   # Content for this page
+│   └── ...
+├── styles/            # Global CSS
+│   └── global.css     # Site-wide styles
+├── utils/            # JavaScript utilities
+│   ├── router.js     # Client-side routing
+│   └── auth-service.js # Authentication
+└── index.html        # Main entry point</code></pre>
+
+<h2>Core Concepts</h2>
+
+<h3>Web Components Architecture</h3>
+<p>The framework is built on native Web Components, providing:</p>
+<ul>
+    <li><strong>Encapsulation</strong> - Each component has isolated styles and behavior</li>
+    <li><strong>Reusability</strong> - Components can be used across different pages</li>
+    <li><strong>Native support</strong> - No framework dependencies required</li>
+</ul>
+
+<h3>Client-Side Routing</h3>
+<p>Navigation is handled by a lightweight router that:</p>
+<ol>
+    <li>Listens for hash changes in the URL (<code>#page1</code>, <code>#about</code>)</li>
+    <li>Loads the appropriate page component dynamically</li>
+    <li>Updates the main content area without page refresh</li>
+</ol>
+
+<div class="callout callout-warning">
+    <strong>⚠️ Note:</strong> Hash-based routing means URLs will include a <code>#</code> symbol. This is normal for client-side routing.
+</div>
+
+<h3>Responsive Layout</h3>
+<p>The framework uses a "Holy Grail" layout pattern that automatically adapts:</p>
+<ul>
+    <li><strong>Desktop</strong> (1200px+): Three-column layout with sidebars</li>
+    <li><strong>Tablet</strong> (768px-1199px): Collapsed navigation, main content prominent</li>
+    <li><strong>Mobile</strong> (<768px): Single column with hamburger menu</li>
+</ul>
+
+<h2>Authentication Integration</h2>
+<p>The template includes optional Google authentication:</p>
+
+<h3>Setup Steps</h3>
+<ol>
+    <li>Create a Google Cloud project</li>
+    <li>Enable the Google Identity API</li>
+    <li>Configure OAuth 2.0 credentials</li>
+    <li>Update <code>config/google-auth.js</code> with your client ID</li>
+</ol>
+
+<p>Users can then sign in with their Google account, and their profile information will be saved locally.</p>
+
+<h2>Customization</h2>
+
+<h3>Adding New Pages</h3>
+<p>To create a new page:</p>
+<ol>
+    <li>Create an HTML template in <code>templates/</code></li>
+    <li>Create a page component in <code>pages/</code></li>
+    <li>Add the route to <code>utils/router.js</code></li>
+    <li>Add navigation link to <code>components/nav-sidebar.js</code></li>
+</ol>
+
+<h3>Styling</h3>
+<p>The framework uses a dark theme by default. To customize:</p>
+<ul>
+    <li>Global styles: Edit <code>styles/global.css</code></li>
+    <li>Component styles: Add CSS within each component's template</li>
+    <li>Color scheme: Update CSS custom properties in the root</li>
+</ul>
+
+<h2>Next Steps</h2>
+<p>Now that you understand the basics, try these next:</p>
+<ul>
+    <li>Explore <a href="#page2">Page Two</a> for advanced examples</li>
+    <li>Check out the <a href="#tool-a">Tools section</a> for utilities</li>
+    <li>Read the <a href="#about">About page</a> for more details</li>
+</ul>
+
+<div class="callout callout-info">
+    <strong>📚 Learn More:</strong> This guide covers the essentials. For advanced topics like custom components and deployment, see the full documentation.
+</div>
+
+
+
+
+
+
+
+
+
