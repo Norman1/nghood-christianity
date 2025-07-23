@@ -38,6 +38,18 @@ class BackendTest extends HTMLElement {
                 userNameElement.textContent = user.name;
             }
             
+            // Display environment info
+            const environmentElement = this.querySelector('#environment');
+            if (environmentElement) {
+                environmentElement.textContent = window.CONFIG.ENVIRONMENT;
+            }
+            
+            // Display API endpoint
+            const apiEndpointElement = this.querySelector('#api-endpoint');
+            if (apiEndpointElement) {
+                apiEndpointElement.textContent = `${window.CONFIG.API_BASE_URL}/api/hello/{userName}`;
+            }
+            
             // Set up backend call button
             this.setupBackendCall();
         } catch (error) {
@@ -62,11 +74,10 @@ class BackendTest extends HTMLElement {
             try {
                 const user = authService.getUser();
                 const userName = user.name;
-                const API_SECRET = "your-api-secret-2024";
                 
-                const response = await fetch(`https://api.nghood.com/api/hello/${encodeURIComponent(userName)}`, {
+                const response = await fetch(`${window.CONFIG.API_BASE_URL}/api/hello/${encodeURIComponent(userName)}`, {
                     headers: {
-                        'X-API-Key': API_SECRET
+                        'X-API-Key': window.CONFIG.API_SECRET
                     }
                 });
                 
