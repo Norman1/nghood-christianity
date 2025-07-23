@@ -1,0 +1,16 @@
+# Private folder
+private/
+
+# JetBrains IDEs
+.idea/
+
+# Claude related
+.claude/
+CLAUDE.md
+
+# Maven
+target/
+
+# Java
+*.class
+*.jar
