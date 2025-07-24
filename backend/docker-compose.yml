@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-quizdb_dev}
+      - POSTGRES_USER=${DB_USERNAME:-dev}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-dev}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME:-dev} -d ${POSTGRES_DB:-quizdb_dev}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  spring-backend:
+    build: .
+    ports:
+      - "${APP_PORT:-8080}:8080"
+    environment:
+      - DB_URL=jdbc:postgresql://postgres:5432/${POSTGRES_DB:-quizdb_dev}
+      - DB_USERNAME=${DB_USERNAME:-dev}
+      - DB_PASSWORD=${DB_PASSWORD:-dev}
+      - API_SECRET=${API_SECRET:-dev-secret-123}
+      - JPA_DDL_AUTO=${JPA_DDL_AUTO:-create-drop}
+      - JPA_SHOW_SQL=${JPA_SHOW_SQL:-true}
+      - DATA_PATH=/app/data/
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
