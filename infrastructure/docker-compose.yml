@@ -6,6 +6,7 @@ services:
       - "8080:8080"
     restart: unless-stopped
     environment:
+      - DB_URL=jdbc:postgresql://postgres:5432/quizdb
       - DB_USERNAME=${DB_USERNAME:-dbuser}
       - DB_PASSWORD=${DB_PASSWORD:-dbpass}
       - API_SECRET=${API_SECRET:-prod-secret-456}
