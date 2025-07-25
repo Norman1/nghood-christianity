@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  spring-backend:
+    image: nghood/nghood-backend:latest
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      - DB_USERNAME=${DB_USERNAME:-dbuser}
+      - DB_PASSWORD=${DB_PASSWORD:-dbpass}
+      - API_SECRET=${API_SECRET:-prod-secret-456}
+    depends_on:
+      - postgres
+  
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=quizdb
+      - POSTGRES_USER=${DB_USERNAME:-dbuser}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-dbpass}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
