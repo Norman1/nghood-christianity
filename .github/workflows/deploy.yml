@@ -5,11 +5,14 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-deploy:
+  # Job 1: Build Java Application
+  build-java:
+    name: "Build Java Application"
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
     
     - name: Set up JDK 17
       uses: actions/setup-java@v3
@@ -18,8 +21,57 @@ jobs:
         distribution: 'temurin'
     
     - name: Build with Maven
-      run: mvn clean package -DskipTests
+      run: |
+        echo "=== Build Java Application Job Started ==="
+        echo "Date: $(date)"
+        echo "Working directory: $(pwd)"
+        echo "Java version:"
+        java -version
+        echo ""
+        echo "=== Starting Maven build ==="
+        mvn clean package -DskipTests
+        echo ""
+        echo "=== Build completed successfully ==="
+        echo "Generated JAR files:"
+        ls -lh target/*.jar
       working-directory: backend
+    
+    - name: Upload JAR artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: jar-artifact
+        path: backend/target/*.jar
+
+  # Job 2: Build and Push Docker Image
+  build-docker:
+    name: "Build Docker Image"
+    needs: build-java
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Download JAR artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: jar-artifact
+        path: backend/target/
+    
+    - name: Verify artifact
+      run: |
+        echo "=== Build Docker Image Job Started ==="
+        echo "Date: $(date)"
+        echo ""
+        echo "=== Verifying JAR artifact ==="
+        echo "Contents of backend/target:"
+        ls -lh backend/target/
+        echo ""
+        if [ ! -f backend/target/*.jar ]; then
+          echo "ERROR: JAR file not found!"
+          exit 1
+        fi
+        echo "JAR artifact verified successfully"
     
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
@@ -38,8 +90,15 @@ jobs:
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/nghood-backend:latest
         cache-from: type=gha
         cache-to: type=gha,mode=max
+
+  # Job 3: Pre-deployment (Pull images and stop old containers)
+  pre-deploy:
+    name: "Pre-deployment"
+    needs: build-docker
+    runs-on: ubuntu-latest
     
-    - name: Deploy to Lightsail
+    steps:
+    - name: Pre-deployment tasks
       uses: appleboy/ssh-action@v0.1.5
       with:
         host: ${{ secrets.LIGHTSAIL_HOST }}
@@ -47,23 +106,109 @@ jobs:
         key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
         script: |
           set -e
+          echo "=== Pre-deployment Job Started ==="
+          echo "Date: $(date)"
+          echo "Server: $(hostname)"
+          echo ""
+          
+          echo "=== System information ==="
+          echo "Docker version: $(docker --version)"
+          echo "Docker-compose version: $(docker-compose --version)"
+          echo ""
+          
+          echo "=== Navigating to app directory ==="
+          cd ~/app
+          echo "Current directory: $(pwd)"
+          echo ""
+          
+          echo "=== Current running containers ==="
+          docker-compose ps
+          echo ""
+          
+          echo "=== Pulling latest Docker images ==="
+          docker-compose pull
+          echo ""
+          
+          echo "=== Stopping old containers ==="
+          docker-compose down
+          echo "Old containers stopped and removed"
+
+  # Job 4: Deploy (Start new containers)
+  deploy:
+    name: "Deploy Application"
+    needs: pre-deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Deploy application
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: ${{ secrets.LIGHTSAIL_HOST }}
+        username: ubuntu
+        key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+        script: |
+          set -e
+          echo "=== Deploy Application Job Started ==="
+          echo "Date: $(date)"
+          echo ""
+          
           echo "=== Navigating to app directory ==="
           cd ~/app
           
-          echo "=== Pulling latest images ==="
-          docker-compose pull
-          
-          echo "=== Stopping and removing old containers ==="
-          docker-compose down
-          
-          echo "=== Starting containers ==="
+          echo "=== Starting new containers ==="
           docker-compose up -d
+          echo ""
           
-          echo "=== Waiting for application startup ==="
-          sleep 15
+          echo "=== Waiting for application startup (15 seconds) ==="
+          for i in {1..15}; do
+            echo -n "."
+            sleep 1
+          done
+          echo ""
+          echo "Startup wait completed"
+
+  # Job 5: Verify deployment
+  verify:
+    name: "Verify Deployment"
+    needs: deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Verify deployment health
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: ${{ secrets.LIGHTSAIL_HOST }}
+        username: ubuntu
+        key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+        script: |
+          set -e
+          echo "=== Verify Deployment Job Started ==="
+          echo "Date: $(date)"
+          echo ""
           
           echo "=== Checking container status ==="
+          cd ~/app
           docker-compose ps
+          echo ""
           
-          echo "=== Checking application health ==="
-          curl -f http://localhost:8080/actuator/health || (echo "Health check failed"; docker-compose logs --tail=50; exit 1)
+          echo "=== Checking application logs (last 20 lines) ==="
+          docker-compose logs --tail=20 spring-backend
+          echo ""
+          
+          echo "=== Performing health check ==="
+          if curl -f http://localhost:8080/actuator/health; then
+            echo ""
+            echo "✅ Health check passed!"
+          else
+            echo ""
+            echo "❌ Health check failed!"
+            echo ""
+            echo "=== Showing detailed logs for debugging ==="
+            docker-compose logs --tail=50
+            exit 1
+          fi
+          
+          echo ""
+          echo "=== Deployment completed successfully! ==="
+          echo "Application is healthy and running"
+          echo "Deployment finished at: $(date)"
