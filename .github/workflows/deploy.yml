@@ -99,7 +99,7 @@ jobs:
     
     steps:
     - name: Pre-deployment tasks
-      uses: appleboy/ssh-action@v0.1.5
+      uses: appleboy/ssh-action@v1
       with:
         host: ${{ secrets.LIGHTSAIL_HOST }}
         username: ubuntu
@@ -141,7 +141,7 @@ jobs:
     
     steps:
     - name: Deploy application
-      uses: appleboy/ssh-action@v0.1.5
+      uses: appleboy/ssh-action@v1
       with:
         host: ${{ secrets.LIGHTSAIL_HOST }}
         username: ubuntu
@@ -160,11 +160,7 @@ jobs:
           echo ""
           
           echo "=== Waiting for application startup (15 seconds) ==="
-          for i in {1..15}; do
-            echo -n "."
-            sleep 1
-          done
-          echo ""
+          sleep 15
           echo "Startup wait completed"
 
   # Job 5: Verify deployment
@@ -175,7 +171,7 @@ jobs:
     
     steps:
     - name: Verify deployment health
-      uses: appleboy/ssh-action@v0.1.5
+      uses: appleboy/ssh-action@v1
       with:
         host: ${{ secrets.LIGHTSAIL_HOST }}
         username: ubuntu
