@@ -16,7 +16,8 @@ public class WebConfig implements WebMvcConfigurer {
                     "file://*",
                     "https://nghood.com",
                     "https://www.nghood.com", 
-                    "https://norman1.github.io"
+                    "https://norman1.github.io",
+                    "https://christianity.nghood.com"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD")
                 .allowedHeaders("*")
