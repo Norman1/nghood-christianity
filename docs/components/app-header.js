@@ -36,7 +36,7 @@ class AppHeader extends HTMLElement {
       </style>
 
       <div class="header">
-        <h1 class="site-title">Learning Hub</h1>
+        <h1 class="site-title">nghood Christianity</h1>
         <div class="auth-wrapper">
           <custom-auth></custom-auth>
         </div>

@@ -17,7 +17,6 @@ class AppFooter extends HTMLElement {
         a {
           color: #0055aa;
           text-decoration: none;
-          margin-left: 0.5rem;
         }
 
         a:hover {
@@ -26,9 +25,8 @@ class AppFooter extends HTMLElement {
       </style>
 
       <div>
-        © ${currentYear} – <a href="https://github.com/your-github-name" target="_blank">My GitHub</a> |
-        <a href="#/about">About</a> |
-        <a href="#/privacy">Privacy & Terms</a>
+        <a href="https://github.com/Norman1/nghood-christianity" target="_blank">GitHub</a> |
+        <a href="#/about">About</a>
       </div>
     `;
     }

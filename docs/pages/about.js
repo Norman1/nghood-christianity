@@ -1,6 +1,6 @@
 import { loadTemplate, createLoadingElement } from '../utils/template-loader.js';
 
-class PrivacyPolicy extends HTMLElement {
+class AboutPage extends HTMLElement {
     async connectedCallback() {
         // Clear right sidebar
         const layout = document.querySelector('main-layout');
@@ -12,7 +12,7 @@ class PrivacyPolicy extends HTMLElement {
 
         try {
             // Load template content
-            const templateContent = await loadTemplate('./templates/privacy-policy.html');
+            const templateContent = await loadTemplate('./templates/about.html');
             
             // Clear this page's content and append the loaded content
             this.innerHTML = '';
@@ -29,4 +29,4 @@ class PrivacyPolicy extends HTMLElement {
     }
 }
 
-customElements.define('privacy-policy', PrivacyPolicy);
+customElements.define('about-page', AboutPage);

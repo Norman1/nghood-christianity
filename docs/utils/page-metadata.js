@@ -2,82 +2,82 @@
 const pageMetadata = {
     // Navigation showcase pages
     '#/navigation-showcase': {
-        title: 'Navigation Showcase | Learning Hub',
+        title: 'Navigation Showcase | nghood Christianity',
         description: 'Explore the flexible 3-level navigation system and learn how to organize content effectively.',
         keywords: 'navigation, showcase, hierarchy, organization'
     },
     '#/category-page-demo': {
-        title: 'Category Page Demo | Learning Hub',
+        title: 'Category Page Demo | nghood Christianity',
         description: 'Demonstration of how pages work within categories for organized content structure.',
         keywords: 'category, organization, content structure, demo'
     },
     '#/nested-page-demo': {
-        title: 'Nested Page Demo | Learning Hub',
+        title: 'Nested Page Demo | nghood Christianity',
         description: 'Example of deep navigation hierarchy with subcategories and nested page organization.',
         keywords: 'nested, subcategory, hierarchy, navigation structure'
     },
     
     // Layout examples
     '#/test-minimal': {
-        title: 'Minimal Content | Learning Hub',
+        title: 'Minimal Content | nghood Christianity',
         description: 'Example of minimal content layout with clean, focused design.',
         keywords: 'minimal, layout, clean design, content'
     },
     '#/test-full': {
-        title: 'Full Content | Learning Hub',
+        title: 'Full Content | nghood Christianity',
         description: 'Example of full content layout with comprehensive information display.',
         keywords: 'full content, layout, comprehensive, information'
     },
     '#/test-with-sidebar': {
-        title: 'With Right Sidebar | Learning Hub',
+        title: 'With Right Sidebar | nghood Christianity',
         description: 'Example layout featuring a right sidebar for additional content and navigation.',
         keywords: 'sidebar, layout, additional content, navigation'
     },
     '#/test-scrollable': {
-        title: 'Scrollable Sidebar | Learning Hub',
+        title: 'Scrollable Sidebar | nghood Christianity',
         description: 'Example of scrollable sidebar layout for handling large amounts of secondary content.',
         keywords: 'scrollable, sidebar, large content, secondary'
     },
     '#/components-gallery': {
-        title: 'Components Gallery | Learning Hub',
+        title: 'Components Gallery | nghood Christianity',
         description: 'Showcase of all available UI components and styling elements in the framework.',
         keywords: 'components, gallery, UI elements, styling, framework'
     },
     
     // Legacy routes (for backwards compatibility)
     '#/page1': {
-        title: 'Navigation Showcase | Learning Hub',
+        title: 'Navigation Showcase | nghood Christianity',
         description: 'Explore the flexible 3-level navigation system and learn how to organize content effectively.',
         keywords: 'navigation, showcase, hierarchy, organization'
     },
     '#/page2': {
-        title: 'Category Page Demo | Learning Hub',
+        title: 'Category Page Demo | nghood Christianity',
         description: 'Demonstration of how pages work within categories for organized content structure.',
         keywords: 'category, organization, content structure, demo'
     },
     '#/about': {
-        title: 'Navigation Showcase | Learning Hub',
+        title: 'Navigation Showcase | nghood Christianity',
         description: 'Explore the flexible 3-level navigation system and learn how to organize content effectively.',
         keywords: 'navigation, showcase, hierarchy, organization'
     },
     '#/profile': {
-        title: 'User Profile | Learning Hub',
+        title: 'User Profile | nghood Christianity',
         description: 'Manage your user profile, settings, and account information.',
         keywords: 'profile, user account, settings'
     },
-    '#/privacy': {
-        title: 'Privacy & Terms | Learning Hub',
-        description: 'Our privacy policy and terms of service for using our application.',
-        keywords: 'privacy policy, terms of service, data protection'
+    '#/about': {
+        title: 'About | nghood Christianity',
+        description: 'Learn about nghood Christianity and our privacy practices.',
+        keywords: 'about, privacy policy, nghood christianity'
     },
     '#/test-404': {
-        title: '404 - Page Not Found | Learning Hub',
+        title: '404 - Page Not Found | nghood Christianity',
         description: 'The requested page could not be found. Return to the main navigation to explore available content.',
         keywords: '404, not found, error page'
     },
     // Default/fallback metadata
     'default': {
-        title: 'Learning Hub - Web Application Framework',
+        title: 'nghood Christianity - Web Application Framework',
         description: 'A modern web application framework showcasing flexible navigation and layout patterns.',
         keywords: 'web app, framework, navigation, layouts, learning'
     }
@@ -148,7 +148,7 @@ function updateStructuredData(metadata, path) {
         "url": window.location.href,
         "isPartOf": {
             "@type": "WebSite",
-            "name": "Learning Hub",
+            "name": "nghood Christianity",
             "url": window.location.origin + window.location.pathname
         }
     };

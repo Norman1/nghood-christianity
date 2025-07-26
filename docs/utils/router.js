@@ -19,13 +19,13 @@ const routes = {
     '#/backend-test': 'backend-test',
     
     // Standalone pages
-    '#/privacy': 'privacy-policy',
+    '#/about': 'about-page',
     '#/test-404': 'not-found-page',
     
     // Legacy routes (for backwards compatibility)
     '#/page1': 'navigation-showcase',
     '#/page2': 'category-page-demo',
-    '#/about': 'navigation-showcase'
+    '#/privacy': 'about-page'  // Redirect old privacy link to about
 };
 
 let currentPage = null;
