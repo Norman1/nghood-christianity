@@ -1,8 +1,12 @@
 name: Build and Deploy to Lightsail
 
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      deploy_message:
+        description: 'Deployment message (optional)'
+        required: false
+        default: 'Manual deployment triggered'
 
 jobs:
   # Job 1: Build Java Application
