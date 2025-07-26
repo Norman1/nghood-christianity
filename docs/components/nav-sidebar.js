@@ -42,56 +42,25 @@ class NavSidebar extends HTMLElement {
         
         return {
             // Top-level pages (no category)
-            topLevel: [
-                { href: '#/navigation-showcase', title: 'Navigation Showcase' }
-            ],
+            topLevel: [],
             
             // Categories with optional subcategories
             categories: [
-                {
-                    id: 'category-example',
-                    title: 'Category Example',
-                    pages: [
-                        { href: '#/category-page-demo', title: 'Category Page Demo' }
-                    ],
-                    subcategories: [
-                        {
-                            id: 'subcategory-example',
-                            title: 'Subcategory Example',
-                            pages: [
-                                { href: '#/nested-page-demo', title: 'Nested Page Demo' }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: 'layouts',
-                    title: 'Layouts',
-                    pages: [
-                        { href: '#/test-minimal', title: 'Minimal Content' },
-                        { href: '#/test-full', title: 'Full Content' },
-                        { href: '#/test-with-sidebar', title: 'With Right Sidebar' },
-                        { href: '#/test-scrollable', title: 'Scrollable Sidebar' },
-                        { href: '#/components-gallery', title: 'Components Gallery' }
-                    ],
-                    subcategories: []
-                },
                 ...(isLoggedIn ? [{
-                    id: 'account',
-                    title: 'Authorized Only',
+                    id: 'debug',
+                    title: 'Debug',
                     pages: [
+                        { href: '#/components-gallery', title: 'Components Gallery' },
                         { href: '#/profile', title: 'My Profile' },
-                        { href: '#/backend-test', title: 'Backend Test' }
+                        { href: '#/backend-test', title: 'Backend Test' },
+                        { href: '#/test-404', title: 'Test 404' }
                     ],
                     subcategories: []
                 }] : [])
             ],
             
             // Bottom-level standalone pages
-            bottomLevel: [
-                { href: '#/privacy', title: 'Privacy & Terms' },
-                { href: '#/test-404', title: 'Test 404' }
-            ]
+            bottomLevel: []
         };
     }
 

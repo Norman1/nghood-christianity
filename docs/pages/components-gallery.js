@@ -2,9 +2,26 @@ import { generateTOC } from '../utils/toc-generator.js';
 import '../components/quiz-card.js';
 import '../components/hierarchical-tree-selector.js';
 import '../components/collapsible-section.js';
+import '../components/auth-guard.js';
+import { authService } from '../utils/auth-service.js';
 
 class ComponentsGallery extends HTMLElement {
     connectedCallback() {
+        // Check if user is authenticated
+        if (!authService.isAuthenticated()) {
+            this.innerHTML = '<auth-guard></auth-guard>';
+            
+            // Listen for successful authentication
+            this.addEventListener('auth-success', () => {
+                this.renderComponentsGallery();
+            });
+            return;
+        }
+
+        this.renderComponentsGallery();
+    }
+    
+    renderComponentsGallery() {
         const layout = document.querySelector('main-layout');
         layout.setAttribute('with-right', '');
 

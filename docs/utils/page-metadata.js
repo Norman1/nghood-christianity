@@ -1,43 +1,5 @@
 // Page metadata for SEO
 const pageMetadata = {
-    // Navigation showcase pages
-    '#/navigation-showcase': {
-        title: 'Navigation Showcase | nghood Christianity',
-        description: 'Explore the flexible 3-level navigation system and learn how to organize content effectively.',
-        keywords: 'navigation, showcase, hierarchy, organization'
-    },
-    '#/category-page-demo': {
-        title: 'Category Page Demo | nghood Christianity',
-        description: 'Demonstration of how pages work within categories for organized content structure.',
-        keywords: 'category, organization, content structure, demo'
-    },
-    '#/nested-page-demo': {
-        title: 'Nested Page Demo | nghood Christianity',
-        description: 'Example of deep navigation hierarchy with subcategories and nested page organization.',
-        keywords: 'nested, subcategory, hierarchy, navigation structure'
-    },
-    
-    // Layout examples
-    '#/test-minimal': {
-        title: 'Minimal Content | nghood Christianity',
-        description: 'Example of minimal content layout with clean, focused design.',
-        keywords: 'minimal, layout, clean design, content'
-    },
-    '#/test-full': {
-        title: 'Full Content | nghood Christianity',
-        description: 'Example of full content layout with comprehensive information display.',
-        keywords: 'full content, layout, comprehensive, information'
-    },
-    '#/test-with-sidebar': {
-        title: 'With Right Sidebar | nghood Christianity',
-        description: 'Example layout featuring a right sidebar for additional content and navigation.',
-        keywords: 'sidebar, layout, additional content, navigation'
-    },
-    '#/test-scrollable': {
-        title: 'Scrollable Sidebar | nghood Christianity',
-        description: 'Example of scrollable sidebar layout for handling large amounts of secondary content.',
-        keywords: 'scrollable, sidebar, large content, secondary'
-    },
     '#/components-gallery': {
         title: 'Components Gallery | nghood Christianity',
         description: 'Showcase of all available UI components and styling elements in the framework.',
@@ -46,29 +8,24 @@ const pageMetadata = {
     
     // Legacy routes (for backwards compatibility)
     '#/page1': {
-        title: 'Navigation Showcase | nghood Christianity',
-        description: 'Explore the flexible 3-level navigation system and learn how to organize content effectively.',
-        keywords: 'navigation, showcase, hierarchy, organization'
+        title: '404 - Page Not Found | nghood Christianity',
+        description: 'The requested page could not be found. Return to the main navigation to explore available content.',
+        keywords: '404, not found, error page'
     },
     '#/page2': {
-        title: 'Category Page Demo | nghood Christianity',
-        description: 'Demonstration of how pages work within categories for organized content structure.',
-        keywords: 'category, organization, content structure, demo'
-    },
-    '#/about': {
-        title: 'Navigation Showcase | nghood Christianity',
-        description: 'Explore the flexible 3-level navigation system and learn how to organize content effectively.',
-        keywords: 'navigation, showcase, hierarchy, organization'
-    },
-    '#/profile': {
-        title: 'User Profile | nghood Christianity',
-        description: 'Manage your user profile, settings, and account information.',
-        keywords: 'profile, user account, settings'
+        title: '404 - Page Not Found | nghood Christianity',
+        description: 'The requested page could not be found. Return to the main navigation to explore available content.',
+        keywords: '404, not found, error page'
     },
     '#/about': {
         title: 'About | nghood Christianity',
         description: 'Learn about nghood Christianity and our privacy practices.',
         keywords: 'about, privacy policy, nghood christianity'
+    },
+    '#/profile': {
+        title: 'User Profile | nghood Christianity',
+        description: 'Manage your user profile, settings, and account information.',
+        keywords: 'profile, user account, settings'
     },
     '#/test-404': {
         title: '404 - Page Not Found | nghood Christianity',

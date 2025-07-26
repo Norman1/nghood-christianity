@@ -30,7 +30,7 @@ class AuthService {
 
     redirectToLogin() {
         // Set the current path as pending redirect
-        this.setPendingRedirect(window.location.hash || '#/page1');
+        this.setPendingRedirect(window.location.hash || '#/about');
         
         // Trigger login modal
         const authComponent = document.querySelector('custom-auth');
@@ -50,11 +50,11 @@ class AuthService {
 
     handleLogout() {
         // If user is on a protected page, redirect to home
-        const protectedRoutes = ['#/profile'];
+        const protectedRoutes = ['#/profile', '#/backend-test', '#/components-gallery'];
         const currentPath = window.location.hash;
         
         if (protectedRoutes.includes(currentPath)) {
-            window.location.hash = '#/page1';
+            window.location.hash = '#/about';
         }
     }
 

@@ -2,16 +2,6 @@ import { updatePageMetadata } from './page-metadata.js';
 import { prepareForAnimation } from './performance-utils.js';
 
 const routes = {
-    // Navigation showcase pages
-    '#/navigation-showcase': 'navigation-showcase',
-    '#/category-page-demo': 'category-page-demo', 
-    '#/nested-page-demo': 'nested-page-demo',
-    
-    // Layout examples
-    '#/test-minimal': 'test-minimal',
-    '#/test-full': 'test-full',
-    '#/test-with-sidebar': 'test-with-sidebar',
-    '#/test-scrollable': 'test-scrollable',
     '#/components-gallery': 'components-gallery',
     
     // Account
@@ -23,8 +13,8 @@ const routes = {
     '#/test-404': 'not-found-page',
     
     // Legacy routes (for backwards compatibility)
-    '#/page1': 'navigation-showcase',
-    '#/page2': 'category-page-demo',
+    '#/page1': 'not-found-page',
+    '#/page2': 'not-found-page',
     '#/privacy': 'about-page'  // Redirect old privacy link to about
 };
 
@@ -41,7 +31,7 @@ export function initRouter() {
     function render() {
         if (isTransitioning) return;
         
-        const path = location.hash || '#/page1';
+        const path = location.hash || '#/about';
         const tag = routes[path] || 'not-found-page';
 
         // Update page metadata for SEO
