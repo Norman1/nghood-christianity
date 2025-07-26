@@ -1,0 +1,220 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple",
+      "question": "Who was present at the council of Nicaea?",
+      "options": [
+        "Emperor Constantine I",
+        "Arius",
+        "Apostle Paul",
+        "Pope Leo I"
+      ],
+      "answer": [
+        "Emperor Constantine I"
+      ],
+      "books": [
+      ],
+      "notes": "The council of Nicaea was held in 325 AD to address the Arian controversy. <a href=\"https://en.wikipedia.org/wiki/First_Council_of_Nicaea\" target=\"_blank\" rel=\"noopener noreferrer\">First Council of Nicaea</a>."
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "question": "During the time of Jesus, which country was in control of Babylon?",
+      "options": [
+        "Persian Empire",
+        "Seleucid Empire",
+        "Roman Empire",
+        "Parthian Empire"
+      ],
+      "answer": [
+        "Parthian Empire"
+      ],
+      "books": [
+      ],
+      "notes": "<img src=\"bible-quiz/kingdoms-jesus-time.png\" alt=\"Map of Roman and Parthian Empire\" />"
+    },
+    {
+      "id": 3,
+      "type": "multiple",
+      "question": "Which Israelites were considered Hellenists in the New Testament context?",
+      "options": [
+        "Israelites living in Israel",
+        "Israelites living in Babylon",
+        "Israelites living in Rome",
+        "Israelites living in Egypt"
+      ],
+      "answer": [
+        "Israelites living in Rome",
+        "Israelites living in Egypt"
+      ],
+      "books": [
+      ]
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "question": "During Jesus his time, more Jews were living in Parthia than in Israel",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": [
+        "True"
+      ],
+      "books": [
+      ]
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "During the time of Jesus, which region lay between Judea and Galilee?",
+      "options": [
+        "Decapolis",
+        "Perea",
+        "Idumea",
+        "Samaria"
+      ],
+      "answer": [
+        "Samaria"
+      ],
+      "books": [
+      ],
+      "notes": "<img src=\"bible-quiz/Judea-Samaria-Galilee.png\" alt=\"Israel Map during Jesus his time\" />"
+    },
+    {
+      "id": 6,
+      "type": "multiple",
+      "question": "Like the Israelites they were descendants of Isaac but not from Jacob. Who were they?",
+      "options": [
+        "Moabites",
+        "Ammonites",
+        "Arabs",
+        "Idumeans"
+      ],
+      "answer": [
+        "Idumeans"
+      ],
+      "books": [
+      ],
+      "notes": "<img src=\"bible-quiz/Idumeans-map.png\" alt=\"Map of Idumea\" />"
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "The Jewish priests during the time of Jesus belonged almost entirely to which group?",
+      "options": [
+        "Pharisees",
+        "Essenes",
+        "Roman non Israelites",
+        "Sadducees"
+      ],
+      "answer": [
+        "Sadducees"
+      ],
+      "books": [
+      ]
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Which Jewish group declared the oral law as equal to the written law?",
+      "options": [
+        "Pharisees",
+        "Essenes",
+        "Sadducees"
+      ],
+      "answer": [
+        "Pharisees"
+      ],
+      "books": [
+      ]
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "The members of which Jewish group lived excluded from society",
+      "options": [
+        "Pharisees",
+        "Essenes",
+        "Sadducees"
+      ],
+      "answer": [
+        "Essenes"
+      ],
+      "books": [
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multiple",
+      "question": "What sources of authority did the Pharisees accept in Jesus’ time?",
+      "options": [
+        "Written Torah",
+        "Oral Torah",
+        "Prophets and Writings",
+        "Greek Philosophy"
+      ],
+      "answer": [
+        "Written Torah",
+        "Oral Torah",
+        "Prophets and Writings"
+      ],
+      "books": [
+      ]
+    },
+    {
+      "id": 11,
+      "type": "single",
+      "question": "When was the Babylonian Talmud compiled?",
+      "options": [
+        "100 BC-70 AD",
+        "Around 200 AD",
+        "Between 200-500 AD",
+        "Starting 100 BC and is still ongoing"
+      ],
+      "answer": [
+        "Between 200-500 AD"
+      ],
+      "books": [
+      ],
+      "notes": " <a href=\"https://www.sefaria.org/texts\" target=\"_blank\" rel=\"noopener noreferrer\">Link to Talmud</a>"
+    },
+    {
+      "id": 12,
+      "type": "multiple",
+      "question": "What is the Mishnah in the context of Judaism?",
+      "options": [
+        "A collection of songs and prayers used in the Jewish Temple.",
+        "The Oral Torah compiled and written down around 200 AD.",
+        "A historical account of the Jewish exile written by the prophets.",
+        "An ancient Jewish calendar used to track feasts and holy days."
+      ],
+      "answer": [
+        "The Oral Torah compiled and written down around 200 AD"
+      ],
+      "books": [
+      ],
+      "notes": " <a href=\"https://www.sefaria.org/texts\" target=\"_blank\" rel=\"noopener noreferrer\">Link to Mishnah</a>"
+    },
+    {
+      "id": 13,
+      "type": "multiple",
+      "question": "Which of the following statements about the Septuagint are true?",
+      "options": [
+        "It is a Greek translation of the Hebrew Scriptures.",
+        "It was created by early Christians to spread the gospel.",
+        "It includes books not found in the Hebrew Bible (Masoretic Text).",
+        "It was translated in Alexandria, Egypt."
+      ],
+      "answer": [
+        "It is a Greek translation of the Hebrew Scriptures.",
+        "It includes books not found in the Hebrew Bible (Masoretic Text).",
+        "It was translated in Alexandria, Egypt."
+      ],
+      "books": [
+      ],
+      "notes": " <a href=\"https://www.biblestudytools.com/lxx/\" target=\"_blank\" rel=\"noopener noreferrer\">Link to Septuagint</a>"
+    }
+  ]
+}
