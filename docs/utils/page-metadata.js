@@ -1,5 +1,10 @@
 // Page metadata for SEO
 const pageMetadata = {
+    '#/bible-reading-plan': {
+        title: 'Bible Reading Plan | nghood Christianity',
+        description: 'Plan and track your Bible reading journey with structured reading plans and progress tracking.',
+        keywords: 'bible reading, reading plan, scripture, daily reading, bible study'
+    },
     '#/components-gallery': {
         title: 'Components Gallery | nghood Christianity',
         description: 'Showcase of all available UI components and styling elements in the framework.',

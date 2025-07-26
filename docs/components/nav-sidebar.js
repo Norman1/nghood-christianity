@@ -42,7 +42,9 @@ class NavSidebar extends HTMLElement {
         
         return {
             // Top-level pages (no category)
-            topLevel: [],
+            topLevel: [
+                { href: '#/bible-reading-plan', title: 'Bible Reading Plan' }
+            ],
             
             // Categories with optional subcategories
             categories: [

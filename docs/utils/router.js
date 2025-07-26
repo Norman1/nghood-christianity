@@ -2,6 +2,7 @@ import { updatePageMetadata } from './page-metadata.js';
 import { prepareForAnimation } from './performance-utils.js';
 
 const routes = {
+    '#/bible-reading-plan': 'bible-reading-plan',
     '#/components-gallery': 'components-gallery',
     
     // Account
