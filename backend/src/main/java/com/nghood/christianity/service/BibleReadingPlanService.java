@@ -72,26 +72,43 @@ public class BibleReadingPlanService {
         // Use two pointers to assign from start (small) or end (large)
         int startIdx = 0;
         int endIdx = oldTestament.size() - 1;
+        Random random = new Random();
 
         // Process each NT book in shuffled order
         for (BibleBook ntBook : newTestament) {
             if (largestNtBooks.contains(ntBook)) {
                 // Large NT books get 2 OT books: 1 large + 1 small
                 if (endIdx >= startIdx) {
-                    // First, get a large OT book from the end
-                    ntToOtMapping.get(ntBook).add(oldTestament.get(endIdx));
+                    // Get a large OT book from end (randomly pick from 3 largest available)
+                    int largeRange = Math.min(3, endIdx - startIdx + 1);
+                    int largeOffset = random.nextInt(largeRange);
+                    int largeIdx = endIdx - largeOffset;
+                    ntToOtMapping.get(ntBook).add(oldTestament.get(largeIdx));
+                    oldTestament.remove(largeIdx);
                     endIdx--;
                 }
                 if (startIdx <= endIdx) {
-                    // Then, get a small OT book from the start
-                    ntToOtMapping.get(ntBook).add(oldTestament.get(startIdx));
-                    startIdx++;
+                    // Get a small OT book from start (randomly pick from 3 smallest available)
+                    int smallRange = Math.min(3, endIdx - startIdx + 1);
+                    int smallOffset = random.nextInt(smallRange);
+                    int smallIdx = startIdx + smallOffset;
+                    ntToOtMapping.get(ntBook).add(oldTestament.get(smallIdx));
+                    oldTestament.remove(smallIdx);
+                    if (smallIdx <= endIdx) {
+                        endIdx--;
+                    }
                 }
             } else {
-                // Small NT books get 1 small OT book
+                // Small NT books get 1 small OT book (randomly pick from 3 smallest available)
                 if (startIdx <= endIdx) {
-                    ntToOtMapping.get(ntBook).add(oldTestament.get(startIdx));
-                    startIdx++;
+                    int smallRange = Math.min(3, endIdx - startIdx + 1);
+                    int smallOffset = random.nextInt(smallRange);
+                    int smallIdx = startIdx + smallOffset;
+                    ntToOtMapping.get(ntBook).add(oldTestament.get(smallIdx));
+                    oldTestament.remove(smallIdx);
+                    if (smallIdx <= endIdx) {
+                        endIdx--;
+                    }
                 }
             }
         }
