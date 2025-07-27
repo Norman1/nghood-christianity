@@ -10,19 +10,34 @@ import java.util.stream.Collectors;
 public class BibleReadingPlanService {
 
     private static final List<BibleBook> BIBLE_BOOKS = initializeBibleBooks();
-    private static final int OPTIMIZATION_PASSES = 3;
 
     public List<BibleBook> getOrderedBibleBooks() {
 
-        // Step 1: Get randomized list of OT and NT books
+        // Step 1: Get OT books sorted by size, NT books shuffled
         List<BibleBook> oldTestament = BIBLE_BOOKS.stream()
-                .filter(BibleBook::isOldTestament).collect(Collectors.toList());
+                .filter(BibleBook::isOldTestament)
+                .sorted(Comparator.comparingInt(BibleBook::getWordCount))
+                .collect(Collectors.toList());
 
         List<BibleBook> newTestament = BIBLE_BOOKS.stream()
-                .filter(book -> !book.isOldTestament()).collect(Collectors.toList());
+                .filter(book -> !book.isOldTestament())
+                .collect(Collectors.toList());
 
-        Collections.shuffle(oldTestament);
         Collections.shuffle(newTestament);
+
+        // Calculate median word count of all Bible books
+        List<Integer> allWordCounts = BIBLE_BOOKS.stream()
+                .map(BibleBook::getWordCount)
+                .sorted()
+                .collect(Collectors.toList());
+        int median = allWordCounts.get(allWordCounts.size() / 2);
+        
+        // Identify the 12 largest NT books (they get 2 OT books each)
+        Set<BibleBook> largestNtBooks = BIBLE_BOOKS.stream()
+                .filter(book -> !book.isOldTestament())
+                .sorted(Comparator.comparingInt(BibleBook::getWordCount).reversed())
+                .limit(12)
+                .collect(Collectors.toSet());
 
         // Step 2: Initialize the mapping of NT to OT books
         Map<BibleBook, List<BibleBook>> ntToOtMapping = new HashMap<>();
@@ -30,8 +45,8 @@ public class BibleReadingPlanService {
             ntToOtMapping.put(ntBook, new ArrayList<>());
         }
 
-        // Assign each OT book to an NT book
-        assignOtBooksToNtBooks(oldTestament, newTestament, ntToOtMapping);
+        // Assign OT books using median-based algorithm
+        assignOtBooksToNtBooks(oldTestament, newTestament, ntToOtMapping, median, largestNtBooks);
 
         // DEBUG: Calculate and print total imbalance
         int totalImbalance = 0;
@@ -48,86 +63,37 @@ public class BibleReadingPlanService {
 
 
     private void assignOtBooksToNtBooks(List<BibleBook> oldTestament, List<BibleBook> newTestament,
-                                        Map<BibleBook, List<BibleBook>> ntToOtMapping) {
-        // 27 NT books, 39 OT books. 12 OT books more than NT books.
-        // first assign without weighing word counts
-        int currentOtIndex = 0;
-        for (Map.Entry<BibleBook, List<BibleBook>> entry : ntToOtMapping.entrySet()) {
-            entry.getValue().add(oldTestament.get(currentOtIndex));
-            currentOtIndex++;
-            // 24 = 2* 12. 12 is the difference in book count
-            if (currentOtIndex <= 24) {
-                entry.getValue().add(oldTestament.get(currentOtIndex));
-                currentOtIndex++;
-            }
-        }
-
-        // now use the word count to smoothen the reading experience
-        optimizeBySwapping(ntToOtMapping);
-
-
-    }
-
-    private void optimizeBySwapping(Map<BibleBook, List<BibleBook>> ntToOtMapping) {
-        // Convert to list for indexed access
-        List<Map.Entry<BibleBook, List<BibleBook>>> entries = new ArrayList<>(ntToOtMapping.entrySet());
-
-        // Repeat optimization passes
-        for (int pass = 0; pass < OPTIMIZATION_PASSES; pass++) {
-            // Check each adjacent pair
-            for (int i = 0; i < entries.size() - 1; i++) {
-                Map.Entry<BibleBook, List<BibleBook>> current = entries.get(i);
-                Map.Entry<BibleBook, List<BibleBook>> next = entries.get(i + 1);
-
-                // Try to find a beneficial swap
-                trySwapBetweenGroups(current, next);
-            }
-        }
-    }
-
-    private void trySwapBetweenGroups(Map.Entry<BibleBook, List<BibleBook>> group1,
-                                      Map.Entry<BibleBook, List<BibleBook>> group2) {
-        List<BibleBook> otBooks1 = group1.getValue();
-        List<BibleBook> otBooks2 = group2.getValue();
-
-        // NT word counts
-        int nt1Words = group1.getKey().getWordCount();
-        int nt2Words = group2.getKey().getWordCount();
-
-        // OT totals for each group
-        int ot1Total = otBooks1.stream().mapToInt(BibleBook::getWordCount).sum();
-        int ot2Total = otBooks2.stream().mapToInt(BibleBook::getWordCount).sum();
-
-        // Current imbalance within each group (NT vs OT difference)
-        int group1Imbalance = Math.abs(nt1Words - ot1Total);
-        int group2Imbalance = Math.abs(nt2Words - ot2Total);
-        int currentTotalImbalance = group1Imbalance + group2Imbalance;
-
-        // Try all possible swaps
-        for (int i = 0; i < otBooks1.size(); i++) {
-            for (int j = 0; j < otBooks2.size(); j++) {
-                BibleBook book1 = otBooks1.get(i);
-                BibleBook book2 = otBooks2.get(j);
-
-                // Calculate new OT totals if we swap
-                int newOt1Total = ot1Total - book1.getWordCount() + book2.getWordCount();
-                int newOt2Total = ot2Total - book2.getWordCount() + book1.getWordCount();
-
-                // New imbalances
-                int newGroup1Imbalance = Math.abs(nt1Words - newOt1Total);
-                int newGroup2Imbalance = Math.abs(nt2Words - newOt2Total);
-                int newTotalImbalance = newGroup1Imbalance + newGroup2Imbalance;
-
-                // If this swap reduces total imbalance, do it
-                if (newTotalImbalance < currentTotalImbalance) {
-                    // Perform the swap
-                    otBooks1.set(i, book2);
-                    otBooks2.set(j, book1);
-                    return; // Exit after first beneficial swap
+                                        Map<BibleBook, List<BibleBook>> ntToOtMapping, int median,
+                                        Set<BibleBook> largestNtBooks) {
+        // OT books are sorted by size (smallest to largest)
+        // Use two pointers to assign from start (small) or end (large)
+        int startIdx = 0;
+        int endIdx = oldTestament.size() - 1;
+        
+        // Process each NT book in shuffled order
+        for (BibleBook ntBook : newTestament) {
+            if (largestNtBooks.contains(ntBook)) {
+                // Large NT books get 2 OT books: 1 large + 1 small
+                if (endIdx >= startIdx) {
+                    // First, get a large OT book from the end
+                    ntToOtMapping.get(ntBook).add(oldTestament.get(endIdx));
+                    endIdx--;
+                }
+                if (startIdx <= endIdx) {
+                    // Then, get a small OT book from the start
+                    ntToOtMapping.get(ntBook).add(oldTestament.get(startIdx));
+                    startIdx++;
+                }
+            } else {
+                // Small NT books get 1 small OT book
+                if (startIdx <= endIdx) {
+                    ntToOtMapping.get(ntBook).add(oldTestament.get(startIdx));
+                    startIdx++;
                 }
             }
         }
     }
+
 
 
     private List<BibleBook> flattenToReadingOrder(List<BibleBook> newTestament,
