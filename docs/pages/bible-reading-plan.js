@@ -17,6 +17,9 @@ class BibleReadingPlan extends HTMLElement {
             // Clear this page's content and append the loaded content
             this.innerHTML = '';
             this.innerHTML = templateContent;
+            
+            // Set up event listeners after content is loaded
+            this.setupEventListeners();
         } catch (error) {
             console.error('Error loading page:', error);
             this.innerHTML = `
@@ -26,6 +29,70 @@ class BibleReadingPlan extends HTMLElement {
                 </div>
             `;
         }
+    }
+    
+    setupEventListeners() {
+        const generateBtn = this.querySelector('#generate-plan-btn');
+        if (generateBtn) {
+            generateBtn.addEventListener('click', () => this.generateReadingPlan());
+        }
+    }
+    
+    async generateReadingPlan() {
+        const generateBtn = this.querySelector('#generate-plan-btn');
+        const loadingIndicator = this.querySelector('#loading-indicator');
+        const errorMessage = this.querySelector('#error-message');
+        const resultsSection = this.querySelector('#reading-plan-results');
+        const booksList = this.querySelector('#books-list');
+        
+        // Reset UI
+        generateBtn.disabled = true;
+        loadingIndicator.style.display = 'block';
+        errorMessage.style.display = 'none';
+        resultsSection.style.display = 'none';
+        
+        try {
+            // Call backend API
+            const response = await fetch(`${window.CONFIG.API_BASE_URL}/api/bible-reading-plan`, {
+                headers: {
+                    'X-API-Key': window.CONFIG.API_SECRET
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Failed to generate reading plan: ${response.statusText}`);
+            }
+            
+            const bookNames = await response.json();
+            
+            // Display the results
+            this.displayReadingPlan(bookNames);
+            
+            // Show results section
+            resultsSection.style.display = 'block';
+            
+            // Scroll to results
+            resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+        } catch (error) {
+            console.error('Error generating reading plan:', error);
+            this.querySelector('#error-text').textContent = error.message;
+            errorMessage.style.display = 'block';
+        } finally {
+            generateBtn.disabled = false;
+            loadingIndicator.style.display = 'none';
+        }
+    }
+    
+    displayReadingPlan(bookNames) {
+        const booksList = this.querySelector('#books-list');
+        booksList.innerHTML = '';
+        
+        bookNames.forEach((bookName) => {
+            const bookDiv = document.createElement('div');
+            bookDiv.textContent = bookName;
+            booksList.appendChild(bookDiv);
+        });
     }
 }
 

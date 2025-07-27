@@ -29,9 +29,9 @@ public class BibleReadingPlanService {
         List<Integer> allWordCounts = BIBLE_BOOKS.stream()
                 .map(BibleBook::getWordCount)
                 .sorted()
-                .collect(Collectors.toList());
+                .toList();
         int median = allWordCounts.get(allWordCounts.size() / 2);
-        
+
         // Identify the 12 largest NT books (they get 2 OT books each)
         Set<BibleBook> largestNtBooks = BIBLE_BOOKS.stream()
                 .filter(book -> !book.isOldTestament())
@@ -55,8 +55,11 @@ public class BibleReadingPlanService {
             int otTotal = entry.getValue().stream().mapToInt(BibleBook::getWordCount).sum();
             totalImbalance += Math.abs(ntWords - otTotal);
         }
-        System.out.println("Total imbalance across all groups: " + totalImbalance);
 
+
+        // Shuffle NT books again before flattening for additional randomness
+        Collections.shuffle(newTestament);
+        
         // Flatten to final list
         return flattenToReadingOrder(newTestament, ntToOtMapping);
     }
@@ -69,7 +72,7 @@ public class BibleReadingPlanService {
         // Use two pointers to assign from start (small) or end (large)
         int startIdx = 0;
         int endIdx = oldTestament.size() - 1;
-        
+
         // Process each NT book in shuffled order
         for (BibleBook ntBook : newTestament) {
             if (largestNtBooks.contains(ntBook)) {
@@ -93,7 +96,6 @@ public class BibleReadingPlanService {
             }
         }
     }
-
 
 
     private List<BibleBook> flattenToReadingOrder(List<BibleBook> newTestament,

@@ -24,8 +24,8 @@ class BibleReadingPlanServiceTest {
 
         // Assert
         assertEquals(66, orderedBooks.size(), "Should return all 66 Bible books");
-        
+
         // Print all books with their type and word count
-        orderedBooks.forEach(book -> System.out.println(book.getName() + " (" + (book.isOldTestament() ? "OT" : "NT") + ") - " + book.getWordCount() + " words"));
+//        orderedBooks.forEach(book -> System.out.println(book.getName() + " (" + (book.isOldTestament() ? "OT" : "NT") + ") - " + book.getWordCount() + " words"));
     }
 }
