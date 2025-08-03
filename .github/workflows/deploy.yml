@@ -240,7 +240,7 @@ jobs:
           echo ""
           
           echo "=== Performing backend health check ==="
-          if curl -f http://localhost/actuator/health; then
+          if curl -f -k https://localhost/actuator/health; then
             echo ""
             echo "✅ Backend health check passed!"
           else
@@ -254,7 +254,7 @@ jobs:
           
           echo ""
           echo "=== Checking frontend accessibility ==="
-          if curl -f -s http://localhost/ | grep -q "nghood Christianity"; then
+          if curl -f -s -k https://localhost/ | grep -q "nghood Christianity"; then
             echo "✅ Frontend is accessible!"
           else
             echo "❌ Frontend is not accessible!"
@@ -264,5 +264,5 @@ jobs:
           echo ""
           echo "=== Deployment completed successfully! ==="
           echo "Application is healthy and running"
-          echo "Frontend URL: http://christianity.nghood.com"
+          echo "Frontend URL: https://christianity.nghood.com"
           echo "Deployment finished at: $(date)"
