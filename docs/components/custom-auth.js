@@ -217,7 +217,7 @@ class CustomAuth extends HTMLElement {
                         <div id="googleSignInDiv"></div>
                         <div class="privacy-notice">
                             <p style="font-size: 0.85rem; color: #666; text-align: center; margin: 1rem 0 0 0;">
-                                By signing in, you agree to our <a href="#/privacy" style="color: #4285f4;">Privacy & Terms</a>. 
+                                By signing in, you agree to our <a href="/privacy" style="color: #4285f4;">Privacy & Terms</a>. 
                                 We only use your name, email, and profile picture to save your progress.
                             </p>
                         </div>

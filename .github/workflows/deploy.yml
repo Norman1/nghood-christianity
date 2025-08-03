@@ -95,10 +95,54 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
-  # Job 3: Pre-deployment (Pull images and stop old containers)
+  # Job 3: Deploy Frontend Files
+  deploy-frontend:
+    name: "Deploy Frontend Files"
+    needs: build-docker
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Deploy frontend files
+      uses: appleboy/scp-action@v0.1.5
+      with:
+        host: ${{ secrets.LIGHTSAIL_HOST }}
+        username: ubuntu
+        key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+        source: "docs/*,nginx/nginx.conf"
+        target: "~/app/temp"
+        rm: true
+    
+    - name: Move frontend files to correct location
+      uses: appleboy/ssh-action@v1
+      with:
+        host: ${{ secrets.LIGHTSAIL_HOST }}
+        username: ubuntu
+        key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+        script: |
+          set -e
+          echo "=== Moving frontend files ==="
+          
+          # Clear old frontend files
+          rm -rf ~/app/frontend/*
+          
+          # Move new frontend files
+          mv ~/app/temp/docs/* ~/app/frontend/
+          
+          # Move nginx config
+          cp ~/app/temp/nginx/nginx.conf ~/app/nginx/nginx.conf
+          
+          # Clean up temp directory
+          rm -rf ~/app/temp
+          
+          echo "Frontend files deployed successfully"
+
+  # Job 4: Pre-deployment (Pull images and stop old containers)
   pre-deploy:
     name: "Pre-deployment"
-    needs: build-docker
+    needs: [build-docker, deploy-frontend]
     runs-on: ubuntu-latest
     
     steps:
@@ -137,7 +181,7 @@ jobs:
           docker-compose down
           echo "Old containers stopped and removed"
 
-  # Job 4: Deploy (Start new containers)
+  # Job 5: Deploy (Start new containers)
   deploy:
     name: "Deploy Application"
     needs: pre-deploy
@@ -167,7 +211,7 @@ jobs:
           sleep 15
           echo "Startup wait completed"
 
-  # Job 5: Verify deployment
+  # Job 6: Verify deployment
   verify:
     name: "Verify Deployment"
     needs: deploy
@@ -195,13 +239,13 @@ jobs:
           docker-compose logs --tail=20 spring-backend
           echo ""
           
-          echo "=== Performing health check ==="
-          if curl -f http://localhost:8080/actuator/health; then
+          echo "=== Performing backend health check ==="
+          if curl -f http://localhost/actuator/health; then
             echo ""
-            echo "✅ Health check passed!"
+            echo "✅ Backend health check passed!"
           else
             echo ""
-            echo "❌ Health check failed!"
+            echo "❌ Backend health check failed!"
             echo ""
             echo "=== Showing detailed logs for debugging ==="
             docker-compose logs --tail=50
@@ -209,6 +253,16 @@ jobs:
           fi
           
           echo ""
+          echo "=== Checking frontend accessibility ==="
+          if curl -f -s http://localhost/ | grep -q "nghood Christianity"; then
+            echo "✅ Frontend is accessible!"
+          else
+            echo "❌ Frontend is not accessible!"
+            exit 1
+          fi
+          
+          echo ""
           echo "=== Deployment completed successfully! ==="
           echo "Application is healthy and running"
+          echo "Frontend URL: http://christianity.nghood.com"
           echo "Deployment finished at: $(date)"

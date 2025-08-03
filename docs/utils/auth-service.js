@@ -30,7 +30,7 @@ class AuthService {
 
     redirectToLogin() {
         // Set the current path as pending redirect
-        this.setPendingRedirect(window.location.hash || '#/about');
+        this.setPendingRedirect(window.location.pathname || '/about');
         
         // Trigger login modal
         const authComponent = document.querySelector('custom-auth');
@@ -43,18 +43,18 @@ class AuthService {
         const redirectPath = this.getPendingRedirect();
         this.clearPendingRedirect();
         
-        if (redirectPath && redirectPath !== window.location.hash) {
-            window.location.hash = redirectPath;
+        if (redirectPath && redirectPath !== window.location.pathname) {
+            window.location.pathname = redirectPath;
         }
     }
 
     handleLogout() {
         // If user is on a protected page, redirect to home
-        const protectedRoutes = ['#/profile', '#/backend-test', '#/components-gallery'];
-        const currentPath = window.location.hash;
+        const protectedRoutes = ['/profile', '/backend-test', '/components-gallery'];
+        const currentPath = window.location.pathname;
         
         if (protectedRoutes.includes(currentPath)) {
-            window.location.hash = '#/about';
+            window.location.pathname = '/about';
         }
     }
 

@@ -26,7 +26,7 @@ class AppFooter extends HTMLElement {
 
       <div>
         <a href="https://github.com/Norman1/nghood-christianity" target="_blank">GitHub</a> |
-        <a href="#/about">About</a>
+        <a href="/about">About</a>
       </div>
     `;
     }

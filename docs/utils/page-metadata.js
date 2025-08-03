@@ -1,41 +1,51 @@
 // Page metadata for SEO
 const pageMetadata = {
-    '#/bible-reading-plan': {
+    '/bible-reading-plan': {
         title: 'Bible Reading Plan | nghood Christianity',
         description: 'Plan and track your Bible reading journey with structured reading plans and progress tracking.',
         keywords: 'bible reading, reading plan, scripture, daily reading, bible study'
     },
-    '#/components-gallery': {
+    '/components-gallery': {
         title: 'Components Gallery | nghood Christianity',
         description: 'Showcase of all available UI components and styling elements in the framework.',
         keywords: 'components, gallery, UI elements, styling, framework'
     },
     
     // Legacy routes (for backwards compatibility)
-    '#/page1': {
+    '/page1': {
         title: '404 - Page Not Found | nghood Christianity',
         description: 'The requested page could not be found. Return to the main navigation to explore available content.',
         keywords: '404, not found, error page'
     },
-    '#/page2': {
+    '/page2': {
         title: '404 - Page Not Found | nghood Christianity',
         description: 'The requested page could not be found. Return to the main navigation to explore available content.',
         keywords: '404, not found, error page'
     },
-    '#/about': {
+    '/about': {
         title: 'About | nghood Christianity',
         description: 'Learn about nghood Christianity and our privacy practices.',
         keywords: 'about, privacy policy, nghood christianity'
     },
-    '#/profile': {
+    '/profile': {
         title: 'User Profile | nghood Christianity',
         description: 'Manage your user profile, settings, and account information.',
         keywords: 'profile, user account, settings'
     },
-    '#/test-404': {
+    '/test-404': {
         title: '404 - Page Not Found | nghood Christianity',
         description: 'The requested page could not be found. Return to the main navigation to explore available content.',
         keywords: '404, not found, error page'
+    },
+    '/backend-test': {
+        title: 'Backend Test | nghood Christianity',
+        description: 'Test backend connectivity and API integration.',
+        keywords: 'backend, test, api'
+    },
+    '/privacy': {
+        title: 'Privacy Policy | nghood Christianity',
+        description: 'Our privacy policy and terms of service.',
+        keywords: 'privacy, policy, terms'
     },
     // Default/fallback metadata
     'default': {

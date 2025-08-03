@@ -9,7 +9,7 @@ class NavSidebar extends HTMLElement {
         this.render();
         this.setupCollapsibles();
         this.highlightActiveLink();
-        window.addEventListener('hashchange', this.highlightActiveLink.bind(this));
+        window.addEventListener('popstate', this.highlightActiveLink.bind(this));
         
         // Listen for auth changes
         window.addEventListener('google-signin', () => {
@@ -34,7 +34,7 @@ class NavSidebar extends HTMLElement {
     }
 
     disconnectedCallback() {
-        window.removeEventListener('hashchange', this.highlightActiveLink.bind(this));
+        window.removeEventListener('popstate', this.highlightActiveLink.bind(this));
     }
 
     getNavigationData() {
@@ -43,7 +43,7 @@ class NavSidebar extends HTMLElement {
         return {
             // Top-level pages (no category)
             topLevel: [
-                { href: '#/bible-reading-plan', title: 'Bible Reading Plan' }
+                { href: '/bible-reading-plan', title: 'Bible Reading Plan' }
             ],
             
             // Categories with optional subcategories
@@ -52,10 +52,10 @@ class NavSidebar extends HTMLElement {
                     id: 'debug',
                     title: 'Debug',
                     pages: [
-                        { href: '#/components-gallery', title: 'Components Gallery' },
-                        { href: '#/profile', title: 'My Profile' },
-                        { href: '#/backend-test', title: 'Backend Test' },
-                        { href: '#/test-404', title: 'Test 404' }
+                        { href: '/components-gallery', title: 'Components Gallery' },
+                        { href: '/profile', title: 'My Profile' },
+                        { href: '/backend-test', title: 'Backend Test' },
+                        { href: '/test-404', title: 'Test 404' }
                     ],
                     subcategories: []
                 }] : [])
@@ -404,7 +404,7 @@ class NavSidebar extends HTMLElement {
     }
 
     highlightActiveLink() {
-        const current = location.hash;
+        const current = location.pathname;
         this.shadowRoot.querySelectorAll('a').forEach(link => {
             link.classList.toggle('active', link.getAttribute('href') === current);
         });

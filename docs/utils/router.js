@@ -2,21 +2,21 @@ import { updatePageMetadata } from './page-metadata.js';
 import { prepareForAnimation } from './performance-utils.js';
 
 const routes = {
-    '#/bible-reading-plan': 'bible-reading-plan',
-    '#/components-gallery': 'components-gallery',
+    '/bible-reading-plan': 'bible-reading-plan',
+    '/components-gallery': 'components-gallery',
     
     // Account
-    '#/profile': 'user-profile',
-    '#/backend-test': 'backend-test',
+    '/profile': 'user-profile',
+    '/backend-test': 'backend-test',
     
     // Standalone pages
-    '#/about': 'about-page',
-    '#/test-404': 'not-found-page',
+    '/about': 'about-page',
+    '/test-404': 'not-found-page',
     
     // Legacy routes (for backwards compatibility)
-    '#/page1': 'not-found-page',
-    '#/page2': 'not-found-page',
-    '#/privacy': 'about-page'  // Redirect old privacy link to about
+    '/page1': 'not-found-page',
+    '/page2': 'not-found-page',
+    '/privacy': 'about-page'  // Redirect old privacy link to about
 };
 
 let currentPage = null;
@@ -32,7 +32,7 @@ export function initRouter() {
     function render() {
         if (isTransitioning) return;
         
-        const path = location.hash || '#/about';
+        const path = location.pathname || '/about';
         const tag = routes[path] || 'not-found-page';
 
         // Update page metadata for SEO
@@ -71,6 +71,27 @@ export function initRouter() {
         }, 100);
     }
 
-    window.addEventListener('hashchange', render);
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', render);
     window.addEventListener('DOMContentLoaded', render);
+    
+    // Handle clicks on links with client-side routing
+    document.addEventListener('click', (e) => {
+        // Check if clicked element is a link
+        const link = e.target.closest('a');
+        if (!link) return;
+        
+        // Check if it's an internal link
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('http') || href.startsWith('#')) return;
+        
+        // Prevent default navigation
+        e.preventDefault();
+        
+        // Use History API to update URL
+        history.pushState(null, '', href);
+        
+        // Render the new page
+        render();
+    });
 }
