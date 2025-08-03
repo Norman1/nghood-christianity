@@ -15,6 +15,7 @@ class BibleVerseGamePage extends HTMLElement {
         this.render();
         this.setupEventListeners();
         this.initializeDefaultBooks();
+        this.renderGameContent();
     }
 
     initializeDefaultBooks() {
@@ -48,7 +49,7 @@ class BibleVerseGamePage extends HTMLElement {
             <style>
                 :host {
                     display: block;
-                    max-width: 800px;
+                    max-width: 1200px;
                     margin: 0 auto;
                     padding: 2rem;
                     font-family: inherit;
@@ -62,8 +63,10 @@ class BibleVerseGamePage extends HTMLElement {
 
                 .book-selection {
                     background: var(--surface-secondary);
-                    border-radius: 8px;
-                    padding: 1.5rem;
+                    border-radius: 12px;
+                    padding: 2rem;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
                 }
 
                 .section-title {
@@ -83,24 +86,49 @@ class BibleVerseGamePage extends HTMLElement {
 
                 .game-area {
                     background: var(--surface-secondary);
-                    border-radius: 8px;
-                    padding: 1.5rem;
-                    min-height: 200px;
+                    border-radius: 12px;
+                    padding: 2rem;
+                    min-height: 300px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
                 }
 
                 .verse-display {
                     background: var(--surface-primary);
-                    border-radius: 6px;
-                    padding: 1.5rem;
+                    border-radius: 8px;
+                    padding: 2rem;
                     margin-bottom: 1.5rem;
                     border-left: 4px solid var(--primary-color);
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
                 }
 
                 .verse-text {
-                    font-size: 1.1rem;
-                    line-height: 1.6;
+                    font-size: 1.2rem;
+                    line-height: 1.7;
                     color: var(--text-primary);
                     margin-bottom: 1rem;
+                    font-family: Georgia, 'Times New Roman', serif;
+                    text-align: justify;
+                }
+
+                .verse-text.original {
+                    background: linear-gradient(135deg, rgba(99, 179, 237, 0.1), rgba(99, 179, 237, 0.05));
+                    border: 2px solid rgba(99, 179, 237, 0.2);
+                    border-radius: 6px;
+                    padding: 1rem;
+                    position: relative;
+                    box-shadow: 0 2px 4px rgba(99, 179, 237, 0.1);
+                }
+
+
+                .verse-text.expanded {
+                    background: rgba(108, 117, 125, 0.05);
+                    border: 1px solid rgba(108, 117, 125, 0.1);
+                    border-radius: 4px;
+                    padding: 0.8rem;
+                    margin-top: 0.5rem;
+                    font-style: italic;
+                    opacity: 0.9;
                 }
 
                 .verse-reference {
@@ -120,52 +148,17 @@ class BibleVerseGamePage extends HTMLElement {
                     display: flex;
                     gap: 1rem;
                     flex-wrap: wrap;
+                    justify-content: center;
+                    margin-bottom: 1.5rem;
+                    padding: 1rem;
+                    background: rgba(255, 255, 255, 0.02);
+                    border-radius: 8px;
+                    border: 1px solid rgba(255, 255, 255, 0.1);
                 }
 
-                .game-btn {
-                    padding: 0.75rem 1.5rem;
-                    border: none;
-                    border-radius: 6px;
-                    font-size: 0.95rem;
+                .game-controls button {
+                    min-width: 120px;
                     font-weight: 500;
-                    cursor: pointer;
-                    transition: all 0.2s ease;
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                }
-
-                .game-btn:disabled {
-                    opacity: 0.6;
-                    cursor: not-allowed;
-                }
-
-                .btn-primary {
-                    background: var(--primary-color);
-                    color: white;
-                }
-
-                .btn-primary:hover:not(:disabled) {
-                    background: var(--primary-hover);
-                }
-
-                .btn-secondary {
-                    background: var(--surface-primary);
-                    color: var(--text-primary);
-                    border: 1px solid var(--border-color);
-                }
-
-                .btn-secondary:hover:not(:disabled) {
-                    background: var(--border-color);
-                }
-
-                .btn-success {
-                    background: #10b981;
-                    color: white;
-                }
-
-                .btn-success:hover:not(:disabled) {
-                    background: #047857;
                 }
 
                 .empty-state {
@@ -218,19 +211,19 @@ class BibleVerseGamePage extends HTMLElement {
             </style>
 
             <div class="game-container">
-                <div class="book-selection">
-                    <h2 class="section-title">Select Bible Books</h2>
-                    <bible-book-tree-selector></bible-book-tree-selector>
-                </div>
-
                 <div class="game-area">
                     <h2 class="section-title">Bible Verse Game</h2>
                     <div id="gameContent">
                         <div class="empty-state">
                             <h3>Ready to Play!</h3>
-                            <p>Select your books above, then click "New Verse" to start guessing.</p>
+                            <p>Select your books below, then click "Start Playing" to begin guessing.</p>
                         </div>
                     </div>
+                </div>
+
+                <div class="book-selection">
+                    <h2 class="section-title">Select Bible Books</h2>
+                    <bible-book-tree-selector></bible-book-tree-selector>
                 </div>
             </div>
         `;
@@ -353,52 +346,55 @@ class BibleVerseGamePage extends HTMLElement {
                     <p>Click "New Verse" to start guessing where the verse is from.</p>
                 </div>
                 <div class="game-controls">
-                    <button class="game-btn btn-primary" onclick="this.getRootNode().host.getNewVerse()">
-                        🎲 New Verse
+                    <button class="btn-primary" onclick="this.getRootNode().host.getNewVerse()">
+                        🎲 Start Playing
                     </button>
                 </div>
             `;
             return;
         }
         
+        const originalVerseNumber = this.gameState.displayedVerses[0].verse;
         const versesHtml = this.gameState.displayedVerses
-            .map(v => `<div class="verse-text">${v.text}</div>`)
+            .map(v => {
+                const isOriginal = v.verse === originalVerseNumber;
+                const cssClass = isOriginal ? 'verse-text original' : 'verse-text expanded';
+                return `<div class="${cssClass}">${v.text}</div>`;
+            })
             .join('');
         
         gameContent.innerHTML = `
+            <div class="game-controls">
+                <button class="btn-secondary" 
+                        onclick="this.getRootNode().host.showMoreVerse()"
+                        ${!this.gameState.currentVerse.canExpandMore || this.gameState.resultRevealed ? 'disabled' : ''}>
+                    📖 Show More Context
+                </button>
+                
+                <button class="btn-commit" 
+                        onclick="this.getRootNode().host.showResult()"
+                        ${this.gameState.resultRevealed ? 'disabled' : ''}>
+                    🔍 Reveal Answer
+                </button>
+                
+                <button class="btn-primary" 
+                        onclick="this.getRootNode().host.getNewVerse()">
+                    🎲 New Verse
+                </button>
+            </div>
+
             <div class="verse-display">
                 ${versesHtml}
                 <div class="verse-reference ${this.gameState.resultRevealed ? '' : 'hidden'}">
                     ${this.gameState.currentVerse.reference}
                 </div>
             </div>
-            
-            <div class="game-controls">
-                <button class="game-btn btn-secondary" 
-                        onclick="this.getRootNode().host.showMoreVerse()"
-                        ${!this.gameState.currentVerse.canExpandMore || this.gameState.resultRevealed ? 'disabled' : ''}>
-                    📖 Show More
-                </button>
-                
-                <button class="game-btn btn-success" 
-                        onclick="this.getRootNode().host.showResult()"
-                        ${this.gameState.resultRevealed ? 'disabled' : ''}>
-                    🔍 Show Result
-                </button>
-                
-                <button class="game-btn btn-primary" 
-                        onclick="this.getRootNode().host.getNewVerse()">
-                    🎲 New Verse
-                </button>
-            </div>
         `;
     }
 
     setLoading(loading) {
         this.gameState.isLoading = loading;
-        if (loading) {
-            this.renderGameContent();
-        }
+        this.renderGameContent();
     }
 
     showError(message) {
@@ -409,8 +405,8 @@ class BibleVerseGamePage extends HTMLElement {
                 <p>${message}</p>
             </div>
             <div class="game-controls">
-                <button class="game-btn btn-primary" onclick="this.getRootNode().host.getNewVerse()">
-                    🎲 Try Again
+                <button class="btn-primary" onclick="this.getRootNode().host.getNewVerse()">
+                    🔄 Try Again
                 </button>
             </div>
         `;
