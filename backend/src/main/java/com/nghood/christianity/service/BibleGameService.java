@@ -68,6 +68,7 @@ public class BibleGameService {
 
     /**
      * Expand the verse range by adding one more verse from the same chapter
+     * Priority: 1) Try next verse (after toVerse), 2) Try previous verse (before fromVerse)
      */
     public BibleVerse expandVerse(String book, int chapter, int fromVerse, int toVerse) {
         BibleChapter chapterData = bibleDataService.getChapter(book, chapter);
@@ -75,33 +76,39 @@ public class BibleGameService {
             throw new IllegalArgumentException("Chapter not found: " + book + " " + chapter);
         }
 
-        // Try to expand after the current range first
+        // Try to expand after the current range first (going forward in the chapter)
         int nextVerse = toVerse + 1;
         if (chapterData.hasVerse(nextVerse)) {
             String verseText = chapterData.getVerse(nextVerse);
             BibleVerse expandedVerse = new BibleVerse(verseText, book, chapter, nextVerse);
             
-            // Check if more expansion is possible
-            int newRangeSize = (toVerse - fromVerse + 1) + 1; // current range + 1 new verse
-            expandedVerse.setCanExpandMore(newRangeSize < chapterData.getVerseCount());
+            // Check if more expansion is possible after adding this verse
+            int newFromVerse = fromVerse;
+            int newToVerse = nextVerse;
+            boolean canExpandMore = canExpandRange(book, chapter, newFromVerse, newToVerse);
+            
+            expandedVerse.setCanExpandMore(canExpandMore);
             expandedVerse.setTotalVersesInChapter(chapterData.getVerseCount());
             
-            log.debug("Expanded verse range to include: {}", expandedVerse.getFormattedReference());
+            log.debug("Expanded verse range forward to include: {}", expandedVerse.getFormattedReference());
             return expandedVerse;
         }
 
-        // If no next verse, try to expand before the current range
+        // If no next verse, try to expand before the current range (going backward in the chapter)
         int previousVerse = fromVerse - 1;
         if (chapterData.hasVerse(previousVerse)) {
             String verseText = chapterData.getVerse(previousVerse);
             BibleVerse expandedVerse = new BibleVerse(verseText, book, chapter, previousVerse);
             
-            // Check if more expansion is possible
-            int newRangeSize = (toVerse - fromVerse + 1) + 1; // current range + 1 new verse
-            expandedVerse.setCanExpandMore(newRangeSize < chapterData.getVerseCount());
+            // Check if more expansion is possible after adding this verse
+            int newFromVerse = previousVerse;
+            int newToVerse = toVerse;
+            boolean canExpandMore = canExpandRange(book, chapter, newFromVerse, newToVerse);
+            
+            expandedVerse.setCanExpandMore(canExpandMore);
             expandedVerse.setTotalVersesInChapter(chapterData.getVerseCount());
             
-            log.debug("Expanded verse range to include: {}", expandedVerse.getFormattedReference());
+            log.debug("Expanded verse range backward to include: {}", expandedVerse.getFormattedReference());
             return expandedVerse;
         }
 
@@ -111,7 +118,7 @@ public class BibleGameService {
     }
 
     /**
-     * Check if a verse range can be expanded
+     * Check if a verse range can be expanded (either forward or backward)
      */
     public boolean canExpandRange(String book, int chapter, int fromVerse, int toVerse) {
         BibleChapter chapterData = bibleDataService.getChapter(book, chapter);
@@ -119,7 +126,19 @@ public class BibleGameService {
             return false;
         }
 
-        int currentRangeSize = toVerse - fromVerse + 1;
-        return currentRangeSize < chapterData.getVerseCount();
+        // Check if we can expand forward (after toVerse)
+        int nextVerse = toVerse + 1;
+        if (chapterData.hasVerse(nextVerse)) {
+            return true;
+        }
+
+        // Check if we can expand backward (before fromVerse)
+        int previousVerse = fromVerse - 1;
+        if (chapterData.hasVerse(previousVerse)) {
+            return true;
+        }
+
+        // No expansion possible in either direction
+        return false;
     }
 }

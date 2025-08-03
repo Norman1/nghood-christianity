@@ -6,6 +6,7 @@ class BibleVerseGamePage extends HTMLElement {
             selectedBooks: new Set(),
             currentVerse: null,
             displayedVerses: [],
+            originalVerseNumber: null,
             resultRevealed: false,
             isLoading: false
         };
@@ -263,6 +264,7 @@ class BibleVerseGamePage extends HTMLElement {
                 verse: verse.verseNumber,
                 text: verse.text
             }];
+            this.gameState.originalVerseNumber = verse.verseNumber;
             this.gameState.resultRevealed = false;
             
             this.renderGameContent();
@@ -354,10 +356,9 @@ class BibleVerseGamePage extends HTMLElement {
             return;
         }
         
-        const originalVerseNumber = this.gameState.displayedVerses[0].verse;
         const versesHtml = this.gameState.displayedVerses
             .map(v => {
-                const isOriginal = v.verse === originalVerseNumber;
+                const isOriginal = v.verse === this.gameState.originalVerseNumber;
                 const cssClass = isOriginal ? 'verse-text original' : 'verse-text expanded';
                 return `<div class="${cssClass}">${v.text}</div>`;
             })
