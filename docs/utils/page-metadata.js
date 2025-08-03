@@ -5,6 +5,11 @@ const pageMetadata = {
         description: 'Plan and track your Bible reading journey with structured reading plans and progress tracking.',
         keywords: 'bible reading, reading plan, scripture, daily reading, bible study'
     },
+    '/bible-verse-game': {
+        title: 'Bible Verse Game | nghood Christianity',
+        description: 'Test your knowledge of Scripture! Can you guess which book of the Bible a verse comes from?',
+        keywords: 'bible game, scripture quiz, bible verse, bible study, christian game'
+    },
     '/components-gallery': {
         title: 'Components Gallery | nghood Christianity',
         description: 'Showcase of all available UI components and styling elements in the framework.',
