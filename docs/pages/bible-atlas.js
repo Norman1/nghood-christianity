@@ -207,18 +207,18 @@ class BibleAtlasPage extends HTMLElement {
             this.map = L.map(mapElement, {
                 center: [31.5, 35.0],
                 zoom: 8,
-                minZoom: 6,
+                minZoom: 2,
                 maxZoom: 15,
-                maxBounds: [[25, 25], [40, 45]],
-                maxBoundsViscosity: 0.8
+                attributionControl: false
             });
 
-            // Use OpenStreetMap tiles
-            const tileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors',
+            // Use CartoDB tiles without labels
+            const tileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+                attribution: '',
                 maxZoom: 19,
                 tileSize: 256,
-                zoomOffset: 0
+                zoomOffset: 0,
+                subdomains: 'abcd'
             });
 
             tileLayer.addTo(this.map);
@@ -258,7 +258,7 @@ class BibleAtlasPage extends HTMLElement {
     addBaselineGeography() {
         if (!this.map) return;
 
-        // Add key biblical locations
+        // Add key biblical locations (always visible)
         const locations = [
             { name: 'Jerusalem', coords: [31.7683, 35.2137], color: '#FFD700' },
             { name: 'Bethlehem', coords: [31.7054, 35.2024], color: '#FFA500' },
@@ -273,7 +273,8 @@ class BibleAtlasPage extends HTMLElement {
                 fillColor: location.color,
                 fillOpacity: 0.8,
                 radius: 6,
-                weight: 2
+                weight: 2,
+                pane: 'markerPane' // Ensures markers are above polygons
             }).addTo(this.map)
               .bindPopup(`<b>${location.name}</b><br>Key biblical location`)
               .bindTooltip(location.name, {permanent: false, direction: 'top'});
@@ -338,12 +339,14 @@ class BibleAtlasPage extends HTMLElement {
         
         this.currentPeriodLayer = L.layerGroup();
         
+        // Add kingdom polygons
         kingdoms.forEach(kingdom => {
             const polygon = L.polygon(kingdom.coordinates, {
                 color: kingdom.color,
                 fillColor: kingdom.color,
                 fillOpacity: 0.4,
-                weight: 2
+                weight: 2,
+                pane: 'overlayPane' // Ensures polygons are below markers
             });
             
             polygon.on('click', () => {
@@ -354,6 +357,24 @@ class BibleAtlasPage extends HTMLElement {
             });
             
             this.currentPeriodLayer.addLayer(polygon);
+        });
+
+        // Add period-specific locations
+        const periodLocations = this.getPeriodLocations(period.id);
+        periodLocations.forEach(location => {
+            const marker = L.circleMarker(location.coords, {
+                color: '#8B0000',
+                fillColor: location.color,
+                fillOpacity: 0.9,
+                radius: 5,
+                weight: 2,
+                pane: 'markerPane'
+            });
+            
+            marker.bindPopup(`<b>${location.name}</b><br><small>${location.description}</small>`);
+            marker.bindTooltip(location.name, {permanent: false, direction: 'top'});
+            
+            this.currentPeriodLayer.addLayer(marker);
         });
         
         this.currentPeriodLayer.addTo(this.map);
@@ -416,6 +437,58 @@ class BibleAtlasPage extends HTMLElement {
         };
         
         return kingdoms[periodId] || [];
+    }
+
+    getPeriodLocations(periodId) {
+        const locations = {
+            'new-testament': [
+                // The 7 Churches of Revelation (Revelation 1:11, 2-3)
+                { 
+                    name: 'Ephesus', 
+                    coords: [37.9495, 27.3478], 
+                    color: '#FF6B6B',
+                    description: 'Church of Ephesus - "You have left your first love" (Rev 2:1-7)'
+                },
+                { 
+                    name: 'Smyrna', 
+                    coords: [38.4192, 27.1384], 
+                    color: '#4ECDC4',
+                    description: 'Church of Smyrna - "Be faithful unto death" (Rev 2:8-11)'
+                },
+                { 
+                    name: 'Pergamon', 
+                    coords: [39.1181, 27.1859], 
+                    color: '#45B7D1',
+                    description: 'Church of Pergamon - "Where Satan\'s throne is" (Rev 2:12-17)'
+                },
+                { 
+                    name: 'Thyatira', 
+                    coords: [38.9151, 27.8434], 
+                    color: '#96CEB4',
+                    description: 'Church of Thyatira - "You tolerate Jezebel" (Rev 2:18-29)'
+                },
+                { 
+                    name: 'Sardis', 
+                    coords: [38.4888, 28.0394], 
+                    color: '#FFEAA7',
+                    description: 'Church of Sardis - "You have a name that you are alive, but you are dead" (Rev 3:1-6)'
+                },
+                { 
+                    name: 'Philadelphia', 
+                    coords: [38.9641, 28.8434], 
+                    color: '#DDA0DD',
+                    description: 'Church of Philadelphia - "I have set before you an open door" (Rev 3:7-13)'
+                },
+                { 
+                    name: 'Laodicea', 
+                    coords: [37.8361, 29.1061], 
+                    color: '#F8B500',
+                    description: 'Church of Laodicea - "You are lukewarm" (Rev 3:14-22)'
+                }
+            ]
+        };
+        
+        return locations[periodId] || [];
     }
 }
 
