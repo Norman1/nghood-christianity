@@ -4,6 +4,7 @@ import { prepareForAnimation } from './performance-utils.js';
 const routes = {
     '/bible-reading-plan': 'bible-reading-plan',
     '/bible-verse-game': 'bible-verse-game-page',
+    '/bible-atlas': 'bible-atlas-page',
     '/components-gallery': 'components-gallery',
     
     // Account

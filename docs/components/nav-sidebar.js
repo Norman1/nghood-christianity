@@ -44,7 +44,8 @@ class NavSidebar extends HTMLElement {
             // Top-level pages (no category)
             topLevel: [
                 { href: '/bible-reading-plan', title: 'Bible Reading Plan' },
-                { href: '/bible-verse-game', title: 'Bible Verse Game' }
+                { href: '/bible-verse-game', title: 'Bible Verse Game' },
+                { href: '/bible-atlas', title: 'Bible Atlas' }
             ],
             
             // Categories with optional subcategories

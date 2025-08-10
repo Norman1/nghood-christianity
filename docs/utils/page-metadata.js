@@ -10,6 +10,11 @@ const pageMetadata = {
         description: 'Test your knowledge of Scripture! Can you guess which book of the Bible a verse comes from?',
         keywords: 'bible game, scripture quiz, bible verse, bible study, christian game'
     },
+    '/bible-atlas': {
+        title: 'Bible Atlas | nghood Christianity',
+        description: 'Interactive Biblical Timeline Map showing locations and kingdoms throughout biblical history.',
+        keywords: 'bible atlas, biblical map, bible geography, biblical timeline, holy land map'
+    },
     '/components-gallery': {
         title: 'Components Gallery | nghood Christianity',
         description: 'Showcase of all available UI components and styling elements in the framework.',
