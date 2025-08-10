@@ -421,17 +421,153 @@ class BibleAtlasPage extends HTMLElement {
                 }
             ],
             'new-testament': [
+                // Local Palestinian territories
                 {
-                    name: 'Judea',
+                    name: 'Judea Province',
                     color: '#8B0000',
-                    coordinates: [[31.2, 34.8], [31.2, 35.2], [32.0, 35.2], [32.0, 34.8]],
-                    significance: 'Under Roman rule. Jesus was born in Bethlehem, ministered here.'
+                    coordinates: [
+                        [31.2, 34.3], [31.2, 34.9], [31.4, 35.0], [31.6, 35.1], 
+                        [31.8, 35.2], [32.0, 35.3], [32.1, 35.2], [32.0, 35.0],
+                        [31.9, 34.8], [31.7, 34.5], [31.5, 34.3], [31.2, 34.3]
+                    ],
+                    significance: 'Roman province including Jerusalem, Bethlehem. Governed by Roman prefects/procurators.'
                 },
                 {
-                    name: 'Galilee',
+                    name: 'Galilee (Herod Antipas)',
                     color: '#4682B4',
-                    coordinates: [[32.5, 35.2], [32.5, 35.7], [33.0, 35.7], [33.0, 35.2]],
-                    significance: 'Jesus grew up in Nazareth. Most of His ministry was here.'
+                    coordinates: [
+                        [32.5, 35.1], [32.5, 35.8], [33.3, 35.8], [33.3, 35.6],
+                        [33.1, 35.5], [32.9, 35.3], [32.7, 35.2], [32.5, 35.1]
+                    ],
+                    significance: 'Tetrarchy of Herod Antipas. Jesus\' homeland - Nazareth, Capernaum, Sea of Galilee.'
+                },
+                {
+                    name: 'Samaria',
+                    color: '#DAA520',
+                    coordinates: [
+                        [32.0, 35.0], [32.0, 35.4], [32.4, 35.4], [32.5, 35.2],
+                        [32.3, 35.1], [32.1, 35.0], [32.0, 35.0]
+                    ],
+                    significance: 'Samaritan region. Jesus met woman at well, passed through en route to Jerusalem.'
+                },
+                {
+                    name: 'Perea',
+                    color: '#9370DB',
+                    coordinates: [
+                        [32.0, 35.6], [32.0, 35.9], [32.3, 36.0], [32.5, 35.8],
+                        [32.3, 35.7], [32.1, 35.6], [32.0, 35.6]
+                    ],
+                    significance: 'Part of Herod Antipas\' territory east of Jordan. John the Baptist ministered here.'
+                },
+                {
+                    name: 'Decapolis',
+                    color: '#20B2AA',
+                    coordinates: [
+                        [32.3, 35.4], [32.3, 35.9], [32.8, 36.2], [33.0, 36.0],
+                        [32.8, 35.7], [32.5, 35.5], [32.3, 35.4]
+                    ],
+                    significance: 'League of 10 Hellenistic cities. Jesus healed demon-possessed man in region.'
+                },
+                {
+                    name: 'Iturea & Trachonitis',
+                    color: '#8FBC8F',
+                    coordinates: [
+                        [33.0, 35.8], [33.0, 36.3], [33.5, 36.5], [33.8, 36.3],
+                        [33.6, 36.0], [33.3, 35.9], [33.0, 35.8]
+                    ],
+                    significance: 'Tetrarchy of Philip. Caesarea Philippi - Peter\'s confession, Transfiguration nearby.'
+                },
+                {
+                    name: 'Nabatean Kingdom',
+                    color: '#CD853F',
+                    coordinates: [
+                        [29.5, 34.8], [29.5, 35.5], [30.8, 36.0], [31.5, 35.8],
+                        [31.2, 35.2], [30.5, 34.9], [29.5, 34.8]
+                    ],
+                    significance: 'Independent Arab kingdom. Controlled trade routes, later conflict with Herod Antipas.'
+                },
+                {
+                    name: 'Roman Syria',
+                    color: '#B22222',
+                    coordinates: [
+                        [33.5, 35.8], [33.5, 37.0], [36.0, 37.5], [36.5, 36.8],
+                        [36.0, 36.0], [35.0, 35.9], [33.5, 35.8]
+                    ],
+                    significance: 'Roman province. Governor Quirinius conducted census. Paul converted on road to Damascus.'
+                },
+                
+                // Broader Roman Empire provinces
+                {
+                    name: 'Asia (Roman Province)',
+                    color: '#DC143C',
+                    coordinates: [
+                        [39.5, 26.0], [39.5, 30.0], [37.0, 30.5], 
+                        [36.5, 28.0], [37.5, 26.0], [39.5, 26.0]
+                    ],
+                    significance: 'Wealthy senatorial province. Contains Seven Churches of Revelation. Capital: Ephesus.'
+                },
+                {
+                    name: 'Galatia',
+                    color: '#FF8C00',
+                    coordinates: [
+                        [39.5, 30.0], [39.5, 35.0], [37.0, 35.5], 
+                        [36.5, 30.5], [39.5, 30.0]
+                    ],
+                    significance: 'Recipients of Paul\'s Epistle to Galatians. Contains Antioch, Iconium, Lystra, Derbe.'
+                },
+                {
+                    name: 'Cappadocia',
+                    color: '#8A2BE2',
+                    coordinates: [
+                        [39.5, 35.0], [39.5, 39.0], [37.0, 39.5], 
+                        [36.0, 35.5], [39.5, 35.0]
+                    ],
+                    significance: 'Imperial province. Mentioned in Acts 2:9 (Pentecost) and 1 Peter 1:1.'
+                },
+                {
+                    name: 'Bithynia and Pontus',
+                    color: '#2E8B57',
+                    coordinates: [
+                        [42.0, 27.0], [42.0, 37.0], [40.0, 37.5], 
+                        [39.5, 30.0], [39.5, 27.0], [42.0, 27.0]
+                    ],
+                    significance: 'Northern Asia Minor province. Mentioned in 1 Peter 1:1 and Acts 16:7.'
+                },
+                {
+                    name: 'Cilicia',
+                    color: '#DAA520',
+                    coordinates: [
+                        [37.0, 34.0], [37.0, 36.5], [35.5, 36.5], 
+                        [35.5, 34.0], [37.0, 34.0]
+                    ],
+                    significance: 'Paul\'s birthplace Tarsus. Southeastern Asia Minor coastal province.'
+                },
+                {
+                    name: 'Macedonia',
+                    color: '#4169E1',
+                    coordinates: [
+                        [42.0, 20.0], [42.0, 26.0], [39.0, 26.0], 
+                        [38.5, 21.0], [42.0, 20.0]
+                    ],
+                    significance: 'First European province evangelized by Paul. Churches at Philippi, Thessalonica, Berea.'
+                },
+                {
+                    name: 'Achaia',
+                    color: '#228B22',
+                    coordinates: [
+                        [39.0, 19.0], [39.0, 26.0], [34.5, 26.0], 
+                        [34.5, 19.0], [39.0, 19.0]
+                    ],
+                    significance: 'Southern Greece. Paul ministered in Corinth and Athens. Senatorial province.'
+                },
+                {
+                    name: 'Pamphylia',
+                    color: '#FF69B4',
+                    coordinates: [
+                        [37.0, 29.5], [37.0, 32.0], [36.0, 32.0], 
+                        [36.0, 29.5], [37.0, 29.5]
+                    ],
+                    significance: 'Southern Asia Minor coast. Paul\'s first missionary journey through Perga and Attalia.'
                 }
             ]
         };
@@ -484,6 +620,74 @@ class BibleAtlasPage extends HTMLElement {
                     coords: [37.8361, 29.1061], 
                     color: '#F8B500',
                     description: 'Church of Laodicea - "You are lukewarm" (Rev 3:14-22)'
+                },
+                
+                // Paul's missionary journey cities
+                { 
+                    name: 'Antioch (Pisidia)', 
+                    coords: [38.3101, 30.6345], 
+                    color: '#FF8C00',
+                    description: 'Paul\'s first missionary journey. Synagogue preaching, Gentile conversion (Acts 13:14-52)'
+                },
+                { 
+                    name: 'Iconium', 
+                    coords: [37.8746, 32.4932], 
+                    color: '#FF8C00',
+                    description: 'Paul and Barnabas preached here. Opposition from unbelieving Jews (Acts 14:1-6)'
+                },
+                { 
+                    name: 'Lystra', 
+                    coords: [37.6158, 32.4215], 
+                    color: '#FF8C00',
+                    description: 'Paul healed lame man, mistaken for gods. Timothy\'s hometown (Acts 14:6-20)'
+                },
+                { 
+                    name: 'Derbe', 
+                    coords: [37.3000, 32.7500], 
+                    color: '#FF8C00',
+                    description: 'Paul\'s preaching made many disciples. Return journey stop (Acts 14:20-21)'
+                },
+                { 
+                    name: 'Tarsus', 
+                    coords: [36.9177, 34.8956], 
+                    color: '#DAA520',
+                    description: 'Paul\'s birthplace. "No mean city" - major center of learning (Acts 21:39)'
+                },
+                { 
+                    name: 'Philippi', 
+                    coords: [41.0136, 24.2872], 
+                    color: '#4169E1',
+                    description: 'First European church. Lydia\'s conversion, Paul and Silas imprisoned (Acts 16:12-40)'
+                },
+                { 
+                    name: 'Thessalonica', 
+                    coords: [40.6401, 22.9444], 
+                    color: '#4169E1',
+                    description: 'Capital of Macedonia. Paul reasoned from Scriptures, church planted (Acts 17:1-9)'
+                },
+                { 
+                    name: 'Berea', 
+                    coords: [40.5228, 22.2019], 
+                    color: '#4169E1',
+                    description: 'Noble Bereans searched Scriptures daily to verify Paul\'s teaching (Acts 17:10-12)'
+                },
+                { 
+                    name: 'Athens', 
+                    coords: [37.9838, 23.7275], 
+                    color: '#228B22',
+                    description: 'Paul\'s Areopagus speech to philosophers. "Unknown God" sermon (Acts 17:16-34)'
+                },
+                { 
+                    name: 'Corinth', 
+                    coords: [37.9065, 22.8756], 
+                    color: '#228B22',
+                    description: 'Paul\'s 18-month ministry. Met Aquila and Priscilla, two epistles written (Acts 18:1-17)'
+                },
+                { 
+                    name: 'Cenchrea', 
+                    coords: [37.8833, 23.0000], 
+                    color: '#228B22',
+                    description: 'Port of Corinth. Phoebe was deacon here, Paul took vow (Rom 16:1, Acts 18:18)'
                 }
             ]
         };
