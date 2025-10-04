@@ -45,16 +45,24 @@ class NavSidebar extends HTMLElement {
             topLevel: [
                 { href: '/bible-reading-plan', title: 'Bible Reading Plan' },
                 { href: '/bible-verse-game', title: 'Bible Verse Game' },
-                { href: '/bible-atlas', title: 'Bible Atlas' }
             ],
             
             // Categories with optional subcategories
             categories: [
+                {
+                    id: 'articles',
+                    title: 'Articles',
+                    pages: [
+                        { href: '/explaining-free-grace', title: 'Explaining Free Grace' }
+                    ],
+                    subcategories: []
+                },
                 ...(isLoggedIn ? [{
                     id: 'debug',
                     title: 'Debug',
                     pages: [
                         { href: '/components-gallery', title: 'Components Gallery' },
+                        { href: '/bible-atlas', title: 'Bible Atlas' },
                         { href: '/profile', title: 'My Profile' },
                         { href: '/backend-test', title: 'Backend Test' },
                         { href: '/test-404', title: 'Test 404' }
@@ -419,3 +427,5 @@ class NavSidebar extends HTMLElement {
 }
 
 customElements.define('nav-sidebar', NavSidebar);
+
+

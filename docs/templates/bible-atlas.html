@@ -1,0 +1,142 @@
+
+            <style>
+                bible-atlas-page {
+                    display: block;
+                    padding: 1rem;
+                    max-width: 1400px;
+                    margin: 0 auto;
+                }
+
+                bible-atlas-page h1 {
+                    color: #f0f6fc;
+                    font-size: 2rem;
+                    margin-bottom: 1rem;
+                    font-weight: 600;
+                }
+
+                bible-atlas-page .map-container {
+                    background: #1c2128;
+                    border-radius: 8px;
+                    padding: 1rem;
+                    border: 1px solid #30363d;
+                    position: relative;
+                }
+
+                bible-atlas-page #__MAP_ID__ {
+                    height: 600px;
+                    width: 100%;
+                    border-radius: 4px;
+                    background: #0f1419;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                bible-atlas-page .timeline-container {
+                    margin-top: 1rem;
+                    background: #1c2128;
+                    border-radius: 8px;
+                    padding: 1rem;
+                    border: 1px solid #30363d;
+                }
+
+                bible-atlas-page .timeline-controls {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 1rem;
+                    flex-wrap: wrap;
+                }
+
+                bible-atlas-page .period-info {
+                    flex: 1;
+                    text-align: center;
+                }
+
+                bible-atlas-page .period-name {
+                    font-size: 1.2rem;
+                    color: #f0f6fc;
+                    font-weight: 600;
+                }
+
+                bible-atlas-page .period-date {
+                    font-size: 0.9rem;
+                    color: #8b949e;
+                    margin-top: 0.25rem;
+                }
+
+                bible-atlas-page .timeline-nav {
+                    display: flex;
+                    gap: 0.5rem;
+                }
+
+                bible-atlas-page button {
+                    background: #238636;
+                    color: white;
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                    transition: background 0.2s;
+                }
+
+                bible-atlas-page button:hover:not(:disabled) {
+                    background: #2ea043;
+                }
+
+                bible-atlas-page button:disabled {
+                    background: #30363d;
+                    color: #8b949e;
+                    cursor: not-allowed;
+                }
+
+                bible-atlas-page .timeline-dots {
+                    display: flex;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    margin-top: 1rem;
+                }
+
+                bible-atlas-page .timeline-dot {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: #30363d;
+                    cursor: pointer;
+                    transition: background 0.2s;
+                }
+
+                bible-atlas-page .timeline-dot.active {
+                    background: #238636;
+                }
+
+                bible-atlas-page .timeline-dot:hover {
+                    background: #8b949e;
+                }
+            </style>
+
+            <h1>Bible Atlas</h1>
+            
+            <div class="map-container">
+                <div id="__MAP_ID__"></div>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-controls">
+                    <div class="timeline-nav">
+                        <button id="prev-period">← Previous</button>
+                    </div>
+                    
+                    <div class="period-info">
+                        <div class="period-name" id="period-name"></div>
+                        <div class="period-date" id="period-date"></div>
+                    </div>
+                    
+                    <div class="timeline-nav">
+                        <button id="next-period">Next →</button>
+                    </div>
+                </div>
+                
+                <div class="timeline-dots" id="timeline-dots"></div>
+            </div>
+        

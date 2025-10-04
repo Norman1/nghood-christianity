@@ -1,3 +1,5 @@
+import { loadTemplate } from '../utils/template-loader.js';
+
 class BibleAtlasPage extends HTMLElement {
     constructor() {
         super();
@@ -13,14 +15,14 @@ class BibleAtlasPage extends HTMLElement {
         this.mapId = 'bible-map-' + Math.random().toString(36).substr(2, 9);
     }
 
-    connectedCallback() {
-        this.loadLeaflet().then(() => {
-            this.render();
-            setTimeout(() => {
-                this.initializeMap();
-                this.loadPeriodData(this.periods[this.currentPeriodIndex]);
-            }, 300);
-        });
+    async connectedCallback() {
+        await this.loadLeaflet();
+        await this.render();
+
+        setTimeout(() => {
+            this.initializeMap();
+            this.loadPeriodData(this.periods[this.currentPeriodIndex]);
+        }, 300);
     }
 
     async loadLeaflet() {
@@ -45,16 +47,11 @@ class BibleAtlasPage extends HTMLElement {
         }
     }
 
-    render() {
-        // Render WITHOUT Shadow DOM to avoid CSS isolation issues
-        this.innerHTML = `
-            <style>
-                bible-atlas-page {
-                    display: block;
-                    padding: 1rem;
-                    max-width: 1400px;
-                    margin: 0 auto;
-                }
+    async render() {
+        const template = await loadTemplate("./templates/bible-atlas.html");
+        const html = template.replace(/__MAP_ID__/g, this.mapId);
+        this.innerHTML = html;
+    }
 
                 bible-atlas-page h1 {
                     color: #f0f6fc;

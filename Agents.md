@@ -4,6 +4,9 @@
 - Treat user prompts ending with a question mark as Q&A mode: focus on answers and read-only exploration (inspecting files, folders, logs), but do not modify anything or run side-effecting commands unless explicitly asked afterward.
 - For action requests (user states the desired change/run), proceed with the usual plan-execute workflow and confirm results.
 
+## Component Usage
+- Reuse elements from the components gallery (`docs/pages/components-gallery.js`) when introducing UI changes; avoid building custom styles when a gallery component exists.
+
 ## Git Workflow Guidance
 - Create short-lived feature branches (e.g., `feat/...`, `fix/...`, `chore/...`) off `main`; rebase with the latest `main` before opening a PR.
 - Keep `main` deployment-ready by merging only through reviewed PRs after local verification and any required CI.
@@ -28,7 +31,7 @@
 - `private/bible-verse-game-todo.md` captures deeper backlog for the verse game (difficulty, translation expansion, data weighting). Use it to guide enhancements beyond the shipped MVP.
 
 ## Collaboration Reminders
+- The sidebar "Debug" category is auth-gated; use it for internal/development pages such as the Bible Atlas or component demos.
 - Right sidebar slots in `<main-layout>` are optional; some pages clear them explicitly. Preserve that behavior when introducing new pages.
 - Keep Google Identity client IDs centralized in `docs/config/google-auth.js`; avoid duplicating secrets.
 - Document any new operational risks or deviations here so future agents inherit non-trivial context without digging through source.
-

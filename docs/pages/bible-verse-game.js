@@ -1,7 +1,9 @@
+import { loadTemplate } from '../utils/template-loader.js';
+
 class BibleVerseGamePage extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow({ mode: "open" });
         this.gameState = {
             selectedBooks: new Set(),
             currentVerse: null,
@@ -12,8 +14,8 @@ class BibleVerseGamePage extends HTMLElement {
         };
     }
 
-    connectedCallback() {
-        this.render();
+    async connectedCallback() {
+        await this.render();
         this.setupEventListeners();
         this.initializeDefaultBooks();
         this.renderGameContent();
