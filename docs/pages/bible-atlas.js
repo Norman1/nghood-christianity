@@ -1,10 +1,242 @@
 import { loadTemplate } from '../utils/template-loader.js';
 
+// Approximate boundary polygon compiled from Genesis 15, Numbers 34, Joshua 1, Ezekiel 47, Isaiah 27 and historical atlas data.
+const GREATER_ISRAEL_BOUNDARY_POINTS = [
+    {
+        name: 'Pelusium (Nile Delta)',
+        coords: [31.050, 32.320],
+        reference: 'Isaiah 27:12'
+    },
+    {
+        name: 'Brook of Egypt (Wadi el-Arish)',
+        coords: [30.990, 34.240],
+        reference: 'Numbers 34:5'
+    },
+    {
+        name: 'Raphia Frontier',
+        coords: [31.280, 34.240],
+        reference: 'Isaiah 19:19'
+    },
+    {
+        name: 'Gaza',
+        coords: [31.500, 34.450],
+        reference: 'Joshua 15:47'
+    },
+    {
+        name: 'Ashdod',
+        coords: [31.800, 34.650],
+        reference: 'Joshua 11:22'
+    },
+    {
+        name: 'Joppa (Jaffa)',
+        coords: [32.060, 34.770],
+        reference: '2 Chronicles 2:16'
+    },
+    {
+        name: 'Caesarea / Dor Coast',
+        coords: [32.580, 34.900],
+        reference: 'Joshua 12:23'
+    },
+    {
+        name: 'Mount Carmel',
+        coords: [32.820, 35.000],
+        reference: '1 Kings 18:19'
+    },
+    {
+        name: 'Acco / Ptolemais',
+        coords: [32.930, 35.080],
+        reference: 'Judges 1:31'
+    },
+    {
+        name: 'Tyre',
+        coords: [33.270, 35.200],
+        reference: '2 Samuel 5:11'
+    },
+    {
+        name: 'Sidon',
+        coords: [33.570, 35.370],
+        reference: 'Judges 18:7'
+    },
+    {
+        name: 'Byblos / Gebal',
+        coords: [34.120, 35.650],
+        reference: 'Ezekiel 27:9'
+    },
+    {
+        name: 'Arvad Coast',
+        coords: [34.640, 35.930],
+        reference: 'Ezekiel 27:8'
+    },
+    {
+        name: 'Entrance of Hamath (Lebo-Hamath)',
+        coords: [34.950, 36.730],
+        reference: 'Numbers 34:8'
+    },
+    {
+        name: 'Zedad',
+        coords: [34.950, 37.270],
+        reference: 'Numbers 34:8'
+    },
+    {
+        name: 'Carchemish on the Euphrates',
+        coords: [36.820, 38.030],
+        reference: '2 Chronicles 35:20'
+    },
+    {
+        name: 'Birecik / Sajur Bend',
+        coords: [36.970, 38.350],
+        reference: 'Genesis 15:18'
+    },
+    {
+        name: 'Harran / Upper Euphrates',
+        coords: [36.870, 39.030],
+        reference: 'Genesis 12:4'
+    },
+    {
+        name: 'Raqqa / Callirhoe',
+        coords: [35.950, 39.010],
+        reference: 'Genesis 15:18'
+    },
+    {
+        name: 'Deir ez-Zor (Euphrates Bend)',
+        coords: [35.330, 40.150],
+        reference: 'Genesis 15:18'
+    },
+    {
+        name: 'Dura-Europos',
+        coords: [34.740, 40.720],
+        reference: 'Genesis 15:18'
+    },
+    {
+        name: 'Mari / Terqa',
+        coords: [34.560, 40.900],
+        reference: 'Genesis 15:18'
+    },
+    {
+        name: 'Al-Qaim / Lower Euphrates',
+        coords: [34.050, 41.000],
+        reference: 'Genesis 15:18'
+    },
+    {
+        name: 'Anah / Hit Corridor',
+        coords: [33.600, 41.900],
+        reference: 'Genesis 15:18'
+    },
+    {
+        name: 'Sippar',
+        coords: [33.060, 44.200],
+        reference: 'Genesis 15:18'
+    },
+    {
+        name: 'Babylon',
+        coords: [32.540, 44.420],
+        reference: 'Daniel 1:1'
+    },
+    {
+        name: 'Uruk',
+        coords: [31.330, 45.630],
+        reference: 'Genesis 10:10'
+    },
+    {
+        name: 'Ur / Tell el-Muqayyar',
+        coords: [30.960, 46.100],
+        reference: 'Genesis 11:31'
+    },
+    {
+        name: 'Shatt al-Arab (River Mouth)',
+        coords: [29.900, 48.520],
+        reference: 'Genesis 15:18'
+    },
+    {
+        name: 'Hafar al-Batin (Wadi al-Batin)',
+        coords: [28.430, 45.960],
+        reference: '1 Samuel 15:7'
+    },
+    {
+        name: 'Dumat al-Jandal',
+        coords: [29.800, 40.290],
+        reference: '1 Kings 4:19'
+    },
+    {
+        name: 'Wadi Sirhan',
+        coords: [30.700, 38.400],
+        reference: 'Numbers 34:10'
+    },
+    {
+        name: 'Damascus',
+        coords: [33.510, 36.290],
+        reference: 'Genesis 14:15'
+    },
+    {
+        name: 'Bashan Plateau',
+        coords: [33.100, 36.050],
+        reference: 'Deuteronomy 3:10'
+    },
+    {
+        name: 'Golan Heights',
+        coords: [32.850, 35.800],
+        reference: 'Deuteronomy 4:43'
+    },
+    {
+        name: 'Sea of Galilee East',
+        coords: [32.600, 35.650],
+        reference: 'Numbers 34:11'
+    },
+    {
+        name: 'Jordan Crossing (Adam)',
+        coords: [32.200, 35.600],
+        reference: 'Joshua 3:16'
+    },
+    {
+        name: 'Jericho',
+        coords: [31.870, 35.460],
+        reference: 'Joshua 6:1'
+    },
+    {
+        name: 'South Dead Sea',
+        coords: [31.000, 35.500],
+        reference: 'Numbers 34:3'
+    },
+    {
+        name: 'Ezion-Geber (Gulf of Aqaba)',
+        coords: [29.530, 34.970],
+        reference: '1 Kings 9:26'
+    },
+    {
+        name: 'Kadesh-Barnea',
+        coords: [30.730, 34.950],
+        reference: 'Numbers 34:4'
+    },
+    {
+        name: 'Hazar Addar',
+        coords: [30.730, 34.750],
+        reference: 'Numbers 34:4'
+    },
+    {
+        name: 'Azmon',
+        coords: [30.850, 34.320],
+        reference: 'Numbers 34:5'
+    },
+    {
+        name: 'Brook Return (Wadi el-Arish)',
+        coords: [30.990, 34.240],
+        reference: 'Numbers 34:5'
+    },
+    {
+        name: 'Pelusium (Nile Delta)',
+        coords: [31.050, 32.320],
+        reference: 'Isaiah 27:12'
+    }
+];
+
+const GREATER_ISRAEL_REFERENCES = 'Genesis 15:18; Numbers 34:1-12; Joshua 1:4; 1 Kings 4:24; Isaiah 27:12; Ezekiel 47:13-20';
+
 class BibleAtlasPage extends HTMLElement {
     constructor() {
         super();
         this.map = null;
         this.greaterIsraelMap = null;
+        this.greaterIsraelLayer = null;
         this.currentPeriodIndex = 0;
         this.periods = [
             { id: 'patriarchal', name: 'Patriarchal Period', year: -2000, dateRange: '2000-1500 BC' },
@@ -91,6 +323,7 @@ class BibleAtlasPage extends HTMLElement {
             tileLayer.addTo(this.greaterIsraelMap);
 
             this.greaterIsraelMap.whenReady(() => {
+                this.renderGreaterIsraelBoundary();
                 this.greaterIsraelMap.invalidateSize(true);
                 setTimeout(() => {
                     if (this.greaterIsraelMap) {
@@ -101,6 +334,51 @@ class BibleAtlasPage extends HTMLElement {
         } catch (error) {
             console.error('Error initializing Greater Israel map:', error);
         }
+    }
+
+    renderGreaterIsraelBoundary() {
+        if (!this.greaterIsraelMap) return;
+
+        if (!this.greaterIsraelLayer) {
+            this.greaterIsraelLayer = L.layerGroup().addTo(this.greaterIsraelMap);
+        } else {
+            this.greaterIsraelLayer.clearLayers();
+        }
+
+        const boundaryCoords = GREATER_ISRAEL_BOUNDARY_POINTS.map(point => point.coords);
+
+        const polygon = L.polygon(boundaryCoords, {
+            color: '#ff9f1c',
+            weight: 2,
+            fillColor: '#ffbf69',
+            fillOpacity: 0.25,
+            dashArray: '6 3'
+        });
+
+        polygon.bindPopup(`<strong>Greater Israel</strong><br><small>${GREATER_ISRAEL_REFERENCES}</small>`);
+
+        this.greaterIsraelLayer.addLayer(polygon);
+
+        GREATER_ISRAEL_BOUNDARY_POINTS.forEach(point => {
+            if (!point.name) {
+                return;
+            }
+
+            const marker = L.circleMarker(point.coords, {
+                radius: 4,
+                color: '#ff9f1c',
+                fillColor: '#ff9f1c',
+                fillOpacity: 0.85,
+                weight: 1
+            });
+
+            const referenceLine = point.reference ? `<br><em>${point.reference}</em>` : '';
+            marker.bindTooltip(point.name);
+            marker.bindPopup(`<strong>${point.name}</strong>${referenceLine}`);
+            this.greaterIsraelLayer.addLayer(marker);
+        });
+
+        this.greaterIsraelMap.fitBounds(polygon.getBounds(), { padding: [24, 24] });
     }
 
     initializeMap() {
