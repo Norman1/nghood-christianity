@@ -2,10 +2,14 @@ import { updatePageMetadata } from './page-metadata.js';
 import { prepareForAnimation } from './performance-utils.js';
 
 const routes = {
+    '/': 'about-page',
     '/bible-reading-plan': 'bible-reading-plan',
     '/bible-verse-game': 'bible-verse-game-page',
     '/bible-atlas': 'bible-atlas-page',
     '/components-gallery': 'components-gallery',
+    
+    // Articles
+    '/explaining-free-grace': 'explaining-free-grace-page',
     
     // Account
     '/profile': 'user-profile',
@@ -97,3 +101,5 @@ export function initRouter() {
         render();
     });
 }
+
+
