@@ -33,5 +33,6 @@
 ## Collaboration Reminders
 - The sidebar "Debug" category is auth-gated; use it for internal/development pages such as the Bible Atlas or component demos.
 - Right sidebar slots in `<main-layout>` are optional; some pages clear them explicitly. Preserve that behavior when introducing new pages.
+- When a page enables the right sidebar, populate it via the standard TOC helper (`generateTOC`). Avoid custom sidebar markup or styling.
 - Keep Google Identity client IDs centralized in `docs/config/google-auth.js`; avoid duplicating secrets.
 - Document any new operational risks or deviations here so future agents inherit non-trivial context without digging through source.
