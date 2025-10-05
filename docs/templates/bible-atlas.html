@@ -7,6 +7,26 @@
                     margin: 0 auto;
                 }
 
+                bible-atlas-page .atlas-section {
+                    margin-bottom: 2rem;
+                }
+
+                bible-atlas-page .atlas-section h2 {
+                    color: #f0f6fc;
+                    font-size: 1.5rem;
+                    margin: 0 0 1rem 0;
+                    font-weight: 600;
+                }
+
+                bible-atlas-page #__GREATER_MAP_ID__ {
+                    height: 450px;
+                    width: 100%;
+                    border-radius: 4px;
+                    background: #0f1419;
+                    position: relative;
+                    z-index: 1;
+                }
+
                 bible-atlas-page h1 {
                     color: #f0f6fc;
                     font-size: 2rem;
@@ -114,6 +134,13 @@
                     background: #8b949e;
                 }
             </style>
+
+            <section class="atlas-section">
+                <h2>Greater Israel Map</h2>
+                <div class="map-container">
+                    <div id="__GREATER_MAP_ID__"></div>
+                </div>
+            </section>
 
             <h1>Bible Atlas</h1>
             

@@ -4,6 +4,7 @@ class BibleAtlasPage extends HTMLElement {
     constructor() {
         super();
         this.map = null;
+        this.greaterIsraelMap = null;
         this.currentPeriodIndex = 0;
         this.periods = [
             { id: 'patriarchal', name: 'Patriarchal Period', year: -2000, dateRange: '2000-1500 BC' },
@@ -13,6 +14,7 @@ class BibleAtlasPage extends HTMLElement {
             { id: 'new-testament', name: 'New Testament', year: 30, dateRange: '30-100 AD' }
         ];
         this.mapId = 'bible-map-' + Math.random().toString(36).substr(2, 9);
+        this.greaterIsraelMapId = 'greater-israel-map-' + Math.random().toString(36).substr(2, 9);
     }
 
     async connectedCallback() {
@@ -20,6 +22,7 @@ class BibleAtlasPage extends HTMLElement {
         await this.render();
 
         setTimeout(() => {
+            this.initializeGreaterIsraelMap();
             this.initializeMap();
             this.loadPeriodData(this.periods[this.currentPeriodIndex]);
         }, 300);
@@ -49,146 +52,55 @@ class BibleAtlasPage extends HTMLElement {
 
     async render() {
         const template = await loadTemplate("./templates/bible-atlas.html");
-        const html = template.replace(/__MAP_ID__/g, this.mapId);
+        const html = template
+            .replace(/__MAP_ID__/g, this.mapId)
+            .replace(/__GREATER_MAP_ID__/g, this.greaterIsraelMapId);
         this.innerHTML = html;
-    }
-
-                bible-atlas-page h1 {
-                    color: #f0f6fc;
-                    font-size: 2rem;
-                    margin-bottom: 1rem;
-                    font-weight: 600;
-                }
-
-                bible-atlas-page .map-container {
-                    background: #1c2128;
-                    border-radius: 8px;
-                    padding: 1rem;
-                    border: 1px solid #30363d;
-                    position: relative;
-                }
-
-                bible-atlas-page #${this.mapId} {
-                    height: 600px;
-                    width: 100%;
-                    border-radius: 4px;
-                    background: #0f1419;
-                    position: relative;
-                    z-index: 1;
-                }
-
-                bible-atlas-page .timeline-container {
-                    margin-top: 1rem;
-                    background: #1c2128;
-                    border-radius: 8px;
-                    padding: 1rem;
-                    border: 1px solid #30363d;
-                }
-
-                bible-atlas-page .timeline-controls {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 1rem;
-                    flex-wrap: wrap;
-                }
-
-                bible-atlas-page .period-info {
-                    flex: 1;
-                    text-align: center;
-                }
-
-                bible-atlas-page .period-name {
-                    font-size: 1.2rem;
-                    color: #f0f6fc;
-                    font-weight: 600;
-                }
-
-                bible-atlas-page .period-date {
-                    font-size: 0.9rem;
-                    color: #8b949e;
-                    margin-top: 0.25rem;
-                }
-
-                bible-atlas-page .timeline-nav {
-                    display: flex;
-                    gap: 0.5rem;
-                }
-
-                bible-atlas-page button {
-                    background: #238636;
-                    color: white;
-                    border: none;
-                    padding: 0.5rem 1rem;
-                    border-radius: 6px;
-                    cursor: pointer;
-                    font-size: 0.9rem;
-                    transition: background 0.2s;
-                }
-
-                bible-atlas-page button:hover:not(:disabled) {
-                    background: #2ea043;
-                }
-
-                bible-atlas-page button:disabled {
-                    background: #30363d;
-                    color: #8b949e;
-                    cursor: not-allowed;
-                }
-
-                bible-atlas-page .timeline-dots {
-                    display: flex;
-                    justify-content: center;
-                    gap: 0.5rem;
-                    margin-top: 1rem;
-                }
-
-                bible-atlas-page .timeline-dot {
-                    width: 8px;
-                    height: 8px;
-                    border-radius: 50%;
-                    background: #30363d;
-                    cursor: pointer;
-                    transition: background 0.2s;
-                }
-
-                bible-atlas-page .timeline-dot.active {
-                    background: #238636;
-                }
-
-                bible-atlas-page .timeline-dot:hover {
-                    background: #8b949e;
-                }
-            </style>
-
-            <h1>Bible Atlas</h1>
-            
-            <div class="map-container">
-                <div id="${this.mapId}"></div>
-            </div>
-
-            <div class="timeline-container">
-                <div class="timeline-controls">
-                    <div class="timeline-nav">
-                        <button id="prev-period">← Previous</button>
-                    </div>
-                    
-                    <div class="period-info">
-                        <div class="period-name" id="period-name"></div>
-                        <div class="period-date" id="period-date"></div>
-                    </div>
-                    
-                    <div class="timeline-nav">
-                        <button id="next-period">Next →</button>
-                    </div>
-                </div>
-                
-                <div class="timeline-dots" id="timeline-dots"></div>
-            </div>
-        `;
 
         this.setupEventListeners();
         this.updateTimelineDisplay();
+    }
+
+
+
+    initializeGreaterIsraelMap() {
+        const mapElement = this.querySelector(`#${this.greaterIsraelMapId}`);
+
+        if (!mapElement) {
+            console.error('Greater Israel map element not found');
+            return;
+        }
+
+        try {
+            this.greaterIsraelMap = L.map(mapElement, {
+                center: [31.5, 35.0],
+                zoom: 6,
+                minZoom: 4,
+                maxZoom: 12,
+                attributionControl: false
+            });
+
+            const tileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+                attribution: '',
+                maxZoom: 19,
+                tileSize: 256,
+                zoomOffset: 0,
+                subdomains: 'abcd'
+            });
+
+            tileLayer.addTo(this.greaterIsraelMap);
+
+            this.greaterIsraelMap.whenReady(() => {
+                this.greaterIsraelMap.invalidateSize(true);
+                setTimeout(() => {
+                    if (this.greaterIsraelMap) {
+                        this.greaterIsraelMap.invalidateSize(true);
+                    }
+                }, 150);
+            });
+        } catch (error) {
+            console.error('Error initializing Greater Israel map:', error);
+        }
     }
 
     initializeMap() {
