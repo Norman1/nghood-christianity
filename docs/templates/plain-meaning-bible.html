@@ -1,159 +1,5 @@
-            <style>
-                plain-meaning-bible-page {
-                    display: block;
-                    padding: 1.5rem;
-                    max-width: 1024px;
-                    margin: 0 auto;
-                }
+                        <link rel="stylesheet" href="./styles/plain-meaning-bible.css">
 
-                plain-meaning-bible-page h1 {
-                    color: #f0f6fc;
-                    margin-bottom: 1rem;
-                }
-
-                plain-meaning-bible-page h2 {
-                    color: #8b949e;
-                    font-size: 1rem;
-                    text-transform: uppercase;
-                    letter-spacing: 0.08em;
-                    margin: 2rem 0 0.75rem;
-                }
-
-                plain-meaning-bible-page p {
-                    color: #c5d1dd;
-                    line-height: 1.7;
-                    margin: 0 0 1rem;
-                }
-
-                plain-meaning-bible-page .section {
-                    background: #161b22;
-                    border: 1px solid #30363d;
-                    border-radius: 8px;
-                    padding: 1.5rem;
-                    margin-bottom: 1.5rem;
-                }
-
-                plain-meaning-bible-page ul {
-                    color: #c5d1dd;
-                    margin: 0 0 1rem 1.5rem;
-                    line-height: 1.6;
-                }
-
-                plain-meaning-bible-page .actions {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 1rem;
-                    margin-top: 1.5rem;
-                }
-
-                plain-meaning-bible-page .actions .callout {
-                    flex: 1 1 280px;
-                    margin: 0;
-                }
-
-                .osis-element-table {
-                    width: 100%;
-                    border-collapse: collapse;
-                    background: rgba(15, 20, 25, 0.4);
-                    border: 1px solid #30363d;
-                    border-radius: 6px;
-                    overflow: hidden;
-                }
-
-                .osis-element-table th,
-                .osis-element-table td {
-                    border-bottom: 1px solid #30363d;
-                    padding: 0.6rem 0.9rem;
-                    text-align: left;
-                    color: #c5d1dd;
-                }
-
-                .osis-element-table th {
-                    background: rgba(88, 166, 255, 0.15);
-                    color: #79c0ff;
-                    letter-spacing: 0.05em;
-                    font-size: 0.85rem;
-                    text-transform: uppercase;
-                }
-
-                .osis-element-table tr:last-child td {
-                    border-bottom: none;
-                }
-
-                .osis-check-cell {
-                    width: 120px;
-                    text-align: center;
-                    font-size: 1.4rem;
-                    color: #7ee787;
-                }
-
-                .osis-demo {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-                    background: #0f1419;
-                    border: 1px dashed #30363d;
-                    padding: 1.25rem;
-                    border-radius: 8px;
-                }
-
-                .osis-book, .osis-book-wrapper {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-                }
-
-                .osis-block {
-                    position: relative;
-                    padding: 0.75rem;
-                    border: 1px solid rgba(48, 54, 61, 0.6);
-                    background: rgba(22, 27, 34, 0.85);
-                    border-radius: 6px;
-                    margin-bottom: 0.75rem;
-                }
-
-                .osis-inline {
-                    display: inline-block;
-                    padding: 0.1rem 0.3rem;
-                    margin: 0 0.1rem;
-                    border-radius: 4px;
-                    background: rgba(88, 166, 255, 0.12);
-                }
-
-                .osis-block:last-child {
-                    margin-bottom: 0;
-                }
-
-                .osis-book-title { font-size: 1.25rem; font-weight: 600; color: #f0f6fc; }
-                .osis-chapter { border: 1px solid #30363d; border-radius: 6px; padding: 1rem; background: #131820; }
-                .osis-chapter-body { display: flex; flex-direction: column; gap: 0.5rem; }
-                .osis-verse { margin: 0.5rem 0; padding: 0.75rem; border-left: 4px solid #58a6ff; background: rgba(88,166,255,0.08); border-radius: 4px; }
-                .osis-verse-body { display: inline; }
-                .osis-paragraph { margin: 0.75rem 0; }
-                .osis-note { margin-top: 0.5rem; padding: 0.5rem 0.75rem; background: rgba(255, 196, 73, 0.08); border-left: 3px solid #fb8500; border-radius: 4px; font-size: 0.85rem; }
-                .osis-reference { color: #58a6ff; text-decoration: underline; }
-                .osis-quote { border-left: 4px solid #7ee787; padding: 0.75rem 1rem; background: rgba(126, 231, 135, 0.08); border-radius: 4px; margin: 1rem 0; }
-                .osis-quote .speaker, .osis-speaker { display: block; font-size: 0.8rem; color: #7ee787; margin-bottom: 0.5rem; text-transform: uppercase; }
-                .osis-list { margin: 0.75rem 0 0.75rem 1.5rem; }
-                .osis-list-item { margin: 0.35rem 0; }
-                .osis-lg { padding: 0.75rem 1rem; background: rgba(121, 192, 255, 0.08); border-radius: 4px; border-left: 3px solid #79c0ff; }
-                .osis-lg .osis-line { display: block; margin: 0.35rem 0; }
-                .osis-word { color: #ff9f1c; font-weight: 600; }
-                .osis-seg { background: rgba(111, 66, 193, 0.15); padding: 0.2rem 0.4rem; border-radius: 4px; display: inline-block; }
-                .osis-milestone { display: block; font-size: 0.8rem; margin-top: 0.5rem; color: #ff9f1c; }
-                .osis-section { border: 1px solid rgba(111, 66, 193, 0.4); border-radius: 6px; padding: 1rem; background: rgba(111, 66, 193, 0.08); }
-                .osis-highlight-italic { font-style: italic; }
-                .osis-highlight-bold { font-weight: 600; }
-                .osis-unknown { color: #ff6b6b; font-size: 0.85rem; }
-
-                .osis-element-label {
-                    font-size: 0.75rem;
-                    text-transform: uppercase;
-                    letter-spacing: 0.08em;
-                    color: #79c0ff;
-                    margin-bottom: 0.4rem;
-                }
-            </style>
 
             <h1>Plain Meaning Bible (Debug)</h1>
             <p class="callout callout-info">This internal workspace will grow into the Plain Meaning Bible experience. It currently surfaces a complete OSIS milestone demonstration so the UI can mature alongside the data pipeline.</p>
@@ -165,10 +11,86 @@
                     <thead>
                         <tr>
                             <th>Element</th>
-                            <th>Review ✓</th>
+                            <th>Review &#10003;</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                        <tr><td>a</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>abbr</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>actor</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>caption</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>castGroup</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>castItem</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>castList</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>catchWord</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>cell</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>chapter</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>closer</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>contributor</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>coverage</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>creator</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>date</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>description</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>div</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>divineName</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>figure</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>foreign</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>format</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>head</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>header</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>hi</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>identifier</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>index</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>inscription</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>item</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>l</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>label</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>language</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>lb</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>lg</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>list</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>mentioned</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>milestone</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>milestoneEnd</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>milestoneStart</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>name</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>note</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>osis</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>osisCorpus</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>osisText</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>p</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>publisher</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>q</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>rdg</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>rdgGrp</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>refSystem</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>reference</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>relation</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>revisionDesc</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>rights</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>role</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>roleDesc</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>row</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>salute</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>scope</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>seg</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>seq</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>signed</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>source</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>speaker</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>speech</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>subject</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>table</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>teiHeader</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>title</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>titlePage</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>transChange</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>type</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>verse</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>w</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>work</td><td class="osis-check-cell"></td></tr>
+                        <tr><td>workPrefix</td><td class="osis-check-cell"></td></tr>
+                    </tbody>
                 </table>
             </div>
 
