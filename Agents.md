@@ -16,6 +16,8 @@
 - Delete feature branches after merge to keep the namespace clean.
 
 ## Architecture Signals Worth Remembering
+- Each OSIS update for the Plain Meaning Bible must pass automated validation against osisCore.2.1.1.xsd before merging.
+- OSIS ingestion should normalize verse data into milestone form; treat milestones as the canonical representation for the Plain Meaning Bible.
 - Frontend is a framework-free Web Components app (`docs/index.html`) orchestrated by a router using History API state (`docs/utils/router.js`). Google auth flows persist user JSON in `localStorage`; `auth-guard` relies on that state to gate protected routes.
 - `docs/assets/config.js` auto-selects API base URLs and secrets. Frontend calls must include the `X-API-Key` header using this value or the Spring filter in `backend/src/main/java/com/nghood/christianity/security/ApiKeyAuthenticationFilter.java` will reject the request.
 - Bible data loads entirely in memory at backend startup via `BibleDataService` (`backend/src/main/java/com/nghood/christianity/service/BibleDataService.java`), pulling 66 JSON manifests from `backend/src/main/resources/data/bible`. Any new data must respect that boot-time cost.

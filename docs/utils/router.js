@@ -7,6 +7,7 @@ const routes = {
     '/bible-verse-game': 'bible-verse-game-page',
     '/bible-atlas': 'bible-atlas-page',
     '/components-gallery': 'components-gallery',
+    '/plain-meaning-bible': 'plain-meaning-bible-page',
     
     // Articles
     '/explaining-free-grace': 'explaining-free-grace-page',
@@ -101,5 +102,6 @@ export function initRouter() {
         render();
     });
 }
+
 
 

@@ -63,6 +63,7 @@ class NavSidebar extends HTMLElement {
                     pages: [
                         { href: '/components-gallery', title: 'Components Gallery' },
                         { href: '/bible-atlas', title: 'Bible Atlas' },
+                        { href: '/plain-meaning-bible', title: 'Plain Meaning Bible' },
                         { href: '/profile', title: 'My Profile' },
                         { href: '/backend-test', title: 'Backend Test' },
                         { href: '/test-404', title: 'Test 404' }
@@ -427,5 +428,6 @@ class NavSidebar extends HTMLElement {
 }
 
 customElements.define('nav-sidebar', NavSidebar);
+
 
 
