@@ -2,12 +2,24 @@ import { loadTemplate, createLoadingElement } from '../utils/template-loader.js'
 
 const OSIS_NAMESPACE = 'http://www.bibletechnologies.net/2003/OSIS/namespace';
 
+const OSIS_ELEMENTS = [
+    'a', 'abbr', 'actor', 'caption', 'castGroup', 'castItem', 'castList', 'catchWord',
+    'cell', 'chapter', 'closer', 'contributor', 'coverage', 'creator', 'date', 'description',
+    'div', 'divineName', 'figure', 'foreign', 'format', 'head', 'header', 'hi', 'identifier',
+    'index', 'inscription', 'item', 'l', 'label', 'language', 'lb', 'lg', 'list', 'mentioned',
+    'milestone', 'milestoneEnd', 'milestoneStart', 'name', 'note', 'osis', 'osisCorpus',
+    'osisText', 'p', 'publisher', 'q', 'rdg', 'rdgGrp', 'refSystem', 'reference', 'relation',
+    'revisionDesc', 'rights', 'role', 'roleDesc', 'row', 'salute', 'scope', 'seg', 'seq',
+    'signed', 'source', 'speaker', 'speech', 'subject', 'table', 'teiHeader', 'title',
+    'titlePage', 'transChange', 'type', 'verse', 'w', 'work', 'workPrefix'
+];
+
 const INLINE_ELEMENTS = new Set([
-    'a', 'abbr', 'catchWord', 'foreign', 'mentioned', 'name', 'seg', 'w',
-    'hi', 'reference', 'speaker', 'transChange', 'workPrefix', 'contributor',
-    'creator', 'identifier', 'language', 'coverage', 'rights', 'source',
-    'subject', 'publisher', 'format', 'relation', 'type', 'description', 'date',
-    'scope', 'refSystem', 'label', 'caption', 'inscription', 'index', 'divineName'
+    'a', 'abbr', 'catchWord', 'foreign', 'mentioned', 'name', 'seg', 'w', 'hi', 'reference',
+    'speaker', 'transChange', 'workPrefix', 'contributor', 'creator', 'identifier', 'language',
+    'coverage', 'rights', 'source', 'subject', 'publisher', 'format', 'relation', 'type',
+    'description', 'date', 'scope', 'refSystem', 'label', 'caption', 'inscription', 'index',
+    'divineName'
 ]);
 
 function createElementLabel(name) {
@@ -26,6 +38,7 @@ class PlainMeaningBiblePage extends HTMLElement {
         try {
             const template = await loadTemplate('./templates/plain-meaning-bible.html');
             this.innerHTML = template;
+            this.populateElementChecklist();
             await this.renderOsisShowcase();
         } catch (error) {
             console.error('Error loading Plain Meaning Bible template:', error);
@@ -36,6 +49,24 @@ class PlainMeaningBiblePage extends HTMLElement {
                 </div>
             `;
         }
+    }
+
+    populateElementChecklist() {
+        const tableBody = this.querySelector('#osis-element-table tbody');
+        if (!tableBody) {
+            return;
+        }
+        tableBody.innerHTML = '';
+        OSIS_ELEMENTS.forEach((name) => {
+            const row = document.createElement('tr');
+            const nameCell = document.createElement('td');
+            nameCell.textContent = name;
+            const reviewCell = document.createElement('td');
+            reviewCell.className = 'osis-check-cell';
+            reviewCell.textContent = '';
+            row.append(nameCell, reviewCell);
+            tableBody.appendChild(row);
+        });
     }
 
     async renderOsisShowcase() {
@@ -85,7 +116,7 @@ class PlainMeaningBiblePage extends HTMLElement {
             corpusWrapper.appendChild(this.createLabelParagraph('osisCorpus'));
 
             Array.from(root.children)
-                .filter(child => child.namespaceURI === OSIS_NAMESPACE && child.localName === 'osis')
+                .filter((child) => child.namespaceURI === OSIS_NAMESPACE && child.localName === 'osis')
                 .forEach((osisElement, index) => {
                     const section = document.createElement('section');
                     section.className = 'osis-work';
@@ -110,8 +141,8 @@ class PlainMeaningBiblePage extends HTMLElement {
 
     renderOsis(osisElement, container) {
         Array.from(osisElement.children)
-            .filter(child => child.namespaceURI === OSIS_NAMESPACE)
-            .forEach(child => {
+            .filter((child) => child.namespaceURI === OSIS_NAMESPACE)
+            .forEach((child) => {
                 if (child.localName === 'osisText') {
                     const textWrapper = document.createElement('section');
                     textWrapper.className = 'osis-text';
@@ -126,7 +157,7 @@ class PlainMeaningBiblePage extends HTMLElement {
     }
 
     processChildNodes(nodeList, contextStack) {
-        Array.from(nodeList).forEach(node => this.renderOsisNode(node, contextStack));
+        Array.from(nodeList).forEach((node) => this.renderOsisNode(node, contextStack));
     }
 
     renderOsisNode(node, contextStack) {
@@ -303,35 +334,11 @@ class PlainMeaningBiblePage extends HTMLElement {
         switch (name) {
             case 'p':
                 return document.createElement('p');
-            case 'list':
-                return document.createElement('div');
-            case 'item':
-                return document.createElement('div');
             case 'table':
                 return document.createElement('div');
             case 'row':
                 return document.createElement('div');
             case 'cell':
-                return document.createElement('div');
-            case 'figure':
-                return document.createElement('div');
-            case 'speech':
-            case 'q':
-            case 'lg':
-            case 'castList':
-            case 'castGroup':
-            case 'castItem':
-            case 'seq':
-            case 'rdgGrp':
-            case 'rdg':
-            case 'note':
-            case 'div':
-            case 'work':
-            case 'header':
-            case 'revisionDesc':
-            case 'teiHeader':
-            case 'titlePage':
-            case 'head':
                 return document.createElement('div');
             default:
                 return document.createElement('div');

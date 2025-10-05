@@ -51,6 +51,42 @@
                     margin: 0;
                 }
 
+                .osis-element-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    background: rgba(15, 20, 25, 0.4);
+                    border: 1px solid #30363d;
+                    border-radius: 6px;
+                    overflow: hidden;
+                }
+
+                .osis-element-table th,
+                .osis-element-table td {
+                    border-bottom: 1px solid #30363d;
+                    padding: 0.6rem 0.9rem;
+                    text-align: left;
+                    color: #c5d1dd;
+                }
+
+                .osis-element-table th {
+                    background: rgba(88, 166, 255, 0.15);
+                    color: #79c0ff;
+                    letter-spacing: 0.05em;
+                    font-size: 0.85rem;
+                    text-transform: uppercase;
+                }
+
+                .osis-element-table tr:last-child td {
+                    border-bottom: none;
+                }
+
+                .osis-check-cell {
+                    width: 120px;
+                    text-align: center;
+                    font-size: 1.4rem;
+                    color: #7ee787;
+                }
+
                 .osis-demo {
                     display: flex;
                     flex-direction: column;
@@ -61,7 +97,13 @@
                     border-radius: 8px;
                 }
 
-                                .osis-block {
+                .osis-book, .osis-book-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .osis-block {
                     position: relative;
                     padding: 0.75rem;
                     border: 1px solid rgba(48, 54, 61, 0.6);
@@ -78,51 +120,15 @@
                     background: rgba(88, 166, 255, 0.12);
                 }
 
-                .osis-inline::before {
-                    content: attr(class);
-                    display: none;
-                }
-
-                .osis-element-label {
-                    font-size: 0.75rem;
-                    text-transform: uppercase;
-                    letter-spacing: 0.08em;
-                    color: #79c0ff;
-                    margin-bottom: 0.4rem;
-                }
-
-                .osis-corpus {
-                    border: 1px solid #30363d;
-                    border-radius: 8px;
-                    padding: 1.25rem;
-                    background: rgba(48, 54, 61, 0.15);
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1.5rem;
-                }
-
-                .osis-work {
-                    border: 1px solid rgba(121, 192, 255, 0.25);
-                    border-radius: 8px;
-                    padding: 1.25rem;
-                    background: rgba(121, 192, 255, 0.08);
-                }
-
-                .osis-text {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-                }.osis-book, .osis-book-wrapper {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
+                .osis-block:last-child {
+                    margin-bottom: 0;
                 }
 
                 .osis-book-title { font-size: 1.25rem; font-weight: 600; color: #f0f6fc; }
                 .osis-chapter { border: 1px solid #30363d; border-radius: 6px; padding: 1rem; background: #131820; }
-                .osis-chapter > .chapter-label { font-weight: 600; color: #79c0ff; margin-bottom: 0.75rem; display: block; }
+                .osis-chapter-body { display: flex; flex-direction: column; gap: 0.5rem; }
                 .osis-verse { margin: 0.5rem 0; padding: 0.75rem; border-left: 4px solid #58a6ff; background: rgba(88,166,255,0.08); border-radius: 4px; }
-                .osis-verse .verse-label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #58a6ff; margin-bottom: 0.35rem; }
+                .osis-verse-body { display: inline; }
                 .osis-paragraph { margin: 0.75rem 0; }
                 .osis-note { margin-top: 0.5rem; padding: 0.5rem 0.75rem; background: rgba(255, 196, 73, 0.08); border-left: 3px solid #fb8500; border-radius: 4px; font-size: 0.85rem; }
                 .osis-reference { color: #58a6ff; text-decoration: underline; }
@@ -139,36 +145,32 @@
                 .osis-highlight-italic { font-style: italic; }
                 .osis-highlight-bold { font-weight: 600; }
                 .osis-unknown { color: #ff6b6b; font-size: 0.85rem; }
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-                    background: #0f1419;
-                    border: 1px dashed #30363d;
-                    padding: 1.25rem;
-                    border-radius: 8px;
-                }
 
-                .osis-book-title { font-size: 1.25rem; font-weight: 600; color: #f0f6fc; }
-                .osis-chapter { border: 1px solid #30363d; border-radius: 6px; padding: 1rem; background: #131820; }
-                .osis-chapter > .chapter-label { font-weight: 600; color: #79c0ff; margin-bottom: 0.75rem; display: block; }
-                .osis-verse { margin: 0.5rem 0; padding: 0.75rem; border-left: 4px solid #58a6ff; background: rgba(88,166,255,0.08); border-radius: 4px; }
-                .osis-verse .verse-label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #58a6ff; margin-bottom: 0.35rem; }
-                .osis-paragraph { margin: 0.75rem 0; }
-                .osis-note { margin-top: 0.5rem; padding: 0.5rem 0.75rem; background: rgba(255, 196, 73, 0.08); border-left: 3px solid #fb8500; border-radius: 4px; font-size: 0.85rem; }
-                .osis-reference { color: #58a6ff; text-decoration: underline; }
-                .osis-quote { border-left: 4px solid #7ee787; padding: 0.75rem 1rem; background: rgba(126, 231, 135, 0.08); border-radius: 4px; margin: 1rem 0; }
-                .osis-quote .speaker { display: block; font-size: 0.8rem; color: #7ee787; margin-bottom: 0.5rem; text-transform: uppercase; }
-                .osis-list { margin: 0.75rem 0 0.75rem 1.5rem; }
-                .osis-lg { padding: 0.75rem 1rem; background: rgba(121, 192, 255, 0.08); border-radius: 4px; border-left: 3px solid #79c0ff; }
-                .osis-lg .osis-line { display: block; margin: 0.35rem 0; }
-                .osis-word { color: #ff9f1c; font-weight: 600; }
-                .osis-seg { background: rgba(111, 66, 193, 0.15); padding: 0.2rem 0.4rem; border-radius: 4px; }
-                .osis-milestone { display: block; font-size: 0.8rem; margin-top: 0.5rem; color: #ff9f1c; }
-                .osis-section { border: 1px solid rgba(111, 66, 193, 0.4); border-radius: 6px; padding: 1rem; background: rgba(111, 66, 193, 0.08); }
+                .osis-element-label {
+                    font-size: 0.75rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    color: #79c0ff;
+                    margin-bottom: 0.4rem;
+                }
             </style>
 
             <h1>Plain Meaning Bible (Debug)</h1>
             <p class="callout callout-info">This internal workspace will grow into the Plain Meaning Bible experience. It currently surfaces a complete OSIS milestone demonstration so the UI can mature alongside the data pipeline.</p>
+
+            <div class="section">
+                <h2>OSIS Element Checklist</h2>
+                <p>Each row lists an OSIS element present in the demo below. Review the rendered output and add a checkmark to the second column when you are satisfied with the layout and styling.</p>
+                <table class="osis-element-table" id="osis-element-table">
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Review ✓</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
 
             <div class="section">
                 <h2>OSIS Element Showcase</h2>
@@ -201,5 +203,3 @@
                     </div>
                 </div>
             </div>
-
-
