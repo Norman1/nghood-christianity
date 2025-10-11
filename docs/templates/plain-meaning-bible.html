@@ -4,6 +4,35 @@
             <h1>Plain Meaning Bible (Debug)</h1>
             <p class="callout callout-info">This internal workspace will grow into the Plain Meaning Bible experience. It currently surfaces a complete OSIS milestone demonstration so the UI can mature alongside the data pipeline.</p>
 
+            <div class="section bible-reader">
+                <div class="bible-reader-heading">
+                    <h2>World English Bible</h2>
+                    <p>Navigate the Public Domain World English Bible directly in this workspace. Book and chapter selectors load scripture instantly; styling experiments remain available below.</p>
+                </div>
+                <div class="bible-controls" id="bible-controls">
+                    <div class="bible-control">
+                        <label for="bible-book-select">Book</label>
+                        <select id="bible-book-select" aria-label="Select book"></select>
+                    </div>
+                    <div class="bible-control">
+                        <label for="bible-chapter-select">Chapter</label>
+                        <select id="bible-chapter-select" aria-label="Select chapter"></select>
+                    </div>
+                    <div class="bible-control bible-control--nav">
+                        <button type="button" id="bible-prev-chapter" class="bible-nav-button" aria-label="Previous chapter">&larr; Previous</button>
+                        <button type="button" id="bible-next-chapter" class="bible-nav-button" aria-label="Next chapter">Next &rarr;</button>
+                    </div>
+                </div>
+                <div class="callout callout-warning bible-loading" id="bible-loading">Loading World English Bible&hellip;</div>
+                <div class="callout callout-error bible-error" id="bible-error" hidden></div>
+                <div class="bible-chapter" id="bible-chapter" hidden>
+                    <header class="bible-chapter-header">
+                        <h3 id="bible-chapter-heading"></h3>
+                    </header>
+                    <div id="bible-chapter-content" class="bible-verse-list"></div>
+                </div>
+            </div>
+
             <div class="section">
                 <h2>OSIS Element Checklist</h2>
                 <p>Each row lists an OSIS element present in the demo below. Review the rendered output and add a checkmark to the second column when you are satisfied with the layout and styling.</p>
