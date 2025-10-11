@@ -11,7 +11,7 @@ const INLINE_ELEMENTS = new Set([
 ]);
 
 function createElementLabel(name) {
-    return `This content showcases the <${name}> element.`;
+    return `<${name}>`;
 }
 
 class PlainMeaningBiblePage extends HTMLElement {
@@ -250,13 +250,13 @@ class PlainMeaningBiblePage extends HTMLElement {
             el.target = '_blank';
             el.rel = 'noopener noreferrer';
         } else if (name === 'lb') {
-            this.renderLineBreak(contextStack);
+            this.renderLineBreak(node, contextStack);
             return;
         } else {
             el = document.createElement('span');
         }
         el.classList.add('osis-inline', `osis-${name}`);
-        el.title = createElementLabel(name);
+        applyAccessibilityLabel(el, name);
         applyOsisAttributes(node, el);
         this.appendToCurrent(el, contextStack);
         contextStack.push({ type: name, id: null, element: el });
@@ -267,7 +267,7 @@ class PlainMeaningBiblePage extends HTMLElement {
     renderSpeaker(node, contextStack) {
         const span = document.createElement('span');
         span.classList.add('osis-inline', 'osis-speaker');
-        span.title = createElementLabel('speaker');
+        applyAccessibilityLabel(span, 'speaker');
         applyOsisAttributes(node, span);
         this.appendToCurrent(span, contextStack);
         contextStack.push({ type: 'speaker', id: null, element: span });
@@ -278,6 +278,7 @@ class PlainMeaningBiblePage extends HTMLElement {
     renderMilestoneElement(node, contextStack) {
         const span = document.createElement('span');
         span.classList.add('osis-milestone', `osis-${node.localName}`);
+        applyAccessibilityLabel(span, node.localName);
         span.textContent = createElementLabel(node.localName);
         applyOsisAttributes(node, span);
         this.appendToCurrent(span, contextStack);
@@ -287,9 +288,11 @@ class PlainMeaningBiblePage extends HTMLElement {
         const current = contextStack[contextStack.length - 1].element;
         const marker = document.createElement('span');
         marker.classList.add('osis-inline', 'osis-lb');
-        marker.title = createElementLabel('lb');
+        applyAccessibilityLabel(marker, 'lb');
         marker.textContent = 'LB';
         marker.setAttribute('aria-hidden', 'true');
+        marker.removeAttribute('aria-label');
+        marker.removeAttribute('data-osis-label');
         applyOsisAttributes(node, marker);
         current.appendChild(marker);
         current.appendChild(document.createElement('br'));
@@ -373,4 +376,14 @@ function applyOsisAttributes(source, target) {
     });
 }
 
+function applyAccessibilityLabel(element, name) {
+    if (!element) {
+        return;
+    }
+    const label = createElementLabel(name);
+    element.setAttribute('data-osis-label', label);
+    element.setAttribute('aria-label', label);
+}
+
 customElements.define('plain-meaning-bible-page', PlainMeaningBiblePage);
+
