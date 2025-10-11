@@ -38,3 +38,6 @@
 - When a page enables the right sidebar, populate it via the standard TOC helper (`generateTOC`). Avoid custom sidebar markup or styling.
 - Keep Google Identity client IDs centralized in `docs/config/google-auth.js`; avoid duplicating secrets.
 - Document any new operational risks or deviations here so future agents inherit non-trivial context without digging through source.
+
+## Shared Planning Notes
+- Active technical plans and workstreams live in `TODO.md` (repo root). Update that file as scopes evolve.
