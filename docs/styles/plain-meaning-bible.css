@@ -1,43 +1,63 @@
 @import './components.css';
 
+/* Container layout and color tokens */
+@import './components.css';
+
+/* Layout tokens */
 plain-meaning-bible-page {
     display: block;
-    padding: 1.5rem;
-    max-width: 1024px;
+    padding: 1.75rem 1.5rem 3rem;
+    max-width: 1120px;
     margin: 0 auto;
+    background: #0f1319;
+    color: #d9dee5;
+    --tone-panel: #141a1f;
+    --tone-border: #1f2932;
+    --tone-border-soft: #2a3541;
+    --tone-heading: #f4f6f9;
+    --tone-muted: #96a2b2;
+    --tone-muted-strong: #b3bcc8;
+    --accent-structure: #3f556b;
+    --accent-frontmatter: #4a5c71;
+    --accent-content: #516579;
+    --accent-note: #5b6d82;
+    --accent-inline: #677686;
 }
 
 plain-meaning-bible-page h1 {
-    color: #f0f6fc;
+    color: var(--tone-heading);
     margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
 }
 
 plain-meaning-bible-page h2 {
-    color: #8b949e;
-    font-size: 1rem;
+    color: var(--tone-muted);
+    font-size: 0.95rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     margin: 2rem 0 0.75rem;
 }
 
 plain-meaning-bible-page p {
-    color: #c5d1dd;
+    color: #d0d6de;
     line-height: 1.7;
     margin: 0 0 1rem;
 }
 
-plain-meaning-bible-page .section {
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
 plain-meaning-bible-page ul {
-    color: #c5d1dd;
+    color: #d0d6de;
     margin: 0 0 1rem 1.5rem;
     line-height: 1.6;
+}
+
+plain-meaning-bible-page .section {
+    background: var(--tone-panel);
+    border: 1px solid var(--tone-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.75rem;
+    box-shadow: 0 18px 36px rgba(8, 12, 18, 0.45);
 }
 
 plain-meaning-bible-page .actions {
@@ -52,28 +72,29 @@ plain-meaning-bible-page .actions .callout {
     margin: 0;
 }
 
+/* OSIS element checklist */
 .osis-element-table {
     width: 100%;
     border-collapse: collapse;
-    background: rgba(15, 20, 25, 0.4);
-    border: 1px solid #30363d;
+    background: rgba(17, 23, 31, 0.7);
+    border: 1px solid var(--tone-border);
     border-radius: 6px;
     overflow: hidden;
 }
 
 .osis-element-table th,
 .osis-element-table td {
-    border-bottom: 1px solid #30363d;
-    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid var(--tone-border);
+    padding: 0.6rem 0.85rem;
     text-align: left;
-    color: #c5d1dd;
+    color: #c9d0d9;
 }
 
 .osis-element-table th {
-    background: rgba(88, 166, 255, 0.15);
-    color: #79c0ff;
+    background: rgba(63, 85, 107, 0.28);
+    color: var(--tone-muted-strong);
     letter-spacing: 0.05em;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     text-transform: uppercase;
 }
 
@@ -82,361 +103,401 @@ plain-meaning-bible-page .actions .callout {
 }
 
 .osis-check-cell {
-    width: 120px;
+    width: 110px;
     text-align: center;
-    font-size: 1.4rem;
-    color: #7ee787;
+    font-size: 1.2rem;
+    color: #8a97a8;
 }
 
+/* Demo wrapper */
 .osis-demo {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background: #0f1419;
-    border: 1px dashed #30363d;
-    padding: 1.25rem;
+    background: rgba(15, 19, 25, 0.85);
+    border: 1px solid var(--tone-border);
+    padding: 1.5rem;
     border-radius: 8px;
 }
 
+/* Block scaffolding */
 .osis-block {
-    --osis-accent: rgba(48, 54, 61, 0.6);
-    border: 1px solid var(--osis-accent);
-    background: rgba(22, 27, 34, 0.85);
+    --osis-accent: var(--accent-content);
+    background: var(--tone-panel);
+    border: 1px solid var(--tone-border);
+    border-left: 4px solid var(--osis-accent);
     border-radius: 6px;
-    padding: 0.75rem;
-    margin-bottom: 0.75rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
-.osis-block:last-child {
-    margin-bottom: 0;
+.osis-block + .osis-block {
+    margin-top: 0.85rem;
 }
 
-.osis-block .osis-element-label {
-    color: var(--osis-accent);
+.osis-block-body {
+    display: block;
 }
 
+.osis-block-body > * + * {
+    margin-top: 0.5rem;
+}
+
+.osis-element-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--tone-muted);
+    padding-left: 0.5rem;
+    border-left: 2px solid var(--osis-accent);
+}
+
+/* Inline scaffolding */
 .osis-inline {
-    --osis-inline-accent: rgba(88, 166, 255, 0.4);
-    display: inline-block;
-    padding: 0.05rem 0.25rem;
-    margin: 0 0.1rem;
+    display: inline;
+    color: inherit;
+    background: transparent;
+    padding: 0 0.1rem;
+    border-bottom: 1px dotted rgba(103, 118, 134, 0.35);
+    line-height: 1.55;
+}
+
+.osis-inline code {
+    font-size: 0.85rem;
+    color: var(--tone-muted);
+}
+
+/* Milestones */
+.osis-milestone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.12rem 0.4rem;
+    border-radius: 999px;
+    border: 1px solid var(--tone-border-soft);
+    color: var(--tone-muted);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+}
+
+.osis-milestone[data-osis-type]::after {
+    content: attr(data-osis-type);
+    color: var(--tone-muted-strong);
+    letter-spacing: 0.08em;
+}
+
+.osis-milestone[data-osis-marker]::before {
+    content: attr(data-osis-marker);
+    color: var(--tone-muted-strong);
+}
+
+.osis-milestone.osis-milestoneStart,
+.osis-milestone.osis-milestoneEnd {
+    border-style: dashed;
+}
+
+/* Chapter & verse wrappers */
+.osis-block.osis-chapter {
+    --osis-accent: var(--accent-structure);
+}
+
+.osis-chapter-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.osis-block.osis-verse {
+    --osis-accent: var(--accent-structure);
+    padding: 0.75rem 0.9rem;
+}
+
+.osis-verse-body {
+    display: inline;
+    font-size: 1.02rem;
+    line-height: 1.75;
+}
+
+/* Structural groupings */
+.osis-block.osis-osis,
+.osis-block.osis-osisCorpus,
+.osis-block.osis-osisText,
+.osis-block.osis-div {
+    --osis-accent: var(--accent-structure);
+}
+
+.osis-block.osis-header,
+.osis-block.osis-work,
+.osis-block.osis-revisionDesc,
+.osis-block.osis-teiHeader,
+.osis-block.osis-titlePage,
+.osis-block.osis-title,
+.osis-block.osis-head,
+.osis-block.osis-castList,
+.osis-block.osis-castGroup,
+.osis-block.osis-castItem {
+    --osis-accent: var(--accent-frontmatter);
+}
+
+.osis-block.osis-p,
+.osis-block.osis-speech,
+.osis-block.osis-q,
+.osis-block.osis-lg,
+.osis-block.osis-l,
+.osis-block.osis-list,
+.osis-block.osis-item,
+.osis-block.osis-figure,
+.osis-block.osis-table,
+.osis-block.osis-row,
+.osis-block.osis-cell,
+.osis-block.osis-seq {
+    --osis-accent: var(--accent-content);
+}
+
+.osis-block.osis-note,
+.osis-block.osis-rdg,
+.osis-block.osis-rdgGrp {
+    --osis-accent: var(--accent-note);
+}
+
+.osis-block.osis-salute,
+.osis-block.osis-closer,
+.osis-block.osis-signed {
+    --osis-accent: var(--accent-frontmatter);
+    font-style: italic;
+}
+
+/* Table layouts */
+.osis-block.osis-table {
+    padding: 0.9rem;
+    overflow-x: auto;
+}
+
+.osis-block.osis-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+}
+
+.osis-block.osis-cell {
+    background: rgba(26, 32, 40, 0.65);
     border-radius: 4px;
-    border-bottom: 1px dotted var(--osis-inline-accent);
-    color: #f0f6fc;
+    padding: 0.6rem;
 }
 
+/* Inline metadata */
+.osis-inline.osis-contributor,
+.osis-inline.osis-creator,
+.osis-inline.osis-coverage,
+.osis-inline.osis-description,
+.osis-inline.osis-format,
+.osis-inline.osis-identifier,
+.osis-inline.osis-language,
+.osis-inline.osis-publisher,
+.osis-inline.osis-relation,
+.osis-inline.osis-rights,
+.osis-inline.osis-source,
+.osis-inline.osis-subject,
+.osis-inline.osis-type,
+.osis-inline.osis-date,
+.osis-inline.osis-scope,
+.osis-inline.osis-refSystem {
+    color: var(--tone-muted);
+    border-bottom-color: rgba(103, 118, 134, 0.6);
+    font-style: normal;
+}
+
+.osis-inline.osis-type,
+.osis-inline.osis-scope,
+.osis-inline.osis-refSystem {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+/* People & names */
+.osis-inline.osis-divineName,
+.osis-inline.osis-name,
+.osis-inline.osis-speaker,
+.osis-inline.osis-actor,
+.osis-inline.osis-mentioned,
+.osis-inline.osis-catchWord {
+    border-bottom-color: rgba(103, 118, 134, 0.65);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.osis-inline.osis-divineName {
+    text-transform: uppercase;
+}
+
+/* Inline references */
+.osis-inline.osis-reference,
 .osis-inline.osis-a {
-    color: #58a6ff;
-    text-decoration: underline;
-    --osis-inline-accent: #58a6ff;
+    color: #b9c5d4;
+    text-decoration: none;
+    border-bottom-color: rgba(63, 85, 107, 0.55);
 }
 
-.osis-inline.osis-abbr {
-    font-variant: small-caps;
+.osis-inline.osis-reference::after {
+    content: attr(data-osis-osisref);
+    display: inline-block;
+    margin-left: 0.35rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--tone-muted);
+}
+
+.osis-inline.osis-a::after {
+    content: attr(data-osis-href);
+    display: inline-block;
+    margin-left: 0.35rem;
+    font-size: 0.7rem;
+    color: var(--tone-muted);
+}
+
+/* Emphasis helpers */
+.osis-inline.osis-hi[data-osis-type="bold"] {
+    font-weight: 600;
+}
+
+.osis-inline.osis-hi[data-osis-type="italic"] {
+    font-style: italic;
+}
+
+.osis-inline.osis-hi[data-osis-type="underline"] {
+    text-decoration: underline;
+}
+
+.osis-inline.osis-transChange {
+    font-style: italic;
+    color: var(--tone-muted);
+}
+
+.osis-inline.osis-seg {
+    border-bottom-style: dashed;
+}
+
+.osis-inline.osis-workPrefix {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: var(--tone-muted);
+}
+
+.osis-inline.osis-index,
+.osis-inline.osis-label,
+.osis-inline.osis-caption,
+.osis-inline.osis-role,
+.osis-inline.osis-roleDesc {
+    color: var(--tone-muted-strong);
+    border-bottom-color: rgba(103, 118, 134, 0.55);
+}
+
+.osis-inline.osis-role,
+.osis-inline.osis-roleDesc {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.osis-inline.osis-inscription {
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom-style: dashed;
 }
 
 .osis-inline.osis-foreign {
     font-style: italic;
 }
 
-.osis-inline.osis-divineName {
+.osis-inline.osis-foreign[data-osis-xml-lang]::before {
+    content: attr(data-osis-xml-lang);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    color: var(--tone-muted);
+    margin-right: 0.35rem;
+}
+
+.osis-inline.osis-abbr {
+    font-variant: small-caps;
+    letter-spacing: 0.12em;
+}
+
+.osis-inline.osis-lb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.1rem;
+    padding: 0 0.25rem;
+    border: 1px solid var(--tone-border-soft);
+    border-radius: 3px;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    color: var(--tone-muted);
+    background: rgba(20, 26, 33, 0.65);
 }
 
 .osis-inline.osis-w {
     font-weight: 600;
 }
 
-.osis-inline.osis-seg {
-    background: rgba(111, 66, 193, 0.2);
-}
-.osis-inline.osis-reference {
-    color: #58a6ff;
-    text-decoration: underline;
-    cursor: pointer;
+.osis-inline.osis-w[data-osis-morph]::before {
+    content: attr(data-osis-morph) " ";
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--tone-muted);
 }
 
-.osis-inline.osis-speaker {
-    color: #7ee787;
-    font-weight: 600;
-    text-transform: uppercase;
+.osis-inline.osis-w[data-osis-lemma]::after {
+    content: " · " attr(data-osis-lemma);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--tone-muted);
 }
 
-.osis-inline.osis-transChange {
-    color: #fbca69;
+.osis-inline.osis-workPrefix,
+.osis-inline.osis-w,
+.osis-inline.osis-reference,
+.osis-inline.osis-a {
+    border-bottom-style: solid;
+}
+
+/* Notes & readings */
+.osis-block.osis-note,
+.osis-block.osis-rdg,
+.osis-block.osis-rdgGrp {
+    background: rgba(21, 26, 33, 0.9);
+}
+
+.osis-block.osis-note[data-osis-type],
+.osis-block.osis-rdg,
+.osis-block.osis-rdgGrp {
+    border-left-style: dotted;
+}
+
+/* Figure content */
+.osis-block.osis-figure {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.osis-block.osis-figure .osis-block-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+/* Poetry */
+.osis-block.osis-lg {
     font-style: italic;
 }
 
-.osis-inline.osis-workPrefix {
-    letter-spacing: 0.08em;
-    font-size: 0.8rem;
-    color: #9b59b6;
+.osis-block.osis-l {
+    padding-left: 0.75rem;
+    border-left-style: dotted;
 }
-
-.osis-inline.osis-index {
-    background: rgba(255, 159, 28, 0.2);
-    color: #ff9f1c;
-}
-
-.osis-inline.osis-inscription {
-    font-family: 'Courier New', monospace;
-    text-transform: uppercase;
-}
-
-.osis-inline.osis-catchWord {
-    font-weight: 600;
-    color: #f85149;
-}
-
-.osis-inline.osis-contributor,
-.osis-inline.osis-creator,
-.osis-inline.osis-identifier,
-.osis-inline.osis-language,
-.osis-inline.osis-coverage,
-.osis-inline.osis-rights,
-.osis-inline.osis-source,
-.osis-inline.osis-subject,
-.osis-inline.osis-publisher,
-.osis-inline.osis-format,
-.osis-inline.osis-relation,
-.osis-inline.osis-type,
-.osis-inline.osis-description,
-.osis-inline.osis-date,
-.osis-inline.osis-scope,
-.osis-inline.osis-refSystem {
-    font-style: italic;
-    color: #c5d1dd;
-}
-
-.osis-element-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 0.4rem;
-}
-
-.osis-inline.osis-a { --osis-inline-accent: #58a6ff; }
-
-.osis-inline.osis-abbr { --osis-inline-accent: #7ee787; }
-
-.osis-block.osis-actor { --osis-accent: #ff9f1c; }
-
-.osis-inline.osis-caption { --osis-inline-accent: #f85149; }
-
-.osis-block.osis-castGroup { --osis-accent: #c297ff; }
-
-.osis-block.osis-castItem { --osis-accent: #3fb950; }
-
-.osis-block.osis-castList { --osis-accent: #fbca69; }
-
-.osis-inline.osis-catchWord { --osis-inline-accent: #ff6b6b; }
-
-.osis-block.osis-cell { --osis-accent: #9b59b6; }
-
-.osis-block.osis-chapter { --osis-accent: #2ecc71; }
-
-.osis-block.osis-closer { --osis-accent: #e67e22; }
-
-.osis-inline.osis-contributor { --osis-inline-accent: #3498db; }
-
-.osis-inline.osis-coverage { --osis-inline-accent: #e84393; }
-
-.osis-inline.osis-creator { --osis-inline-accent: #1abc9c; }
-
-.osis-inline.osis-date { --osis-inline-accent: #f5b041; }
-
-.osis-inline.osis-description { --osis-inline-accent: #8e44ad; }
-
-.osis-block.osis-div { --osis-accent: #48c9b0; }
-
-.osis-inline.osis-divineName { --osis-inline-accent: #ff8ba7; }
-
-.osis-block.osis-figure { --osis-accent: #f39c12; }
-
-.osis-inline.osis-foreign { --osis-inline-accent: #5dade2; }
-
-.osis-inline.osis-format { --osis-inline-accent: #58a6ff; }
-
-.osis-block.osis-head { --osis-accent: #7ee787; }
-
-.osis-block.osis-header { --osis-accent: #ff9f1c; }
-
-.osis-inline.osis-hi { --osis-inline-accent: #f85149; }
-
-.osis-inline.osis-identifier { --osis-inline-accent: #c297ff; }
-
-.osis-inline.osis-index { --osis-inline-accent: #3fb950; }
-
-.osis-inline.osis-inscription { --osis-inline-accent: #fbca69; }
-
-.osis-block.osis-item { --osis-accent: #ff6b6b; }
-
-.osis-block.osis-l { --osis-accent: #9b59b6; }
-
-.osis-inline.osis-label { --osis-inline-accent: #2ecc71; }
-
-.osis-inline.osis-language { --osis-inline-accent: #e67e22; }
-
-.osis-inline.osis-lb { --osis-inline-accent: #3498db; }
-
-.osis-block.osis-lg { --osis-accent: #e84393; }
-
-.osis-block.osis-list { --osis-accent: #1abc9c; }
-
-.osis-inline.osis-mentioned { --osis-inline-accent: #f5b041; }
-
-.osis-block.osis-milestone { --osis-accent: #8e44ad; }
-
-.osis-block.osis-milestoneEnd { --osis-accent: #48c9b0; }
-
-.osis-block.osis-milestoneStart { --osis-accent: #ff8ba7; }
-
-.osis-inline.osis-name { --osis-inline-accent: #f39c12; }
-
-.osis-block.osis-note { --osis-accent: #5dade2; }
-
-.osis-block.osis-osis { --osis-accent: #58a6ff; }
-
-.osis-block.osis-osisCorpus { --osis-accent: #7ee787; }
-
-.osis-block.osis-osisText { --osis-accent: #ff9f1c; }
-
-.osis-block.osis-p { --osis-accent: #f85149; }
-
-.osis-inline.osis-publisher { --osis-inline-accent: #c297ff; }
-
-.osis-block.osis-q { --osis-accent: #3fb950; }
-
-.osis-block.osis-rdg { --osis-accent: #fbca69; }
-
-.osis-block.osis-rdgGrp { --osis-accent: #ff6b6b; }
-
-.osis-inline.osis-refSystem { --osis-inline-accent: #9b59b6; }
-
-.osis-inline.osis-reference { --osis-inline-accent: #2ecc71; }
-
-.osis-inline.osis-relation { --osis-inline-accent: #e67e22; }
-
-.osis-block.osis-revisionDesc { --osis-accent: #3498db; }
-
-.osis-inline.osis-rights { --osis-inline-accent: #e84393; }
-
-.osis-block.osis-role { --osis-accent: #1abc9c; }
-
-.osis-block.osis-roleDesc { --osis-accent: #f5b041; }
-
-.osis-block.osis-row { --osis-accent: #8e44ad; }
-
-.osis-block.osis-salute { --osis-accent: #48c9b0; }
-
-.osis-inline.osis-scope { --osis-inline-accent: #ff8ba7; }
-
-.osis-inline.osis-seg { --osis-inline-accent: #f39c12; }
-
-.osis-block.osis-seq { --osis-accent: #5dade2; }
-
-.osis-block.osis-signed { --osis-accent: #58a6ff; }
-
-.osis-inline.osis-source { --osis-inline-accent: #7ee787; }
-
-.osis-inline.osis-speaker { --osis-inline-accent: #ff9f1c; }
-
-.osis-block.osis-speech { --osis-accent: #f85149; }
-
-.osis-inline.osis-subject { --osis-inline-accent: #c297ff; }
-
-.osis-block.osis-table { --osis-accent: #3fb950; }
-
-.osis-block.osis-teiHeader { --osis-accent: #fbca69; }
-
-.osis-block.osis-title { --osis-accent: #ff6b6b; }
-
-.osis-block.osis-titlePage { --osis-accent: #9b59b6; }
-
-.osis-inline.osis-transChange { --osis-inline-accent: #2ecc71; }
-
-.osis-inline.osis-type { --osis-inline-accent: #e67e22; }
-
-.osis-block.osis-verse { --osis-accent: #3498db; }
-
-.osis-inline.osis-w { --osis-inline-accent: #e84393; }
-
-.osis-block.osis-work { --osis-accent: #1abc9c; }
-
-.osis-inline.osis-workPrefix { --osis-inline-accent: #f5b041; }
-
-.osis-block.osis-note { background: rgba(251, 202, 105, 0.18); border-left-width: 6px; }
-
-.osis-block.osis-q { border-left-width: 6px; }
-
-.osis-block.osis-speech { border-left: 4px solid #7ee787; background: rgba(126, 231, 135, 0.08); }
-
-.osis-block.osis-list { padding-left: 1.25rem; }
-
-.osis-block.osis-item { margin: 0.3rem 0; }
-
-.osis-block.osis-lg { background: rgba(121, 192, 255, 0.12); }
-
-.osis-block.osis-figure { background: rgba(155, 89, 182, 0.12); }
-
-.osis-block.osis-table { padding: 0.5rem; background: rgba(236, 184, 36, 0.12); }
-
-.osis-block.osis-row { display: flex; gap: 0.75rem; }
-
-.osis-block.osis-cell { flex: 1; background: rgba(48, 54, 61, 0.35); padding: 0.5rem; border-radius: 4px; }
-
-.osis-block.osis-header { background: rgba(88, 166, 255, 0.08); }
-
-.osis-block.osis-title { font-weight: 600; }
-
-.osis-block.osis-chapter { border-left: 4px solid #58a6ff; }
-
-.osis-block.osis-verse { border-left: 4px solid #58a6ff; }
-
-.osis-block.osis-div { background: rgba(155, 89, 182, 0.08); }
-
-.osis-block.osis-osis { background: rgba(88, 166, 255, 0.12); }
-
-.osis-block.osis-osisCorpus { background: rgba(88, 166, 255, 0.08); }
-
-.osis-block.osis-osisText { background: rgba(88, 166, 255, 0.05); }
-
-.osis-block.osis-revisionDesc { background: rgba(255, 196, 73, 0.12); }
-
-.osis-block.osis-titlePage { background: rgba(88, 166, 255, 0.08); }
-
-.osis-block.osis-teiHeader { background: rgba(88, 166, 255, 0.08); }
-
-.osis-block.osis-castList { background: rgba(255, 159, 28, 0.08); }
-
-.osis-block.osis-castGroup { background: rgba(255, 159, 28, 0.12); }
-
-.osis-block.osis-castItem { background: rgba(255, 159, 28, 0.15); }
-
-.osis-inline.osis-a { color: #58a6ff; text-decoration: underline; }
-
-.osis-inline.osis-abbr { font-variant: small-caps; }
-
-.osis-inline.osis-foreign { font-style: italic; }
-
-.osis-inline.osis-divineName { text-transform: uppercase; letter-spacing: 0.05em; }
-
-.osis-inline.osis-w { font-weight: 600; }
-
-.osis-inline.osis-seg { background: rgba(111, 66, 193, 0.2); }
-
-.osis-inline.osis-reference { color: #58a6ff; text-decoration: underline; }
-
-.osis-inline.osis-speaker { color: #7ee787; font-weight: 600; text-transform: uppercase; }
-
-.osis-inline.osis-transChange { color: #fbca69; font-style: italic; }
-
-.osis-inline.osis-workPrefix { letter-spacing: 0.08em; font-size: 0.8rem; color: #9b59b6; }
-
-.osis-inline.osis-index { background: rgba(255, 159, 28, 0.2); color: #ff9f1c; }
-
-.osis-inline.osis-inscription { font-family: 'Courier New', monospace; text-transform: uppercase; }
-
-.osis-inline.osis-catchWord { font-weight: 600; color: #f85149; }
-

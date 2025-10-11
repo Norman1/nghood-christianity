@@ -10,18 +10,18 @@
 
     <button id="generate-plan-btn" class="btn-primary">Generate Reading Plan</button>
     
-    <div id="loading-indicator" style="display: none; margin-top: 20px;">
+    <div id="loading-indicator" class="callout callout-info" hidden>
         <p><em>Generating your reading plan...</em></p>
     </div>
     
-    <div id="error-message" class="callout callout-error" style="display: none; margin-top: 20px;">
+    <div id="error-message" class="callout callout-error" hidden>
         <strong>Error:</strong> <span id="error-text"></span>
     </div>
     
-    <div id="reading-plan-results" style="display: none; margin-top: 40px;">
+    <section id="reading-plan-results" hidden>
         <h2>Your Bible Reading Plan</h2>
         <p>Copy the list below and print or save it. Read through the Bible in the order shown below. Each entry represents a book to read completely before moving to the next.</p>
         
         <div id="books-list"></div>
-    </div>
+    </section>
 </div>
