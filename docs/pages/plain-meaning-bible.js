@@ -122,6 +122,7 @@ class PlainMeaningBiblePage extends HTMLElement {
         this.loadingNotice = this.querySelector('#bible-loading');
         this.errorNotice = this.querySelector('#bible-error');
         this.chapterContainer = this.querySelector('#bible-chapter');
+        this.introductionContainer = this.querySelector('#bible-introduction');
         this.chapterHeading = this.querySelector('#bible-chapter-heading');
         this.chapterContent = this.querySelector('#bible-chapter-content');
     }
@@ -309,6 +310,8 @@ class PlainMeaningBiblePage extends HTMLElement {
             return;
         }
 
+        this.renderIntroduction(book);
+
         const safeChapter = Math.min(Math.max(chapterNumber, 1), book.chapterCount);
         if (Number.isNaN(safeChapter)) {
             this.setError('The chapter number is not valid.');
@@ -348,6 +351,35 @@ class PlainMeaningBiblePage extends HTMLElement {
         this.setError(null);
         this.updateNavigationState();
         this.updateUrl(book.osisID, safeChapter);
+    }
+
+    renderIntroduction(book) {
+        if (!this.introductionContainer) {
+            return;
+        }
+
+        const introductionElement = Array.from(book.node.children).find(
+            (child) => child.localName === 'div' && child.getAttribute('type') === 'introduction'
+        );
+
+        if (!introductionElement) {
+            this.introductionContainer.hidden = true;
+            this.introductionContainer.innerHTML = '';
+            return;
+        }
+
+        const block = document.createElement('div');
+        block.classList.add('osis-block', 'osis-div');
+        block.setAttribute('data-osis-element', 'div');
+        block.setAttribute('data-osis-type', 'introduction');
+
+        Array.from(introductionElement.childNodes).forEach((node) => {
+            block.appendChild(node.cloneNode(true));
+        });
+
+        this.introductionContainer.innerHTML = '';
+        this.introductionContainer.appendChild(block);
+        this.introductionContainer.hidden = false;
     }
 
     getChapterElement(book, chapterNumber) {
