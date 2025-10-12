@@ -385,7 +385,6 @@ class PlainMeaningBiblePage extends HTMLElement {
                 this.chapterSelect.value = '__intro';
             }
             this.renderIntroductionBlock(book, true);
-            this.chapterHeading.textContent = `${book.title} Overview`;
             this.chapterContent.innerHTML = '';
             this.chapterContainer.hidden = false;
             this.currentBookId = book.osisID;
