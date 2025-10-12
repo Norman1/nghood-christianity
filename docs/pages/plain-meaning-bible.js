@@ -125,6 +125,7 @@ class PlainMeaningBiblePage extends HTMLElement {
         this.loadingNotice = this.querySelector('#bible-loading');
         this.errorNotice = this.querySelector('#bible-error');
         this.chapterContainer = this.querySelector('#bible-chapter');
+        this.chapterHeader = this.querySelector('.bible-chapter-header');
         this.introductionContainer = this.querySelector('#bible-introduction');
         this.chapterHeading = this.querySelector('#bible-chapter-heading');
         this.chapterContent = this.querySelector('#bible-chapter-content');
@@ -384,6 +385,12 @@ class PlainMeaningBiblePage extends HTMLElement {
             if (this.chapterSelect) {
                 this.chapterSelect.value = '__intro';
             }
+            if (this.chapterHeader) {
+                this.chapterHeader.hidden = true;
+            }
+            if (this.chapterHeading) {
+                this.chapterHeading.textContent = '';
+            }
             this.renderIntroductionBlock(book, true);
             this.chapterContent.innerHTML = '';
             this.chapterContainer.hidden = false;
@@ -402,6 +409,9 @@ class PlainMeaningBiblePage extends HTMLElement {
             : Math.min(Math.max(numericSelection, 1), book.chapterCount);
 
         this.renderIntroductionBlock(book, false);
+        if (this.chapterHeader) {
+            this.chapterHeader.hidden = false;
+        }
 
         const chapterElement = this.getChapterElement(book, safeChapter);
         if (!chapterElement) {

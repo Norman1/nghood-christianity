@@ -162,6 +162,10 @@ plain-meaning-bible-page .actions .callout {
     display: none;
 }
 
+.bible-chapter-header[hidden] {
+    display: none;
+}
+
 .bible-error[hidden],
 .bible-loading[hidden] {
     display: none;
