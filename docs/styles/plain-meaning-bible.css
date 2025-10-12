@@ -481,6 +481,19 @@ plain-meaning-bible-page .actions .callout {
     font-style: italic;
 }
 
+.osis-block.osis-div[data-osis-type="preface"],
+.osis-block.osis-div[data-osis-type="introduction"] {
+    --osis-accent: var(--accent-frontmatter);
+    border-left-style: dotted;
+    font-style: italic;
+}
+
+.osis-block.osis-div[data-osis-type="preface"] p:first-child,
+.osis-block.osis-div[data-osis-type="introduction"] p:first-child {
+    font-style: normal;
+    font-weight: 600;
+}
+
 /* Table layouts */
 .osis-block.osis-table {
     padding: 0.9rem;
