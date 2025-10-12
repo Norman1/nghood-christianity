@@ -101,6 +101,9 @@ class PlainMeaningBiblePage extends HTMLElement {
             const template = await loadTemplate('./templates/plain-meaning-bible.html');
             this.innerHTML = template;
             this.cacheElements();
+            this.currentBookId = null;
+            this.currentChapter = null;
+            this.currentSelection = null;
             this.attachEventListeners();
             await this.loadBible();
         } catch (error) {
@@ -159,11 +162,11 @@ class PlainMeaningBiblePage extends HTMLElement {
                 throw new Error('No books were found in the OSIS document.');
             }
 
-            const { bookId, chapter } = this.resolveInitialSelection();
+            const { bookId, selection } = this.resolveInitialSelection();
             const initialBook = this.bookMap.get(bookId) ?? this.books[0];
             this.populateBookSelect(initialBook.osisID);
-            const selectedChapter = this.populateChapterSelect(initialBook, chapter);
-            this.renderChapter(initialBook.osisID, selectedChapter);
+            const selectedValue = this.populateChapterSelect(initialBook, selection);
+            this.renderChapter(initialBook.osisID, selectedValue);
         } catch (error) {
             console.error('Plain Meaning Bible load error:', error);
             this.setError(error.message || 'Unable to load the World English Bible.');
@@ -207,6 +210,15 @@ class PlainMeaningBiblePage extends HTMLElement {
         this.bookMap = new Map(books.map((book) => [book.osisID, book]));
     }
 
+    bookHasIntroduction(book) {
+        if (!book || !book.node) {
+            return false;
+        }
+        return Array.from(book.node.children).some(
+            (child) => child.localName === 'div' && child.getAttribute('type') === 'introduction'
+        );
+    }
+
     populateBookSelect(selectedId) {
         if (!this.bookSelect) {
             return;
@@ -222,20 +234,58 @@ class PlainMeaningBiblePage extends HTMLElement {
         this.bookSelect.value = validId;
     }
 
-    populateChapterSelect(book, desiredChapter = 1) {
+    populateChapterSelect(book, desiredSelection) {
         if (!this.chapterSelect) {
+            if (desiredSelection === '__intro') {
+                return '__intro';
+            }
             return 1;
         }
+
+        const hasIntroduction = this.bookHasIntroduction(book);
         this.chapterSelect.innerHTML = '';
+
+        if (hasIntroduction) {
+            const introOption = document.createElement('option');
+            introOption.value = '__intro';
+            introOption.textContent = 'Overview';
+            this.chapterSelect.appendChild(introOption);
+        }
+
         for (let i = 1; i <= book.chapterCount; i += 1) {
             const option = document.createElement('option');
             option.value = String(i);
             option.textContent = String(i);
             this.chapterSelect.appendChild(option);
         }
-        const safeChapter = Math.min(Math.max(desiredChapter, 1), book.chapterCount);
-        this.chapterSelect.value = String(safeChapter);
-        return safeChapter;
+
+        let selection = desiredSelection;
+
+        if (selection === undefined) {
+            selection = hasIntroduction ? '__intro' : 1;
+        }
+
+        if (selection === '__intro' && !hasIntroduction) {
+            selection = 1;
+        }
+
+        let normalizedChapter = 1;
+
+        if (selection !== '__intro') {
+            const numericSelection = Number.parseInt(selection, 10);
+            normalizedChapter = Number.isNaN(numericSelection)
+                ? 1
+                : Math.min(Math.max(numericSelection, 1), book.chapterCount);
+            selection = normalizedChapter;
+        }
+
+        if (selection === '__intro') {
+            this.chapterSelect.value = '__intro';
+            return '__intro';
+        }
+
+        this.chapterSelect.value = String(normalizedChapter);
+        return normalizedChapter;
     }
 
     handleBookChange() {
@@ -246,23 +296,24 @@ class PlainMeaningBiblePage extends HTMLElement {
         if (!selectedBook) {
             return;
         }
-        const chapter = this.populateChapterSelect(selectedBook, 1);
-        this.renderChapter(selectedBook.osisID, chapter);
+        const selection = this.populateChapterSelect(selectedBook);
+        this.renderChapter(selectedBook.osisID, selection);
     }
 
     handleChapterChange() {
         if (!this.chapterSelect || !this.currentBookId) {
             return;
         }
-        const chapterNumber = Number.parseInt(this.chapterSelect.value, 10);
-        if (Number.isNaN(chapterNumber)) {
+        const selectedValue = this.chapterSelect.value;
+        const selection = selectedValue === '__intro' ? '__intro' : Number.parseInt(selectedValue, 10);
+        if (selectedValue !== '__intro' && Number.isNaN(selection)) {
             return;
         }
-        this.renderChapter(this.currentBookId, chapterNumber);
+        this.renderChapter(this.currentBookId, selection);
     }
 
     navigateByOffset(offset) {
-        if (!this.currentBookId || typeof this.currentChapter !== 'number') {
+        if (!this.currentBookId || !this.chapterSelect) {
             return;
         }
 
@@ -272,6 +323,19 @@ class PlainMeaningBiblePage extends HTMLElement {
         }
 
         const currentBook = this.books[currentIndex];
+
+        if (this.currentSelection === '__intro') {
+            if (offset > 0 && currentBook.chapterCount > 0) {
+                this.chapterSelect.value = '1';
+                this.renderChapter(currentBook.osisID, 1);
+            }
+            return;
+        }
+
+        if (typeof this.currentChapter !== 'number') {
+            return;
+        }
+
         let targetBook = currentBook;
         let targetChapter = this.currentChapter + offset;
 
@@ -300,7 +364,7 @@ class PlainMeaningBiblePage extends HTMLElement {
         this.renderChapter(targetBook.osisID, targetChapter);
     }
 
-    renderChapter(bookId, chapterNumber) {
+    renderChapter(bookId, selection) {
         if (!this.chapterHeading || !this.chapterContent || !this.chapterContainer) {
             return;
         }
@@ -310,13 +374,35 @@ class PlainMeaningBiblePage extends HTMLElement {
             return;
         }
 
-        this.renderIntroduction(book);
+        const hasIntroduction = this.bookHasIntroduction(book);
 
-        const safeChapter = Math.min(Math.max(chapterNumber, 1), book.chapterCount);
-        if (Number.isNaN(safeChapter)) {
-            this.setError('The chapter number is not valid.');
+        if (selection === '__intro') {
+            if (!hasIntroduction) {
+                this.renderChapter(bookId, 1);
+                return;
+            }
+            if (this.chapterSelect) {
+                this.chapterSelect.value = '__intro';
+            }
+            this.renderIntroductionBlock(book, true);
+            this.chapterHeading.textContent = `${book.title} Overview`;
+            this.chapterContent.innerHTML = '';
+            this.chapterContainer.hidden = false;
+            this.currentBookId = book.osisID;
+            this.currentSelection = '__intro';
+            this.currentChapter = null;
+            this.setError(null);
+            this.updateNavigationState(book, true);
+            this.updateUrl(book.osisID, '__intro');
             return;
         }
+
+        const numericSelection = Number.parseInt(selection, 10);
+        const safeChapter = Number.isNaN(numericSelection)
+            ? 1
+            : Math.min(Math.max(numericSelection, 1), book.chapterCount);
+
+        this.renderIntroductionBlock(book, false);
 
         const chapterElement = this.getChapterElement(book, safeChapter);
         if (!chapterElement) {
@@ -347,13 +433,14 @@ class PlainMeaningBiblePage extends HTMLElement {
 
         this.chapterContainer.hidden = false;
         this.currentBookId = book.osisID;
+        this.currentSelection = safeChapter;
         this.currentChapter = safeChapter;
         this.setError(null);
-        this.updateNavigationState();
+        this.updateNavigationState(book, false);
         this.updateUrl(book.osisID, safeChapter);
     }
 
-    renderIntroduction(book) {
+    renderIntroductionBlock(book, show) {
         if (!this.introductionContainer) {
             return;
         }
@@ -362,7 +449,7 @@ class PlainMeaningBiblePage extends HTMLElement {
             (child) => child.localName === 'div' && child.getAttribute('type') === 'introduction'
         );
 
-        if (!introductionElement) {
+        if (!introductionElement || !show) {
             this.introductionContainer.hidden = true;
             this.introductionContainer.innerHTML = '';
             return;
@@ -421,19 +508,30 @@ class PlainMeaningBiblePage extends HTMLElement {
         return finalSegment.replace(/^0+/, '');
     }
 
-    updateNavigationState() {
-        if (!this.prevButton || !this.nextButton || !this.currentBookId) {
+    updateNavigationState(currentBook, isOverview) {
+        if (!this.prevButton || !this.nextButton) {
             return;
         }
 
-        const bookIndex = this.books.findIndex((book) => book.osisID === this.currentBookId);
+        const bookIndex = this.books.findIndex((book) => book.osisID === currentBook?.osisID);
         if (bookIndex === -1) {
             this.prevButton.disabled = true;
             this.nextButton.disabled = true;
             return;
         }
 
-        const currentBook = this.books[bookIndex];
+        if (isOverview) {
+            this.prevButton.disabled = true;
+            this.nextButton.disabled = currentBook.chapterCount === 0;
+            return;
+        }
+
+        if (typeof this.currentChapter !== 'number') {
+            this.prevButton.disabled = true;
+            this.nextButton.disabled = true;
+            return;
+        }
+
         const isFirstBook = bookIndex === 0;
         const isLastBook = bookIndex === this.books.length - 1;
 
@@ -444,14 +542,23 @@ class PlainMeaningBiblePage extends HTMLElement {
     resolveInitialSelection() {
         const url = new URL(window.location.href);
         const bookId = url.searchParams.get('book');
+        if (url.searchParams.get('section') === 'intro') {
+            return { bookId, selection: '__intro' };
+        }
         const chapter = Number.parseInt(url.searchParams.get('chapter') || '1', 10) || 1;
-        return { bookId, chapter };
+        return { bookId, selection: chapter };
     }
 
     updateUrl(bookId, chapterNumber) {
         const url = new URL(window.location.href);
         url.searchParams.set('book', bookId);
-        url.searchParams.set('chapter', String(chapterNumber));
+        if (chapterNumber === '__intro') {
+            url.searchParams.set('section', 'intro');
+            url.searchParams.delete('chapter');
+        } else {
+            url.searchParams.set('chapter', String(chapterNumber));
+            url.searchParams.delete('section');
+        }
         window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
     }
 
@@ -477,3 +584,4 @@ class PlainMeaningBiblePage extends HTMLElement {
 }
 
 customElements.define('plain-meaning-bible-page', PlainMeaningBiblePage);
+

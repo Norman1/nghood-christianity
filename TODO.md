@@ -16,6 +16,7 @@ Goal: surface the entire World English Bible on the Plain Meaning Bible page usi
 - [x] Show a minimal loading indicator while the XML fetch/parsing occurs.
 - [x] Keep the styling checklist/demo section available (move into a secondary panel/tab if needed).
 - [x] Document the current frontend-only flow in `docs/bible-data/README.md` for future contributors.
+- [x] Offer a dedicated book overview selection in the chapter control (hide introductions during chapter reading).
 
 ### Future Enhancements
 - Smart “go to reference” input (e.g., `Hos 12`, `John 3:16`).
