@@ -20,6 +20,11 @@ const pageMetadata = {
         description: 'Showcase of all available UI components and styling elements in the framework.',
         keywords: 'components, gallery, UI elements, styling, framework'
     },
+    '/why-homosexuality-misleads-christian-ethics': {
+        title: 'Why "Homosexuality" Misleads Christian Ethics | nghood Christianity',
+        description: 'Explore why the umbrella term homosexuality blurs attraction, behavior, and identity, and how to teach with biblical precision.',
+        keywords: 'homosexuality, christian ethics, same-sex attraction, pastoral care, bible'
+    },
     
     // Legacy routes (for backwards compatibility)
     '/page1': {

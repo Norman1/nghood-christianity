@@ -53,7 +53,7 @@ class NavSidebar extends HTMLElement {
                     id: 'articles',
                     title: 'Articles',
                     pages: [
-                        { href: '/explaining-free-grace', title: 'Explaining Free Grace' }
+                        { href: '/why-homosexuality-misleads-christian-ethics', title: 'Why "Homosexuality" Misleads Christian Ethics' }
                     ],
                     subcategories: []
                 },

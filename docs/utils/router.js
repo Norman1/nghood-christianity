@@ -10,7 +10,7 @@ const routes = {
     '/plain-meaning-bible': 'plain-meaning-bible-page',
     
     // Articles
-    '/explaining-free-grace': 'explaining-free-grace-page',
+    '/why-homosexuality-misleads-christian-ethics': 'why-homosexuality-misleads-page',
     
     // Account
     '/profile': 'user-profile',
