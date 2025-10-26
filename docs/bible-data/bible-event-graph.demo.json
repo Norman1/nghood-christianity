@@ -20,9 +20,9 @@
         ]
       }
     },
-    "event:creation-cosmos": {
-      "id": "event:creation-cosmos",
-      "title": "Creation of the heavens and the earth",
+    "era:creation-primeval:creation-vocation": {
+      "id": "era:creation-primeval:creation-vocation",
+      "title": "Creation & vocation",
       "parent_id": "era:creation-primeval",
       "attributes": {
         "order": [
@@ -30,9 +30,49 @@
         ]
       }
     },
-    "event:eden-vocation": {
-      "id": "event:eden-vocation",
-      "title": "Human vocation, Sabbath rhythm, and marriage",
+    "era:creation-primeval:creation-vocation:01": {
+      "id": "era:creation-primeval:creation-vocation:01",
+      "title": "Light and darkness are separated and time begins to tick",
+      "parent_id": "era:creation-primeval:creation-vocation",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:creation-primeval:creation-vocation:02": {
+      "id": "era:creation-primeval:creation-vocation:02",
+      "title": "Skies, seas, and fertile ground emerge in rhythm",
+      "parent_id": "era:creation-primeval:creation-vocation",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:creation-primeval:creation-vocation:03": {
+      "id": "era:creation-primeval:creation-vocation:03",
+      "title": "Creatures fill sea, sky, and land with abundance",
+      "parent_id": "era:creation-primeval:creation-vocation",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:creation-primeval:creation-vocation:04": {
+      "id": "era:creation-primeval:creation-vocation:04",
+      "title": "Humans receive God\u2019s image and co-rule mandate",
+      "parent_id": "era:creation-primeval:creation-vocation",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:creation-primeval:garden-beginnings": {
+      "id": "era:creation-primeval:garden-beginnings",
+      "title": "Garden beginnings",
       "parent_id": "era:creation-primeval",
       "attributes": {
         "order": [
@@ -40,9 +80,49 @@
         ]
       }
     },
-    "event:rebellion-promise": {
-      "id": "event:rebellion-promise",
-      "title": "Human rebellion and the first promise of rescue",
+    "era:creation-primeval:garden-beginnings:01": {
+      "id": "era:creation-primeval:garden-beginnings:01",
+      "title": "Eden is planted as a sanctuary-workshop",
+      "parent_id": "era:creation-primeval:garden-beginnings",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:creation-primeval:garden-beginnings:02": {
+      "id": "era:creation-primeval:garden-beginnings:02",
+      "title": "Marriage covenant launches a new household",
+      "parent_id": "era:creation-primeval:garden-beginnings",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:creation-primeval:garden-beginnings:03": {
+      "id": "era:creation-primeval:garden-beginnings:03",
+      "title": "Serpent deception fractures trust and exile follows",
+      "parent_id": "era:creation-primeval:garden-beginnings",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:creation-primeval:garden-beginnings:04": {
+      "id": "era:creation-primeval:garden-beginnings:04",
+      "title": "Promise of a wounded rescuer is whispered",
+      "parent_id": "era:creation-primeval:garden-beginnings",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:creation-primeval:from-cities-to-flood": {
+      "id": "era:creation-primeval:from-cities-to-flood",
+      "title": "From cities to flood",
       "parent_id": "era:creation-primeval",
       "attributes": {
         "order": [
@@ -50,9 +130,49 @@
         ]
       }
     },
-    "event:cain-abel": {
-      "id": "event:cain-abel",
-      "title": "Violence spreads from Cain and Abel to Lamech",
+    "era:creation-primeval:from-cities-to-flood:01": {
+      "id": "era:creation-primeval:from-cities-to-flood:01",
+      "title": "Cain builds a city even as mercy marks his exile",
+      "parent_id": "era:creation-primeval:from-cities-to-flood",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:creation-primeval:from-cities-to-flood:02": {
+      "id": "era:creation-primeval:from-cities-to-flood:02",
+      "title": "Generations advance craft, music, and revenge",
+      "parent_id": "era:creation-primeval:from-cities-to-flood",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:creation-primeval:from-cities-to-flood:03": {
+      "id": "era:creation-primeval:from-cities-to-flood:03",
+      "title": "Noah builds an ark while culture mocks the warning",
+      "parent_id": "era:creation-primeval:from-cities-to-flood",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:creation-primeval:from-cities-to-flood:04": {
+      "id": "era:creation-primeval:from-cities-to-flood:04",
+      "title": "Waters reset the earth and a rainbow seals covenant",
+      "parent_id": "era:creation-primeval:from-cities-to-flood",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:creation-primeval:nations-disperse": {
+      "id": "era:creation-primeval:nations-disperse",
+      "title": "Nations disperse",
       "parent_id": "era:creation-primeval",
       "attributes": {
         "order": [
@@ -60,23 +180,43 @@
         ]
       }
     },
-    "event:flood-renewal": {
-      "id": "event:flood-renewal",
-      "title": "Global flood and covenant with Noah",
-      "parent_id": "era:creation-primeval",
+    "era:creation-primeval:nations-disperse:01": {
+      "id": "era:creation-primeval:nations-disperse:01",
+      "title": "Noah\u2019s family replants vineyards and trades blessing & folly",
+      "parent_id": "era:creation-primeval:nations-disperse",
       "attributes": {
         "order": [
-          "050"
+          "010"
         ]
       }
     },
-    "event:babel-dispersal": {
-      "id": "event:babel-dispersal",
-      "title": "Tower of Babel and the scattering of nations",
-      "parent_id": "era:creation-primeval",
+    "era:creation-primeval:nations-disperse:02": {
+      "id": "era:creation-primeval:nations-disperse:02",
+      "title": "Nations list details families spreading with unique gifts",
+      "parent_id": "era:creation-primeval:nations-disperse",
       "attributes": {
         "order": [
-          "060"
+          "020"
+        ]
+      }
+    },
+    "era:creation-primeval:nations-disperse:03": {
+      "id": "era:creation-primeval:nations-disperse:03",
+      "title": "Tower builders chase fame and are scattered with new tongues",
+      "parent_id": "era:creation-primeval:nations-disperse",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:creation-primeval:nations-disperse:04": {
+      "id": "era:creation-primeval:nations-disperse:04",
+      "title": "Abram hears the call to leave home for an unseen land",
+      "parent_id": "era:creation-primeval:nations-disperse",
+      "attributes": {
+        "order": [
+          "040"
         ]
       }
     },
@@ -90,9 +230,9 @@
         ]
       }
     },
-    "event:call-abraham": {
-      "id": "event:call-abraham",
-      "title": "Abraham trusts God and begins a covenant journey",
+    "era:patriarchs:abraham-s-journey": {
+      "id": "era:patriarchs:abraham-s-journey",
+      "title": "Abraham\u2019s journey",
       "parent_id": "era:patriarchs",
       "attributes": {
         "order": [
@@ -100,9 +240,49 @@
         ]
       }
     },
-    "event:isaac-heir": {
-      "id": "event:isaac-heir",
-      "title": "Isaac arrives and the promise is reaffirmed",
+    "era:patriarchs:abraham-s-journey:01": {
+      "id": "era:patriarchs:abraham-s-journey:01",
+      "title": "Abram leaves Ur and raises an altar at Shechem",
+      "parent_id": "era:patriarchs:abraham-s-journey",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:patriarchs:abraham-s-journey:02": {
+      "id": "era:patriarchs:abraham-s-journey:02",
+      "title": "Famine drives a risky trip to Egypt and back",
+      "parent_id": "era:patriarchs:abraham-s-journey",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:patriarchs:abraham-s-journey:03": {
+      "id": "era:patriarchs:abraham-s-journey:03",
+      "title": "Covenant of pieces seals promises under the stars",
+      "parent_id": "era:patriarchs:abraham-s-journey",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:patriarchs:abraham-s-journey:04": {
+      "id": "era:patriarchs:abraham-s-journey:04",
+      "title": "Visitors announce Isaac and judge the cities of the plain",
+      "parent_id": "era:patriarchs:abraham-s-journey",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:patriarchs:promise-tested-secured": {
+      "id": "era:patriarchs:promise-tested-secured",
+      "title": "Promise tested & secured",
       "parent_id": "era:patriarchs",
       "attributes": {
         "order": [
@@ -110,9 +290,49 @@
         ]
       }
     },
-    "event:jacob-wrestles": {
-      "id": "event:jacob-wrestles",
-      "title": "Jacob is refined and renamed Israel",
+    "era:patriarchs:promise-tested-secured:01": {
+      "id": "era:patriarchs:promise-tested-secured:01",
+      "title": "Hagar meets God in the desert and names Him \u201cThe God who sees\u201d",
+      "parent_id": "era:patriarchs:promise-tested-secured",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:patriarchs:promise-tested-secured:02": {
+      "id": "era:patriarchs:promise-tested-secured:02",
+      "title": "Circumcision sign marks the household as set apart",
+      "parent_id": "era:patriarchs:promise-tested-secured",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:patriarchs:promise-tested-secured:03": {
+      "id": "era:patriarchs:promise-tested-secured:03",
+      "title": "Isaac is offered on Moriah and rescued by a ram",
+      "parent_id": "era:patriarchs:promise-tested-secured",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:patriarchs:promise-tested-secured:04": {
+      "id": "era:patriarchs:promise-tested-secured:04",
+      "title": "Sarah\u2019s field becomes a burial site anchoring the land",
+      "parent_id": "era:patriarchs:promise-tested-secured",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:patriarchs:jacob-transformed": {
+      "id": "era:patriarchs:jacob-transformed",
+      "title": "Jacob transformed",
       "parent_id": "era:patriarchs",
       "attributes": {
         "order": [
@@ -120,9 +340,49 @@
         ]
       }
     },
-    "event:joseph-preserves": {
-      "id": "event:joseph-preserves",
-      "title": "Joseph rises in Egypt and preserves the family",
+    "era:patriarchs:jacob-transformed:01": {
+      "id": "era:patriarchs:jacob-transformed:01",
+      "title": "Jacob bargains for a birthright over stew",
+      "parent_id": "era:patriarchs:jacob-transformed",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:patriarchs:jacob-transformed:02": {
+      "id": "era:patriarchs:jacob-transformed:02",
+      "title": "A ladder dream at Bethel assures divine presence",
+      "parent_id": "era:patriarchs:jacob-transformed",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:patriarchs:jacob-transformed:03": {
+      "id": "era:patriarchs:jacob-transformed:03",
+      "title": "Years with Laban forge a large yet conflicted family",
+      "parent_id": "era:patriarchs:jacob-transformed",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:patriarchs:jacob-transformed:04": {
+      "id": "era:patriarchs:jacob-transformed:04",
+      "title": "Wrestling at Peniel leaves Jacob limping yet blessed",
+      "parent_id": "era:patriarchs:jacob-transformed",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:patriarchs:joseph-preserves-the-clan": {
+      "id": "era:patriarchs:joseph-preserves-the-clan",
+      "title": "Joseph preserves the clan",
       "parent_id": "era:patriarchs",
       "attributes": {
         "order": [
@@ -130,13 +390,43 @@
         ]
       }
     },
-    "event:family-goshen": {
-      "id": "event:family-goshen",
-      "title": "The clan settles in Goshen awaiting deliverance",
-      "parent_id": "era:patriarchs",
+    "era:patriarchs:joseph-preserves-the-clan:01": {
+      "id": "era:patriarchs:joseph-preserves-the-clan:01",
+      "title": "Dreams of sheaves and stars fuel brothers\u2019 jealousy",
+      "parent_id": "era:patriarchs:joseph-preserves-the-clan",
       "attributes": {
         "order": [
-          "050"
+          "010"
+        ]
+      }
+    },
+    "era:patriarchs:joseph-preserves-the-clan:02": {
+      "id": "era:patriarchs:joseph-preserves-the-clan:02",
+      "title": "Joseph is sold, resists temptation, and is imprisoned",
+      "parent_id": "era:patriarchs:joseph-preserves-the-clan",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:patriarchs:joseph-preserves-the-clan:03": {
+      "id": "era:patriarchs:joseph-preserves-the-clan:03",
+      "title": "Interpretation of royal dreams leads to a new post",
+      "parent_id": "era:patriarchs:joseph-preserves-the-clan",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:patriarchs:joseph-preserves-the-clan:04": {
+      "id": "era:patriarchs:joseph-preserves-the-clan:04",
+      "title": "Famine reunites the family in Goshen with forgiveness",
+      "parent_id": "era:patriarchs:joseph-preserves-the-clan",
+      "attributes": {
+        "order": [
+          "040"
         ]
       }
     },
@@ -150,9 +440,9 @@
         ]
       }
     },
-    "event:moses-called": {
-      "id": "event:moses-called",
-      "title": "Moses meets God in the desert and returns to Egypt",
+    "era:exodus-sinai:deliverer-prepared": {
+      "id": "era:exodus-sinai:deliverer-prepared",
+      "title": "Deliverer prepared",
       "parent_id": "era:exodus-sinai",
       "attributes": {
         "order": [
@@ -160,9 +450,49 @@
         ]
       }
     },
-    "event:passover-escape": {
-      "id": "event:passover-escape",
-      "title": "Plagues expose Egypt and Passover births a people",
+    "era:exodus-sinai:deliverer-prepared:01": {
+      "id": "era:exodus-sinai:deliverer-prepared:01",
+      "title": "Baby Moses is hidden, discovered, and adopted",
+      "parent_id": "era:exodus-sinai:deliverer-prepared",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:exodus-sinai:deliverer-prepared:02": {
+      "id": "era:exodus-sinai:deliverer-prepared:02",
+      "title": "Years in Midian hone humility and shepherd skills",
+      "parent_id": "era:exodus-sinai:deliverer-prepared",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:exodus-sinai:deliverer-prepared:03": {
+      "id": "era:exodus-sinai:deliverer-prepared:03",
+      "title": "Burning bush encounter reveals \u201cI AM\u201d and a mission",
+      "parent_id": "era:exodus-sinai:deliverer-prepared",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:exodus-sinai:deliverer-prepared:04": {
+      "id": "era:exodus-sinai:deliverer-prepared:04",
+      "title": "Moses debates God yet finally returns to Egypt",
+      "parent_id": "era:exodus-sinai:deliverer-prepared",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:exodus-sinai:egypt-confronted": {
+      "id": "era:exodus-sinai:egypt-confronted",
+      "title": "Egypt confronted",
       "parent_id": "era:exodus-sinai",
       "attributes": {
         "order": [
@@ -170,9 +500,49 @@
         ]
       }
     },
-    "event:red-sea-song": {
-      "id": "event:red-sea-song",
-      "title": "The sea parts, enemies fall, and worship erupts",
+    "era:exodus-sinai:egypt-confronted:01": {
+      "id": "era:exodus-sinai:egypt-confronted:01",
+      "title": "Staffs become serpents before hardened hearts",
+      "parent_id": "era:exodus-sinai:egypt-confronted",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:exodus-sinai:egypt-confronted:02": {
+      "id": "era:exodus-sinai:egypt-confronted:02",
+      "title": "Waters turn to blood and plagues escalate",
+      "parent_id": "era:exodus-sinai:egypt-confronted",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:exodus-sinai:egypt-confronted:03": {
+      "id": "era:exodus-sinai:egypt-confronted:03",
+      "title": "Passover night marks homes with lamb\u2019s blood",
+      "parent_id": "era:exodus-sinai:egypt-confronted",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:exodus-sinai:egypt-confronted:04": {
+      "id": "era:exodus-sinai:egypt-confronted:04",
+      "title": "Exodus begins as slaves walk out laden with gifts",
+      "parent_id": "era:exodus-sinai:egypt-confronted",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:exodus-sinai:into-the-wilderness-classroom": {
+      "id": "era:exodus-sinai:into-the-wilderness-classroom",
+      "title": "Into the wilderness classroom",
       "parent_id": "era:exodus-sinai",
       "attributes": {
         "order": [
@@ -180,9 +550,49 @@
         ]
       }
     },
-    "event:sinai-covenant": {
-      "id": "event:sinai-covenant",
-      "title": "Sinai covenant defines a holy nation",
+    "era:exodus-sinai:into-the-wilderness-classroom:01": {
+      "id": "era:exodus-sinai:into-the-wilderness-classroom:01",
+      "title": "Red Sea parts, Miriam leads songs of victory",
+      "parent_id": "era:exodus-sinai:into-the-wilderness-classroom",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:exodus-sinai:into-the-wilderness-classroom:02": {
+      "id": "era:exodus-sinai:into-the-wilderness-classroom:02",
+      "title": "Bitter water turns sweet and manna appears",
+      "parent_id": "era:exodus-sinai:into-the-wilderness-classroom",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:exodus-sinai:into-the-wilderness-classroom:03": {
+      "id": "era:exodus-sinai:into-the-wilderness-classroom:03",
+      "title": "Amalek attacks and hands are raised for victory",
+      "parent_id": "era:exodus-sinai:into-the-wilderness-classroom",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:exodus-sinai:into-the-wilderness-classroom:04": {
+      "id": "era:exodus-sinai:into-the-wilderness-classroom:04",
+      "title": "Jethro mentors Moses on shared leadership",
+      "parent_id": "era:exodus-sinai:into-the-wilderness-classroom",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:exodus-sinai:sinai-covenant-dwelling": {
+      "id": "era:exodus-sinai:sinai-covenant-dwelling",
+      "title": "Sinai covenant & dwelling",
       "parent_id": "era:exodus-sinai",
       "attributes": {
         "order": [
@@ -190,23 +600,43 @@
         ]
       }
     },
-    "event:golden-calf-crisis": {
-      "id": "event:golden-calf-crisis",
-      "title": "Golden calf rebellion and Moses intercedes",
-      "parent_id": "era:exodus-sinai",
+    "era:exodus-sinai:sinai-covenant-dwelling:01": {
+      "id": "era:exodus-sinai:sinai-covenant-dwelling:01",
+      "title": "Thunderous glory rests on Sinai as people pledge obedience",
+      "parent_id": "era:exodus-sinai:sinai-covenant-dwelling",
       "attributes": {
         "order": [
-          "050"
+          "010"
         ]
       }
     },
-    "event:tabernacle-glory": {
-      "id": "event:tabernacle-glory",
-      "title": "Tabernacle constructed and glory fills the camp",
-      "parent_id": "era:exodus-sinai",
+    "era:exodus-sinai:sinai-covenant-dwelling:02": {
+      "id": "era:exodus-sinai:sinai-covenant-dwelling:02",
+      "title": "Golden calf crisis sparks intercession and renewed mercy",
+      "parent_id": "era:exodus-sinai:sinai-covenant-dwelling",
       "attributes": {
         "order": [
-          "060"
+          "020"
+        ]
+      }
+    },
+    "era:exodus-sinai:sinai-covenant-dwelling:03": {
+      "id": "era:exodus-sinai:sinai-covenant-dwelling:03",
+      "title": "Artisans craft a tabernacle from willing offerings",
+      "parent_id": "era:exodus-sinai:sinai-covenant-dwelling",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:exodus-sinai:sinai-covenant-dwelling:04": {
+      "id": "era:exodus-sinai:sinai-covenant-dwelling:04",
+      "title": "Cloud and fire settle on the completed dwelling",
+      "parent_id": "era:exodus-sinai:sinai-covenant-dwelling",
+      "attributes": {
+        "order": [
+          "040"
         ]
       }
     },
@@ -220,9 +650,9 @@
         ]
       }
     },
-    "event:kadesh-revolt": {
-      "id": "event:kadesh-revolt",
-      "title": "Kadesh defiance leads to forty years of wandering",
+    "era:wilderness-conquest:lessons-in-trust": {
+      "id": "era:wilderness-conquest:lessons-in-trust",
+      "title": "Lessons in trust",
       "parent_id": "era:wilderness-conquest",
       "attributes": {
         "order": [
@@ -230,9 +660,49 @@
         ]
       }
     },
-    "event:desert-formation": {
-      "id": "event:desert-formation",
-      "title": "Desert decades shape identity and hope",
+    "era:wilderness-conquest:lessons-in-trust:01": {
+      "id": "era:wilderness-conquest:lessons-in-trust:01",
+      "title": "Spies survey Canaan and the crowd chooses fear",
+      "parent_id": "era:wilderness-conquest:lessons-in-trust",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:wilderness-conquest:lessons-in-trust:02": {
+      "id": "era:wilderness-conquest:lessons-in-trust:02",
+      "title": "Korah\u2019s revolt challenges authority and ends dramatically",
+      "parent_id": "era:wilderness-conquest:lessons-in-trust",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:wilderness-conquest:lessons-in-trust:03": {
+      "id": "era:wilderness-conquest:lessons-in-trust:03",
+      "title": "Rock is struck twice and leadership consequences follow",
+      "parent_id": "era:wilderness-conquest:lessons-in-trust",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:wilderness-conquest:lessons-in-trust:04": {
+      "id": "era:wilderness-conquest:lessons-in-trust:04",
+      "title": "Bronze serpent lifts hope amid poisonous bites",
+      "parent_id": "era:wilderness-conquest:lessons-in-trust",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:wilderness-conquest:east-side-victories": {
+      "id": "era:wilderness-conquest:east-side-victories",
+      "title": "East side victories",
       "parent_id": "era:wilderness-conquest",
       "attributes": {
         "order": [
@@ -240,9 +710,49 @@
         ]
       }
     },
-    "event:joshua-commissioned": {
-      "id": "event:joshua-commissioned",
-      "title": "Joshua is commissioned and Moses blesses the tribes",
+    "era:wilderness-conquest:east-side-victories:01": {
+      "id": "era:wilderness-conquest:east-side-victories:01",
+      "title": "God turns Balaam\u2019s curses into blessings",
+      "parent_id": "era:wilderness-conquest:east-side-victories",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:wilderness-conquest:east-side-victories:02": {
+      "id": "era:wilderness-conquest:east-side-victories:02",
+      "title": "Battles on the east secure land for Reuben, Gad, and half-Manasseh",
+      "parent_id": "era:wilderness-conquest:east-side-victories",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:wilderness-conquest:east-side-victories:03": {
+      "id": "era:wilderness-conquest:east-side-victories:03",
+      "title": "Moses delivers farewell discourses rehearsing the story",
+      "parent_id": "era:wilderness-conquest:east-side-victories",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:wilderness-conquest:east-side-victories:04": {
+      "id": "era:wilderness-conquest:east-side-victories:04",
+      "title": "Joshua is commissioned before the nation",
+      "parent_id": "era:wilderness-conquest:east-side-victories",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:wilderness-conquest:crossing-and-remembering": {
+      "id": "era:wilderness-conquest:crossing-and-remembering",
+      "title": "Crossing and remembering",
       "parent_id": "era:wilderness-conquest",
       "attributes": {
         "order": [
@@ -250,9 +760,49 @@
         ]
       }
     },
-    "event:jordan-crossing": {
-      "id": "event:jordan-crossing",
-      "title": "Jordan crossing marks a new beginning",
+    "era:wilderness-conquest:crossing-and-remembering:01": {
+      "id": "era:wilderness-conquest:crossing-and-remembering:01",
+      "title": "Jordan River stops as priests stand with the ark",
+      "parent_id": "era:wilderness-conquest:crossing-and-remembering",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:wilderness-conquest:crossing-and-remembering:02": {
+      "id": "era:wilderness-conquest:crossing-and-remembering:02",
+      "title": "Stones from the river become a memorial at Gilgal",
+      "parent_id": "era:wilderness-conquest:crossing-and-remembering",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:wilderness-conquest:crossing-and-remembering:03": {
+      "id": "era:wilderness-conquest:crossing-and-remembering:03",
+      "title": "Covenant signs are renewed before Passover in the land",
+      "parent_id": "era:wilderness-conquest:crossing-and-remembering",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:wilderness-conquest:crossing-and-remembering:04": {
+      "id": "era:wilderness-conquest:crossing-and-remembering:04",
+      "title": "Manna ends as people eat the land\u2019s produce",
+      "parent_id": "era:wilderness-conquest:crossing-and-remembering",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:wilderness-conquest:campaigns-allotments": {
+      "id": "era:wilderness-conquest:campaigns-allotments",
+      "title": "Campaigns & allotments",
       "parent_id": "era:wilderness-conquest",
       "attributes": {
         "order": [
@@ -260,23 +810,43 @@
         ]
       }
     },
-    "event:jericho-campaign": {
-      "id": "event:jericho-campaign",
-      "title": "Jericho falls and the campaign spreads across Canaan",
-      "parent_id": "era:wilderness-conquest",
+    "era:wilderness-conquest:campaigns-allotments:01": {
+      "id": "era:wilderness-conquest:campaigns-allotments:01",
+      "title": "Jericho\u2019s walls fall after worshipful marches",
+      "parent_id": "era:wilderness-conquest:campaigns-allotments",
       "attributes": {
         "order": [
-          "050"
+          "010"
         ]
       }
     },
-    "event:covenant-shechem": {
-      "id": "event:covenant-shechem",
-      "title": "Covenant is renewed before Joshua departs",
-      "parent_id": "era:wilderness-conquest",
+    "era:wilderness-conquest:campaigns-allotments:02": {
+      "id": "era:wilderness-conquest:campaigns-allotments:02",
+      "title": "Ai exposes hidden sin then becomes a victory",
+      "parent_id": "era:wilderness-conquest:campaigns-allotments",
       "attributes": {
         "order": [
-          "060"
+          "020"
+        ]
+      }
+    },
+    "era:wilderness-conquest:campaigns-allotments:03": {
+      "id": "era:wilderness-conquest:campaigns-allotments:03",
+      "title": "Southern and northern coalitions are defeated",
+      "parent_id": "era:wilderness-conquest:campaigns-allotments",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:wilderness-conquest:campaigns-allotments:04": {
+      "id": "era:wilderness-conquest:campaigns-allotments:04",
+      "title": "Land is allotted, cities of refuge named, and Joshua issues a final challenge",
+      "parent_id": "era:wilderness-conquest:campaigns-allotments",
+      "attributes": {
+        "order": [
+          "040"
         ]
       }
     },
@@ -290,9 +860,9 @@
         ]
       }
     },
-    "event:cycles-of-judges": {
-      "id": "event:cycles-of-judges",
-      "title": "Cycles of compromise, crying out, and deliverance",
+    "era:judges-kingdom:cycles-of-deliverance": {
+      "id": "era:judges-kingdom:cycles-of-deliverance",
+      "title": "Cycles of deliverance",
       "parent_id": "era:judges-kingdom",
       "attributes": {
         "order": [
@@ -300,9 +870,49 @@
         ]
       }
     },
-    "event:gideon-midian": {
-      "id": "event:gideon-midian",
-      "title": "Gideon learns trust while confronting Midian",
+    "era:judges-kingdom:cycles-of-deliverance:01": {
+      "id": "era:judges-kingdom:cycles-of-deliverance:01",
+      "title": "Othniel launches the pattern of rest and relapse",
+      "parent_id": "era:judges-kingdom:cycles-of-deliverance",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:judges-kingdom:cycles-of-deliverance:02": {
+      "id": "era:judges-kingdom:cycles-of-deliverance:02",
+      "title": "Ehud assassinates a tyrant with a hidden dagger",
+      "parent_id": "era:judges-kingdom:cycles-of-deliverance",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:judges-kingdom:cycles-of-deliverance:03": {
+      "id": "era:judges-kingdom:cycles-of-deliverance:03",
+      "title": "Deborah and Barak partner to bring victory and song",
+      "parent_id": "era:judges-kingdom:cycles-of-deliverance",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:judges-kingdom:cycles-of-deliverance:04": {
+      "id": "era:judges-kingdom:cycles-of-deliverance:04",
+      "title": "Gideon tears down altars and learns reliance",
+      "parent_id": "era:judges-kingdom:cycles-of-deliverance",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:judges-kingdom:from-chaos-to-hope": {
+      "id": "era:judges-kingdom:from-chaos-to-hope",
+      "title": "From chaos to hope",
       "parent_id": "era:judges-kingdom",
       "attributes": {
         "order": [
@@ -310,9 +920,49 @@
         ]
       }
     },
-    "event:samson-philistines": {
-      "id": "event:samson-philistines",
-      "title": "Samson clashes with Philistines at great cost",
+    "era:judges-kingdom:from-chaos-to-hope:01": {
+      "id": "era:judges-kingdom:from-chaos-to-hope:01",
+      "title": "Jephthah negotiates and laments a rash vow",
+      "parent_id": "era:judges-kingdom:from-chaos-to-hope",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:judges-kingdom:from-chaos-to-hope:02": {
+      "id": "era:judges-kingdom:from-chaos-to-hope:02",
+      "title": "Samson wages solo wars against the Philistines",
+      "parent_id": "era:judges-kingdom:from-chaos-to-hope",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:judges-kingdom:from-chaos-to-hope:03": {
+      "id": "era:judges-kingdom:from-chaos-to-hope:03",
+      "title": "Dark tales of civil strife reveal the need for a king",
+      "parent_id": "era:judges-kingdom:from-chaos-to-hope",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:judges-kingdom:from-chaos-to-hope:04": {
+      "id": "era:judges-kingdom:from-chaos-to-hope:04",
+      "title": "Ruth and Boaz illustrate loyal love and lineage",
+      "parent_id": "era:judges-kingdom:from-chaos-to-hope",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:judges-kingdom:samuel-bridges-the-eras": {
+      "id": "era:judges-kingdom:samuel-bridges-the-eras",
+      "title": "Samuel bridges the eras",
       "parent_id": "era:judges-kingdom",
       "attributes": {
         "order": [
@@ -320,9 +970,49 @@
         ]
       }
     },
-    "event:ruth-redemption": {
-      "id": "event:ruth-redemption",
-      "title": "Ruth and Boaz keep the promise alive",
+    "era:judges-kingdom:samuel-bridges-the-eras:01": {
+      "id": "era:judges-kingdom:samuel-bridges-the-eras:01",
+      "title": "Hannah\u2019s prayer and dedication bring Samuel to Shiloh",
+      "parent_id": "era:judges-kingdom:samuel-bridges-the-eras",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:judges-kingdom:samuel-bridges-the-eras:02": {
+      "id": "era:judges-kingdom:samuel-bridges-the-eras:02",
+      "title": "The ark is captured, Dagon falls, and the ark returns",
+      "parent_id": "era:judges-kingdom:samuel-bridges-the-eras",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:judges-kingdom:samuel-bridges-the-eras:03": {
+      "id": "era:judges-kingdom:samuel-bridges-the-eras:03",
+      "title": "God thunders against Philistines as Israel repents",
+      "parent_id": "era:judges-kingdom:samuel-bridges-the-eras",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:judges-kingdom:samuel-bridges-the-eras:04": {
+      "id": "era:judges-kingdom:samuel-bridges-the-eras:04",
+      "title": "People demand a king and Saul is chosen",
+      "parent_id": "era:judges-kingdom:samuel-bridges-the-eras",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:judges-kingdom:saul-and-david": {
+      "id": "era:judges-kingdom:saul-and-david",
+      "title": "Saul and David",
       "parent_id": "era:judges-kingdom",
       "attributes": {
         "order": [
@@ -330,23 +1020,43 @@
         ]
       }
     },
-    "event:samuel-transition": {
-      "id": "event:samuel-transition",
-      "title": "Samuel leads the people through transition",
-      "parent_id": "era:judges-kingdom",
+    "era:judges-kingdom:saul-and-david:01": {
+      "id": "era:judges-kingdom:saul-and-david:01",
+      "title": "Saul wins early battles yet disobeys and is rejected",
+      "parent_id": "era:judges-kingdom:saul-and-david",
       "attributes": {
         "order": [
-          "050"
+          "010"
         ]
       }
     },
-    "event:saul-coronation": {
-      "id": "event:saul-coronation",
-      "title": "Saul becomes king but struggles to obey",
-      "parent_id": "era:judges-kingdom",
+    "era:judges-kingdom:saul-and-david:02": {
+      "id": "era:judges-kingdom:saul-and-david:02",
+      "title": "David serves in Saul\u2019s court and faces Goliath",
+      "parent_id": "era:judges-kingdom:saul-and-david",
       "attributes": {
         "order": [
-          "060"
+          "020"
+        ]
+      }
+    },
+    "era:judges-kingdom:saul-and-david:03": {
+      "id": "era:judges-kingdom:saul-and-david:03",
+      "title": "David gains friends, flees, and spares Saul twice",
+      "parent_id": "era:judges-kingdom:saul-and-david",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:judges-kingdom:saul-and-david:04": {
+      "id": "era:judges-kingdom:saul-and-david:04",
+      "title": "Saul falls on Mount Gilboa and David mourns",
+      "parent_id": "era:judges-kingdom:saul-and-david",
+      "attributes": {
+        "order": [
+          "040"
         ]
       }
     },
@@ -360,9 +1070,9 @@
         ]
       }
     },
-    "event:david-unites": {
-      "id": "event:david-unites",
-      "title": "David unites the tribes and establishes Jerusalem",
+    "era:united-monarchy:david-s-reign": {
+      "id": "era:united-monarchy:david-s-reign",
+      "title": "David\u2019s reign",
       "parent_id": "era:united-monarchy",
       "attributes": {
         "order": [
@@ -370,9 +1080,49 @@
         ]
       }
     },
-    "event:ark-returns": {
-      "id": "event:ark-returns",
-      "title": "The ark returns with celebration",
+    "era:united-monarchy:david-s-reign:01": {
+      "id": "era:united-monarchy:david-s-reign:01",
+      "title": "Tribes unite under David in Hebron",
+      "parent_id": "era:united-monarchy:david-s-reign",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:united-monarchy:david-s-reign:02": {
+      "id": "era:united-monarchy:david-s-reign:02",
+      "title": "Jerusalem becomes political and worship center",
+      "parent_id": "era:united-monarchy:david-s-reign",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:united-monarchy:david-s-reign:03": {
+      "id": "era:united-monarchy:david-s-reign:03",
+      "title": "David shows kindness to Mephibosheth",
+      "parent_id": "era:united-monarchy:david-s-reign",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:united-monarchy:david-s-reign:04": {
+      "id": "era:united-monarchy:david-s-reign:04",
+      "title": "Sin with Bathsheba brings confession and consequences",
+      "parent_id": "era:united-monarchy:david-s-reign",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:united-monarchy:family-turmoil-hope": {
+      "id": "era:united-monarchy:family-turmoil-hope",
+      "title": "Family turmoil & hope",
       "parent_id": "era:united-monarchy",
       "attributes": {
         "order": [
@@ -380,9 +1130,49 @@
         ]
       }
     },
-    "event:davidic-promise": {
-      "id": "event:davidic-promise",
-      "title": "God promises a lasting house for David",
+    "era:united-monarchy:family-turmoil-hope:01": {
+      "id": "era:united-monarchy:family-turmoil-hope:01",
+      "title": "Amnon assaults Tamar and Absalom plots revenge",
+      "parent_id": "era:united-monarchy:family-turmoil-hope",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:united-monarchy:family-turmoil-hope:02": {
+      "id": "era:united-monarchy:family-turmoil-hope:02",
+      "title": "Absalom steals hearts and David flees the city",
+      "parent_id": "era:united-monarchy:family-turmoil-hope",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:united-monarchy:family-turmoil-hope:03": {
+      "id": "era:united-monarchy:family-turmoil-hope:03",
+      "title": "Rebellion ends abruptly and David grieves a son",
+      "parent_id": "era:united-monarchy:family-turmoil-hope",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:united-monarchy:family-turmoil-hope:04": {
+      "id": "era:united-monarchy:family-turmoil-hope:04",
+      "title": "Temple preparation plans are handed to Solomon",
+      "parent_id": "era:united-monarchy:family-turmoil-hope",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:united-monarchy:solomon-s-glory": {
+      "id": "era:united-monarchy:solomon-s-glory",
+      "title": "Solomon\u2019s glory",
       "parent_id": "era:united-monarchy",
       "attributes": {
         "order": [
@@ -390,9 +1180,49 @@
         ]
       }
     },
-    "event:solomon-wisdom": {
-      "id": "event:solomon-wisdom",
-      "title": "Solomon demonstrates wisdom and order",
+    "era:united-monarchy:solomon-s-glory:01": {
+      "id": "era:united-monarchy:solomon-s-glory:01",
+      "title": "Solomon requests wisdom and receives abundance",
+      "parent_id": "era:united-monarchy:solomon-s-glory",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:united-monarchy:solomon-s-glory:02": {
+      "id": "era:united-monarchy:solomon-s-glory:02",
+      "title": "Administration, trade, and proverbs flourish",
+      "parent_id": "era:united-monarchy:solomon-s-glory",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:united-monarchy:solomon-s-glory:03": {
+      "id": "era:united-monarchy:solomon-s-glory:03",
+      "title": "Temple construction engages artisans for seven years",
+      "parent_id": "era:united-monarchy:solomon-s-glory",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:united-monarchy:solomon-s-glory:04": {
+      "id": "era:united-monarchy:solomon-s-glory:04",
+      "title": "Dedication prayer invites heaven to hear prayers",
+      "parent_id": "era:united-monarchy:solomon-s-glory",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:united-monarchy:seeds-of-division": {
+      "id": "era:united-monarchy:seeds-of-division",
+      "title": "Seeds of division",
       "parent_id": "era:united-monarchy",
       "attributes": {
         "order": [
@@ -400,23 +1230,43 @@
         ]
       }
     },
-    "event:temple-dedicated": {
-      "id": "event:temple-dedicated",
-      "title": "Temple dedicated as worship is centralized",
-      "parent_id": "era:united-monarchy",
+    "era:united-monarchy:seeds-of-division:01": {
+      "id": "era:united-monarchy:seeds-of-division:01",
+      "title": "Queen of Sheba marvels at wisdom and wealth",
+      "parent_id": "era:united-monarchy:seeds-of-division",
       "attributes": {
         "order": [
-          "050"
+          "010"
         ]
       }
     },
-    "event:solomon-drift": {
-      "id": "event:solomon-drift",
-      "title": "Solomon drifts and division seeds are planted",
-      "parent_id": "era:united-monarchy",
+    "era:united-monarchy:seeds-of-division:02": {
+      "id": "era:united-monarchy:seeds-of-division:02",
+      "title": "Foreign wives pull Solomon toward idolatry",
+      "parent_id": "era:united-monarchy:seeds-of-division",
       "attributes": {
         "order": [
-          "060"
+          "020"
+        ]
+      }
+    },
+    "era:united-monarchy:seeds-of-division:03": {
+      "id": "era:united-monarchy:seeds-of-division:03",
+      "title": "Prophets warn as adversaries arise",
+      "parent_id": "era:united-monarchy:seeds-of-division",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:united-monarchy:seeds-of-division:04": {
+      "id": "era:united-monarchy:seeds-of-division:04",
+      "title": "Jeroboam receives a prophecy of future rule",
+      "parent_id": "era:united-monarchy:seeds-of-division",
+      "attributes": {
+        "order": [
+          "040"
         ]
       }
     },
@@ -430,9 +1280,9 @@
         ]
       }
     },
-    "event:kingdom-splits": {
-      "id": "event:kingdom-splits",
-      "title": "Harsh leadership splits the kingdom in two",
+    "era:divided-kingdom:split-and-struggle": {
+      "id": "era:divided-kingdom:split-and-struggle",
+      "title": "Split and struggle",
       "parent_id": "era:divided-kingdom",
       "attributes": {
         "order": [
@@ -440,9 +1290,49 @@
         ]
       }
     },
-    "event:elijah-mount-carmel": {
-      "id": "event:elijah-mount-carmel",
-      "title": "Elijah confronts idolatry and renews hope",
+    "era:divided-kingdom:split-and-struggle:01": {
+      "id": "era:divided-kingdom:split-and-struggle:01",
+      "title": "Rehoboam\u2019s harsh reply fractures the kingdom",
+      "parent_id": "era:divided-kingdom:split-and-struggle",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:divided-kingdom:split-and-struggle:02": {
+      "id": "era:divided-kingdom:split-and-struggle:02",
+      "title": "Jeroboam installs golden calves to secure loyalty",
+      "parent_id": "era:divided-kingdom:split-and-struggle",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:divided-kingdom:split-and-struggle:03": {
+      "id": "era:divided-kingdom:split-and-struggle:03",
+      "title": "Prophets confront altars and predict a future Josiah",
+      "parent_id": "era:divided-kingdom:split-and-struggle",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:divided-kingdom:split-and-struggle:04": {
+      "id": "era:divided-kingdom:split-and-struggle:04",
+      "title": "Reforms flicker in Judah while Israel drifts",
+      "parent_id": "era:divided-kingdom:split-and-struggle",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:divided-kingdom:elijah-elisha-era": {
+      "id": "era:divided-kingdom:elijah-elisha-era",
+      "title": "Elijah & Elisha era",
       "parent_id": "era:divided-kingdom",
       "attributes": {
         "order": [
@@ -450,9 +1340,49 @@
         ]
       }
     },
-    "event:elisha-mirrors": {
-      "id": "event:elisha-mirrors",
-      "title": "Elisha multiplies mercies across Israel",
+    "era:divided-kingdom:elijah-elisha-era:01": {
+      "id": "era:divided-kingdom:elijah-elisha-era:01",
+      "title": "Drought begins with Elijah\u2019s announcement",
+      "parent_id": "era:divided-kingdom:elijah-elisha-era",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:divided-kingdom:elijah-elisha-era:02": {
+      "id": "era:divided-kingdom:elijah-elisha-era:02",
+      "title": "Fire falls on Carmel and rain returns",
+      "parent_id": "era:divided-kingdom:elijah-elisha-era",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:divided-kingdom:elijah-elisha-era:03": {
+      "id": "era:divided-kingdom:elijah-elisha-era:03",
+      "title": "Still small voice restores the weary prophet",
+      "parent_id": "era:divided-kingdom:elijah-elisha-era",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:divided-kingdom:elijah-elisha-era:04": {
+      "id": "era:divided-kingdom:elijah-elisha-era:04",
+      "title": "Elisha receives the mantle and multiplies miracles",
+      "parent_id": "era:divided-kingdom:elijah-elisha-era",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:divided-kingdom:threats-from-empires": {
+      "id": "era:divided-kingdom:threats-from-empires",
+      "title": "Threats from empires",
       "parent_id": "era:divided-kingdom",
       "attributes": {
         "order": [
@@ -460,9 +1390,49 @@
         ]
       }
     },
-    "event:north-collapse": {
-      "id": "event:north-collapse",
-      "title": "The northern kingdom collapses to Assyria",
+    "era:divided-kingdom:threats-from-empires:01": {
+      "id": "era:divided-kingdom:threats-from-empires:01",
+      "title": "Jehu purges but fails to walk humbly",
+      "parent_id": "era:divided-kingdom:threats-from-empires",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:divided-kingdom:threats-from-empires:02": {
+      "id": "era:divided-kingdom:threats-from-empires:02",
+      "title": "Assyria pressures Israel and captures Damascus",
+      "parent_id": "era:divided-kingdom:threats-from-empires",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:divided-kingdom:threats-from-empires:03": {
+      "id": "era:divided-kingdom:threats-from-empires:03",
+      "title": "Jonah reluctantly preaches and Nineveh repents",
+      "parent_id": "era:divided-kingdom:threats-from-empires",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:divided-kingdom:threats-from-empires:04": {
+      "id": "era:divided-kingdom:threats-from-empires:04",
+      "title": "Samaria falls and northern tribes are scattered",
+      "parent_id": "era:divided-kingdom:threats-from-empires",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:divided-kingdom:last-days-of-judah": {
+      "id": "era:divided-kingdom:last-days-of-judah",
+      "title": "Last days of Judah",
       "parent_id": "era:divided-kingdom",
       "attributes": {
         "order": [
@@ -470,33 +1440,43 @@
         ]
       }
     },
-    "event:hezekiah-trust": {
-      "id": "event:hezekiah-trust",
-      "title": "Hezekiah and Isaiah trust God against impossible odds",
-      "parent_id": "era:divided-kingdom",
+    "era:divided-kingdom:last-days-of-judah:01": {
+      "id": "era:divided-kingdom:last-days-of-judah:01",
+      "title": "Hezekiah trusts God as Assyria surrounds Jerusalem",
+      "parent_id": "era:divided-kingdom:last-days-of-judah",
       "attributes": {
         "order": [
-          "050"
+          "010"
         ]
       }
     },
-    "event:josiah-renewal": {
-      "id": "event:josiah-renewal",
-      "title": "Josiah discovers the scroll and renews covenant",
-      "parent_id": "era:divided-kingdom",
+    "era:divided-kingdom:last-days-of-judah:02": {
+      "id": "era:divided-kingdom:last-days-of-judah:02",
+      "title": "Manasseh\u2019s evil reign scars the nation yet ends with repentance",
+      "parent_id": "era:divided-kingdom:last-days-of-judah",
       "attributes": {
         "order": [
-          "060"
+          "020"
         ]
       }
     },
-    "event:jerusalem-falls": {
-      "id": "event:jerusalem-falls",
-      "title": "Jerusalem falls and exile begins",
-      "parent_id": "era:divided-kingdom",
+    "era:divided-kingdom:last-days-of-judah:03": {
+      "id": "era:divided-kingdom:last-days-of-judah:03",
+      "title": "Josiah uncovers the scroll and leads sweeping reform",
+      "parent_id": "era:divided-kingdom:last-days-of-judah",
       "attributes": {
         "order": [
-          "070"
+          "030"
+        ]
+      }
+    },
+    "era:divided-kingdom:last-days-of-judah:04": {
+      "id": "era:divided-kingdom:last-days-of-judah:04",
+      "title": "Babylon rises, Jehoiachin surrenders, and Jerusalem ultimately falls",
+      "parent_id": "era:divided-kingdom:last-days-of-judah",
+      "attributes": {
+        "order": [
+          "040"
         ]
       }
     },
@@ -510,9 +1490,9 @@
         ]
       }
     },
-    "event:daniel-steadfast": {
-      "id": "event:daniel-steadfast",
-      "title": "Daniel and friends witness with wisdom and courage",
+    "era:exile-return:faith-in-foreign-courts": {
+      "id": "era:exile-return:faith-in-foreign-courts",
+      "title": "Faith in foreign courts",
       "parent_id": "era:exile-return",
       "attributes": {
         "order": [
@@ -520,9 +1500,49 @@
         ]
       }
     },
-    "event:cyrus-decree": {
-      "id": "event:cyrus-decree",
-      "title": "Cyrus decrees that return can begin",
+    "era:exile-return:faith-in-foreign-courts:01": {
+      "id": "era:exile-return:faith-in-foreign-courts:01",
+      "title": "Daniel interprets dreams and preserves kings",
+      "parent_id": "era:exile-return:faith-in-foreign-courts",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:exile-return:faith-in-foreign-courts:02": {
+      "id": "era:exile-return:faith-in-foreign-courts:02",
+      "title": "Friends face the furnace and walk with God",
+      "parent_id": "era:exile-return:faith-in-foreign-courts",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:exile-return:faith-in-foreign-courts:03": {
+      "id": "era:exile-return:faith-in-foreign-courts:03",
+      "title": "Prideful kings are humbled repeatedly",
+      "parent_id": "era:exile-return:faith-in-foreign-courts",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:exile-return:faith-in-foreign-courts:04": {
+      "id": "era:exile-return:faith-in-foreign-courts:04",
+      "title": "Writing on the wall ushers in a new empire",
+      "parent_id": "era:exile-return:faith-in-foreign-courts",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:exile-return:first-return": {
+      "id": "era:exile-return:first-return",
+      "title": "First return",
       "parent_id": "era:exile-return",
       "attributes": {
         "order": [
@@ -530,9 +1550,49 @@
         ]
       }
     },
-    "event:altar-and-foundation": {
-      "id": "event:altar-and-foundation",
-      "title": "Altar is rebuilt and the new foundation is laid",
+    "era:exile-return:first-return:01": {
+      "id": "era:exile-return:first-return:01",
+      "title": "Cyrus releases exiles with resources",
+      "parent_id": "era:exile-return:first-return",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:exile-return:first-return:02": {
+      "id": "era:exile-return:first-return:02",
+      "title": "Altar is rebuilt amid opposition",
+      "parent_id": "era:exile-return:first-return",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:exile-return:first-return:03": {
+      "id": "era:exile-return:first-return:03",
+      "title": "Foundation is laid with mixed tears and shouts",
+      "parent_id": "era:exile-return:first-return",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:exile-return:first-return:04": {
+      "id": "era:exile-return:first-return:04",
+      "title": "Prophets Haggai and Zechariah restart the work",
+      "parent_id": "era:exile-return:first-return",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:exile-return:protection-in-persia": {
+      "id": "era:exile-return:protection-in-persia",
+      "title": "Protection in Persia",
       "parent_id": "era:exile-return",
       "attributes": {
         "order": [
@@ -540,9 +1600,49 @@
         ]
       }
     },
-    "event:esther-protects": {
-      "id": "event:esther-protects",
-      "title": "Esther\u2019s courage safeguards the diaspora",
+    "era:exile-return:protection-in-persia:01": {
+      "id": "era:exile-return:protection-in-persia:01",
+      "title": "Esther becomes queen against all odds",
+      "parent_id": "era:exile-return:protection-in-persia",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:exile-return:protection-in-persia:02": {
+      "id": "era:exile-return:protection-in-persia:02",
+      "title": "Plots against Jews are overturned",
+      "parent_id": "era:exile-return:protection-in-persia",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:exile-return:protection-in-persia:03": {
+      "id": "era:exile-return:protection-in-persia:03",
+      "title": "Purim is established to remember deliverance",
+      "parent_id": "era:exile-return:protection-in-persia",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:exile-return:protection-in-persia:04": {
+      "id": "era:exile-return:protection-in-persia:04",
+      "title": "Diaspora communities gain new courage",
+      "parent_id": "era:exile-return:protection-in-persia",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:exile-return:renewed-worship-society": {
+      "id": "era:exile-return:renewed-worship-society",
+      "title": "Renewed worship & society",
       "parent_id": "era:exile-return",
       "attributes": {
         "order": [
@@ -550,33 +1650,43 @@
         ]
       }
     },
-    "event:ezra-reforms": {
-      "id": "event:ezra-reforms",
-      "title": "Ezra teaches and reforms the community",
-      "parent_id": "era:exile-return",
+    "era:exile-return:renewed-worship-society:01": {
+      "id": "era:exile-return:renewed-worship-society:01",
+      "title": "Ezra teaches Torah and confronts compromise",
+      "parent_id": "era:exile-return:renewed-worship-society",
       "attributes": {
         "order": [
-          "050"
+          "010"
         ]
       }
     },
-    "event:nehemiah-walls": {
-      "id": "event:nehemiah-walls",
-      "title": "Walls rise while opposition presses in",
-      "parent_id": "era:exile-return",
+    "era:exile-return:renewed-worship-society:02": {
+      "id": "era:exile-return:renewed-worship-society:02",
+      "title": "Nehemiah rebuilds walls despite opposition",
+      "parent_id": "era:exile-return:renewed-worship-society",
       "attributes": {
         "order": [
-          "060"
+          "020"
         ]
       }
     },
-    "event:malachi-calls": {
-      "id": "event:malachi-calls",
-      "title": "Malachi challenges a weary remnant to wholehearted worship",
-      "parent_id": "era:exile-return",
+    "era:exile-return:renewed-worship-society:03": {
+      "id": "era:exile-return:renewed-worship-society:03",
+      "title": "People confess, celebrate booths, and sign covenant",
+      "parent_id": "era:exile-return:renewed-worship-society",
       "attributes": {
         "order": [
-          "070"
+          "030"
+        ]
+      }
+    },
+    "era:exile-return:renewed-worship-society:04": {
+      "id": "era:exile-return:renewed-worship-society:04",
+      "title": "Malachi calls for wholehearted worship and future hope",
+      "parent_id": "era:exile-return:renewed-worship-society",
+      "attributes": {
+        "order": [
+          "040"
         ]
       }
     },
@@ -590,9 +1700,9 @@
         ]
       }
     },
-    "event:birth-overview": {
-      "id": "event:birth-overview",
-      "title": "Announcements, nativity, and childhood of Jesus",
+    "era:messiah:big-picture": {
+      "id": "era:messiah:big-picture",
+      "title": "Big picture",
       "parent_id": "era:messiah",
       "attributes": {
         "order": [
@@ -600,53 +1710,43 @@
         ]
       }
     },
-    "event:ministry-overview": {
-      "id": "event:ministry-overview",
-      "title": "Public ministry demonstrates authority and compassion",
-      "parent_id": "era:messiah",
+    "era:messiah:big-picture:01": {
+      "id": "era:messiah:big-picture:01",
+      "title": "Birth narratives highlight humility and wonder",
+      "parent_id": "era:messiah:big-picture",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:messiah:big-picture:02": {
+      "id": "era:messiah:big-picture:02",
+      "title": "Public ministry displays authority over sickness and storms",
+      "parent_id": "era:messiah:big-picture",
       "attributes": {
         "order": [
           "020"
         ]
       }
     },
-    "event:twelve-formed": {
-      "id": "event:twelve-formed",
-      "title": "Twelve apprentices are shaped for mission",
-      "parent_id": "era:messiah",
+    "era:messiah:big-picture:03": {
+      "id": "era:messiah:big-picture:03",
+      "title": "Apprentices are formed into a kingdom team",
+      "parent_id": "era:messiah:big-picture",
       "attributes": {
         "order": [
           "030"
         ]
       }
     },
-    "event:jerusalem-arrival": {
-      "id": "event:jerusalem-arrival",
-      "title": "Jesus arrives in Jerusalem with prophetic actions",
-      "parent_id": "era:messiah",
+    "era:messiah:big-picture:04": {
+      "id": "era:messiah:big-picture:04",
+      "title": "Passion, cross, and resurrection secure redemption",
+      "parent_id": "era:messiah:big-picture",
       "attributes": {
         "order": [
           "040"
-        ]
-      }
-    },
-    "event:passion-overview": {
-      "id": "event:passion-overview",
-      "title": "Upper room, arrest, trials, and crucifixion",
-      "parent_id": "era:messiah",
-      "attributes": {
-        "order": [
-          "050"
-        ]
-      }
-    },
-    "event:resurrection-overview": {
-      "id": "event:resurrection-overview",
-      "title": "Resurrection appearances and ascension",
-      "parent_id": "era:messiah",
-      "attributes": {
-        "order": [
-          "060"
         ]
       }
     },
@@ -660,9 +1760,9 @@
         ]
       }
     },
-    "event:pentecost": {
-      "id": "event:pentecost",
-      "title": "Spirit empowers a multi-language birth of the church",
+    "era:apostolic-church:church-launched": {
+      "id": "era:apostolic-church:church-launched",
+      "title": "Church launched",
       "parent_id": "era:apostolic-church",
       "attributes": {
         "order": [
@@ -670,9 +1770,49 @@
         ]
       }
     },
-    "event:shared-community": {
-      "id": "event:shared-community",
-      "title": "Shared life, bold witness, and early tensions",
+    "era:apostolic-church:church-launched:01": {
+      "id": "era:apostolic-church:church-launched:01",
+      "title": "Pentecost births a multi-language community",
+      "parent_id": "era:apostolic-church:church-launched",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:apostolic-church:church-launched:02": {
+      "id": "era:apostolic-church:church-launched:02",
+      "title": "Shared life cares for the vulnerable and bold witness spreads",
+      "parent_id": "era:apostolic-church:church-launched",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:apostolic-church:church-launched:03": {
+      "id": "era:apostolic-church:church-launched:03",
+      "title": "Persecution scatters seeds that become new gatherings",
+      "parent_id": "era:apostolic-church:church-launched",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:apostolic-church:church-launched:04": {
+      "id": "era:apostolic-church:church-launched:04",
+      "title": "Households like Cornelius welcome the gospel",
+      "parent_id": "era:apostolic-church:church-launched",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:apostolic-church:mission-formation": {
+      "id": "era:apostolic-church:mission-formation",
+      "title": "Mission & formation",
       "parent_id": "era:apostolic-church",
       "attributes": {
         "order": [
@@ -680,9 +1820,49 @@
         ]
       }
     },
-    "event:gentile-breakthrough": {
-      "id": "event:gentile-breakthrough",
-      "title": "Good news crosses cultures with Cornelius",
+    "era:apostolic-church:mission-formation:01": {
+      "id": "era:apostolic-church:mission-formation:01",
+      "title": "Paul\u2019s journeys plant communities across the Mediterranean",
+      "parent_id": "era:apostolic-church:mission-formation",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:apostolic-church:mission-formation:02": {
+      "id": "era:apostolic-church:mission-formation:02",
+      "title": "Jerusalem Council clarifies grace for Jews and Gentiles",
+      "parent_id": "era:apostolic-church:mission-formation",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:apostolic-church:mission-formation:03": {
+      "id": "era:apostolic-church:mission-formation:03",
+      "title": "Letters circulate shaping doctrine and practice",
+      "parent_id": "era:apostolic-church:mission-formation",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:apostolic-church:mission-formation:04": {
+      "id": "era:apostolic-church:mission-formation:04",
+      "title": "Witness reaches Rome even through imprisonment",
+      "parent_id": "era:apostolic-church:mission-formation",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:apostolic-church:future-hope": {
+      "id": "era:apostolic-church:future-hope",
+      "title": "Future hope",
       "parent_id": "era:apostolic-church",
       "attributes": {
         "order": [
@@ -690,463 +1870,563 @@
         ]
       }
     },
-    "event:paul-journeys": {
-      "id": "event:paul-journeys",
-      "title": "Paul\u2019s journeys plant communities across the empire",
-      "parent_id": "era:apostolic-church",
+    "era:apostolic-church:future-hope:01": {
+      "id": "era:apostolic-church:future-hope:01",
+      "title": "John\u2019s Revelation lifts eyes to the risen King",
+      "parent_id": "era:apostolic-church:future-hope",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:apostolic-church:future-hope:02": {
+      "id": "era:apostolic-church:future-hope:02",
+      "title": "Churches are urged to persevere and repent",
+      "parent_id": "era:apostolic-church:future-hope",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:apostolic-church:future-hope:03": {
+      "id": "era:apostolic-church:future-hope:03",
+      "title": "Lamb and throne imagery reframe allegiance",
+      "parent_id": "era:apostolic-church:future-hope",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:apostolic-church:future-hope:04": {
+      "id": "era:apostolic-church:future-hope:04",
+      "title": "New creation vision promises restoration",
+      "parent_id": "era:apostolic-church:future-hope",
       "attributes": {
         "order": [
           "040"
         ]
       }
     },
-    "event:jerusalem-council": {
-      "id": "event:jerusalem-council",
-      "title": "Council affirms grace for Jews and Gentiles alike",
-      "parent_id": "era:apostolic-church",
-      "attributes": {
-        "order": [
-          "050"
-        ]
-      }
-    },
-    "event:letters-circulate": {
-      "id": "event:letters-circulate",
-      "title": "Letters circulate to form resilient disciples",
-      "parent_id": "era:apostolic-church",
-      "attributes": {
-        "order": [
-          "060"
-        ]
-      }
-    },
-    "event:hope-revelation": {
-      "id": "event:hope-revelation",
-      "title": "Revelation lifts eyes to the returning King",
-      "parent_id": "era:apostolic-church",
-      "attributes": {
-        "order": [
-          "070"
-        ]
-      }
-    },
-    "stage:messiah-announcements": {
-      "id": "stage:messiah-announcements",
+    "era:messiah:stage-01": {
+      "id": "era:messiah:stage-01",
       "title": "Announcements & births",
       "parent_id": "era:messiah",
       "attributes": {
         "order": [
-          "015"
+          "810"
         ]
       }
     },
-    "event:angel-zechariah": {
-      "id": "event:angel-zechariah",
-      "title": "Gabriel promises a son to Zechariah in the temple",
-      "parent_id": "stage:messiah-announcements",
+    "era:messiah:stage-01:01": {
+      "id": "era:messiah:stage-01:01",
+      "title": "Gabriel promises a son to Zechariah",
+      "parent_id": "era:messiah:stage-01",
       "attributes": {
         "order": [
           "010"
         ]
       }
     },
-    "event:angel-mary": {
-      "id": "event:angel-mary",
-      "title": "Gabriel announces Jesus to Mary in Nazareth",
-      "parent_id": "stage:messiah-announcements",
+    "era:messiah:stage-01:02": {
+      "id": "era:messiah:stage-01:02",
+      "title": "Mary hears the impossible invitation",
+      "parent_id": "era:messiah:stage-01",
       "attributes": {
         "order": [
           "020"
         ]
       }
     },
-    "event:visitation": {
-      "id": "event:visitation",
-      "title": "Mary visits Elizabeth and both rejoice",
-      "parent_id": "stage:messiah-announcements",
+    "era:messiah:stage-01:03": {
+      "id": "era:messiah:stage-01:03",
+      "title": "Mary and Elizabeth rejoice together",
+      "parent_id": "era:messiah:stage-01",
       "attributes": {
         "order": [
           "030"
         ]
       }
     },
-    "event:john-born": {
-      "id": "event:john-born",
-      "title": "John is born and Zechariah praises God",
-      "parent_id": "stage:messiah-announcements",
+    "era:messiah:stage-01:04": {
+      "id": "era:messiah:stage-01:04",
+      "title": "John is born and Zechariah sings",
+      "parent_id": "era:messiah:stage-01",
       "attributes": {
         "order": [
           "040"
         ]
       }
     },
-    "event:joseph-dream": {
-      "id": "event:joseph-dream",
-      "title": "Joseph follows the dream to take Mary as wife",
-      "parent_id": "stage:messiah-announcements",
+    "era:messiah:stage-01:05": {
+      "id": "era:messiah:stage-01:05",
+      "title": "Joseph trusts the night dream",
+      "parent_id": "era:messiah:stage-01",
       "attributes": {
         "order": [
           "050"
         ]
       }
     },
-    "event:jesus-born": {
-      "id": "event:jesus-born",
-      "title": "Jesus is born and placed in a manger",
-      "parent_id": "stage:messiah-announcements",
+    "era:messiah:stage-01:06": {
+      "id": "era:messiah:stage-01:06",
+      "title": "Jesus is born in Bethlehem",
+      "parent_id": "era:messiah:stage-01",
       "attributes": {
         "order": [
           "060"
         ]
       }
     },
-    "event:shepherds": {
-      "id": "event:shepherds",
-      "title": "Shepherds visit after angelic announcement",
-      "parent_id": "stage:messiah-announcements",
+    "era:messiah:stage-01:07": {
+      "id": "era:messiah:stage-01:07",
+      "title": "Shepherds visit after angelic news",
+      "parent_id": "era:messiah:stage-01",
       "attributes": {
         "order": [
           "070"
         ]
       }
     },
-    "stage:messiah-preparation": {
-      "id": "stage:messiah-preparation",
+    "era:messiah:stage-01:08": {
+      "id": "era:messiah:stage-01:08",
+      "title": "Magi arrive with gifts and warnings",
+      "parent_id": "era:messiah:stage-01",
+      "attributes": {
+        "order": [
+          "080"
+        ]
+      }
+    },
+    "era:messiah:stage-01:09": {
+      "id": "era:messiah:stage-01:09",
+      "title": "Family escapes to Egypt and later returns",
+      "parent_id": "era:messiah:stage-01",
+      "attributes": {
+        "order": [
+          "090"
+        ]
+      }
+    },
+    "era:messiah:stage-02": {
+      "id": "era:messiah:stage-02",
       "title": "Preparation & calling",
       "parent_id": "era:messiah",
       "attributes": {
         "order": [
-          "025"
+          "820"
         ]
       }
     },
-    "event:magi-visit": {
-      "id": "event:magi-visit",
-      "title": "Magi honor the child and the family flees Herod",
-      "parent_id": "stage:messiah-preparation",
+    "era:messiah:stage-02:01": {
+      "id": "era:messiah:stage-02:01",
+      "title": "Boy Jesus engages teachers in the temple",
+      "parent_id": "era:messiah:stage-02",
       "attributes": {
         "order": [
           "010"
         ]
       }
     },
-    "event:john-preaches": {
-      "id": "event:john-preaches",
-      "title": "John calls for repentance at the Jordan",
-      "parent_id": "stage:messiah-preparation",
+    "era:messiah:stage-02:02": {
+      "id": "era:messiah:stage-02:02",
+      "title": "John calls the nation to repentance",
+      "parent_id": "era:messiah:stage-02",
       "attributes": {
         "order": [
           "020"
         ]
       }
     },
-    "event:jesus-baptized": {
-      "id": "event:jesus-baptized",
-      "title": "Jesus is baptized and affirmed by the Father",
-      "parent_id": "stage:messiah-preparation",
+    "era:messiah:stage-02:03": {
+      "id": "era:messiah:stage-02:03",
+      "title": "Jesus is baptized and affirmed",
+      "parent_id": "era:messiah:stage-02",
       "attributes": {
         "order": [
           "030"
         ]
       }
     },
-    "event:temptation": {
-      "id": "event:temptation",
-      "title": "Jesus resists the wilderness temptations",
-      "parent_id": "stage:messiah-preparation",
+    "era:messiah:stage-02:04": {
+      "id": "era:messiah:stage-02:04",
+      "title": "Forty days of testing end with victory",
+      "parent_id": "era:messiah:stage-02",
       "attributes": {
         "order": [
           "040"
         ]
       }
     },
-    "event:first-disciples": {
-      "id": "event:first-disciples",
-      "title": "First disciples begin following Jesus",
-      "parent_id": "stage:messiah-preparation",
+    "era:messiah:stage-02:05": {
+      "id": "era:messiah:stage-02:05",
+      "title": "First disciples leave nets to follow",
+      "parent_id": "era:messiah:stage-02",
       "attributes": {
         "order": [
           "050"
         ]
       }
     },
-    "event:cana-sign": {
-      "id": "event:cana-sign",
-      "title": "Water becomes wine at a wedding in Cana",
-      "parent_id": "stage:messiah-preparation",
+    "era:messiah:stage-02:06": {
+      "id": "era:messiah:stage-02:06",
+      "title": "Water becomes wine at Cana",
+      "parent_id": "era:messiah:stage-02",
       "attributes": {
         "order": [
           "060"
         ]
       }
     },
-    "stage:messiah-galilee": {
-      "id": "stage:messiah-galilee",
-      "title": "Galilean ministry",
-      "parent_id": "era:messiah",
-      "attributes": {
-        "order": [
-          "035"
-        ]
-      }
-    },
-    "event:nazareth-synagogue": {
-      "id": "event:nazareth-synagogue",
-      "title": "Jesus declares good news in Nazareth",
-      "parent_id": "stage:messiah-galilee",
-      "attributes": {
-        "order": [
-          "010"
-        ]
-      }
-    },
-    "event:sermon-mount": {
-      "id": "event:sermon-mount",
-      "title": "The Sermon on the Mount reframes life with God",
-      "parent_id": "stage:messiah-galilee",
-      "attributes": {
-        "order": [
-          "020"
-        ]
-      }
-    },
-    "event:storm-calmed": {
-      "id": "event:storm-calmed",
-      "title": "A storm is calmed with a word",
-      "parent_id": "stage:messiah-galilee",
-      "attributes": {
-        "order": [
-          "030"
-        ]
-      }
-    },
-    "event:feeding-multitude": {
-      "id": "event:feeding-multitude",
-      "title": "Crowds are fed from a simple meal",
-      "parent_id": "stage:messiah-galilee",
-      "attributes": {
-        "order": [
-          "040"
-        ]
-      }
-    },
-    "event:healings-restorations": {
-      "id": "event:healings-restorations",
-      "title": "Outsiders experience healing and forgiveness",
-      "parent_id": "stage:messiah-galilee",
-      "attributes": {
-        "order": [
-          "050"
-        ]
-      }
-    },
-    "event:mission-twelve": {
-      "id": "event:mission-twelve",
-      "title": "The Twelve are sent two-by-two",
-      "parent_id": "stage:messiah-galilee",
-      "attributes": {
-        "order": [
-          "060"
-        ]
-      }
-    },
-    "stage:messiah-journeys": {
-      "id": "stage:messiah-journeys",
-      "title": "Journeys toward Jerusalem",
-      "parent_id": "era:messiah",
-      "attributes": {
-        "order": [
-          "045"
-        ]
-      }
-    },
-    "event:peters-confession": {
-      "id": "event:peters-confession",
-      "title": "Peter confesses Jesus as Messiah",
-      "parent_id": "stage:messiah-journeys",
-      "attributes": {
-        "order": [
-          "010"
-        ]
-      }
-    },
-    "event:transfiguration": {
-      "id": "event:transfiguration",
-      "title": "The transfiguration reveals glory on the mountain",
-      "parent_id": "stage:messiah-journeys",
-      "attributes": {
-        "order": [
-          "020"
-        ]
-      }
-    },
-    "event:seventy-sent": {
-      "id": "event:seventy-sent",
-      "title": "Seventy disciples carry peace to new towns",
-      "parent_id": "stage:messiah-journeys",
-      "attributes": {
-        "order": [
-          "030"
-        ]
-      }
-    },
-    "event:lazarus-raised": {
-      "id": "event:lazarus-raised",
-      "title": "Lazarus is raised and hope surges",
-      "parent_id": "stage:messiah-journeys",
-      "attributes": {
-        "order": [
-          "040"
-        ]
-      }
-    },
-    "stage:messiah-passion-week": {
-      "id": "stage:messiah-passion-week",
-      "title": "Passion Week",
-      "parent_id": "era:messiah",
-      "attributes": {
-        "order": [
-          "055"
-        ]
-      }
-    },
-    "event:entry-jerusalem": {
-      "id": "event:entry-jerusalem",
-      "title": "Jesus enters Jerusalem on a colt as crowds sing",
-      "parent_id": "stage:messiah-passion-week",
-      "attributes": {
-        "order": [
-          "010"
-        ]
-      }
-    },
-    "event:temple-cleansed": {
-      "id": "event:temple-cleansed",
-      "title": "The temple courts are cleared for prayer",
-      "parent_id": "stage:messiah-passion-week",
-      "attributes": {
-        "order": [
-          "020"
-        ]
-      }
-    },
-    "event:last-supper": {
-      "id": "event:last-supper",
-      "title": "Jesus shares Passover and redefines the meal",
-      "parent_id": "stage:messiah-passion-week",
-      "attributes": {
-        "order": [
-          "030"
-        ]
-      }
-    },
-    "event:gethsemane": {
-      "id": "event:gethsemane",
-      "title": "Gethsemane vigil ends with arrest",
-      "parent_id": "stage:messiah-passion-week",
-      "attributes": {
-        "order": [
-          "040"
-        ]
-      }
-    },
-    "event:trials": {
-      "id": "event:trials",
-      "title": "Night trials before the council, Herod, and Pilate",
-      "parent_id": "stage:messiah-passion-week",
-      "attributes": {
-        "order": [
-          "050"
-        ]
-      }
-    },
-    "event:crucifixion": {
-      "id": "event:crucifixion",
-      "title": "Jesus carries the cross and dies outside the city",
-      "parent_id": "stage:messiah-passion-week",
-      "attributes": {
-        "order": [
-          "060"
-        ]
-      }
-    },
-    "event:burial": {
-      "id": "event:burial",
-      "title": "Jesus is laid in a new tomb",
-      "parent_id": "stage:messiah-passion-week",
+    "era:messiah:stage-02:07": {
+      "id": "era:messiah:stage-02:07",
+      "title": "Temple is cleared early in the ministry",
+      "parent_id": "era:messiah:stage-02",
       "attributes": {
         "order": [
           "070"
         ]
       }
     },
-    "stage:messiah-resurrection": {
-      "id": "stage:messiah-resurrection",
-      "title": "Resurrection & commission",
+    "era:messiah:stage-03": {
+      "id": "era:messiah:stage-03",
+      "title": "Galilean ministry",
       "parent_id": "era:messiah",
       "attributes": {
         "order": [
-          "065"
+          "830"
         ]
       }
     },
-    "event:tomb-empty": {
-      "id": "event:tomb-empty",
-      "title": "Women discover the stone rolled away",
-      "parent_id": "stage:messiah-resurrection",
+    "era:messiah:stage-03:01": {
+      "id": "era:messiah:stage-03:01",
+      "title": "Sermon on the Mount reframes flourishing",
+      "parent_id": "era:messiah:stage-03",
       "attributes": {
         "order": [
           "010"
         ]
       }
     },
-    "event:emmaus": {
-      "id": "event:emmaus",
-      "title": "Jesus walks with disciples on the way to Emmaus",
-      "parent_id": "stage:messiah-resurrection",
+    "era:messiah:stage-03:02": {
+      "id": "era:messiah:stage-03:02",
+      "title": "A paralytic is forgiven and walks home",
+      "parent_id": "era:messiah:stage-03",
       "attributes": {
         "order": [
           "020"
         ]
       }
     },
-    "event:upper-room": {
-      "id": "event:upper-room",
-      "title": "Jesus breathes peace on the gathered followers",
-      "parent_id": "stage:messiah-resurrection",
+    "era:messiah:stage-03:03": {
+      "id": "era:messiah:stage-03:03",
+      "title": "Storm obeys a single command",
+      "parent_id": "era:messiah:stage-03",
       "attributes": {
         "order": [
           "030"
         ]
       }
     },
-    "event:galilee-charge": {
-      "id": "event:galilee-charge",
-      "title": "The risen King restores Peter and charges the disciples",
-      "parent_id": "stage:messiah-resurrection",
+    "era:messiah:stage-03:04": {
+      "id": "era:messiah:stage-03:04",
+      "title": "Legion of demons is cast out",
+      "parent_id": "era:messiah:stage-03",
       "attributes": {
         "order": [
           "040"
         ]
       }
     },
-    "event:ascension": {
-      "id": "event:ascension",
-      "title": "Jesus blesses the disciples and ascends",
-      "parent_id": "stage:messiah-resurrection",
+    "era:messiah:stage-03:05": {
+      "id": "era:messiah:stage-03:05",
+      "title": "Feeding of thousands with a simple meal",
+      "parent_id": "era:messiah:stage-03",
       "attributes": {
         "order": [
           "050"
         ]
       }
     },
-    "event:great-commission": {
-      "id": "event:great-commission",
-      "title": "The church receives the ongoing mission",
-      "parent_id": "stage:messiah-resurrection",
+    "era:messiah:stage-03:06": {
+      "id": "era:messiah:stage-03:06",
+      "title": "Jesus walks on water to rescue friends",
+      "parent_id": "era:messiah:stage-03",
       "attributes": {
         "order": [
           "060"
+        ]
+      }
+    },
+    "era:messiah:stage-03:07": {
+      "id": "era:messiah:stage-03:07",
+      "title": "Mission of the Twelve multiplies ministry",
+      "parent_id": "era:messiah:stage-03",
+      "attributes": {
+        "order": [
+          "070"
+        ]
+      }
+    },
+    "era:messiah:stage-04": {
+      "id": "era:messiah:stage-04",
+      "title": "Journeys toward Jerusalem",
+      "parent_id": "era:messiah",
+      "attributes": {
+        "order": [
+          "840"
+        ]
+      }
+    },
+    "era:messiah:stage-04:01": {
+      "id": "era:messiah:stage-04:01",
+      "title": "Peter confesses Jesus as the Messiah",
+      "parent_id": "era:messiah:stage-04",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:messiah:stage-04:02": {
+      "id": "era:messiah:stage-04:02",
+      "title": "Glory shines at the transfiguration",
+      "parent_id": "era:messiah:stage-04",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:messiah:stage-04:03": {
+      "id": "era:messiah:stage-04:03",
+      "title": "Seventy-two carry peace to new towns",
+      "parent_id": "era:messiah:stage-04",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:messiah:stage-04:04": {
+      "id": "era:messiah:stage-04:04",
+      "title": "Rich young ruler wrestles with invitation",
+      "parent_id": "era:messiah:stage-04",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:messiah:stage-04:05": {
+      "id": "era:messiah:stage-04:05",
+      "title": "Lazarus is raised near Bethany",
+      "parent_id": "era:messiah:stage-04",
+      "attributes": {
+        "order": [
+          "050"
+        ]
+      }
+    },
+    "era:messiah:stage-04:06": {
+      "id": "era:messiah:stage-04:06",
+      "title": "Children are welcomed despite objections",
+      "parent_id": "era:messiah:stage-04",
+      "attributes": {
+        "order": [
+          "060"
+        ]
+      }
+    },
+    "era:messiah:stage-05": {
+      "id": "era:messiah:stage-05",
+      "title": "Passion Week",
+      "parent_id": "era:messiah",
+      "attributes": {
+        "order": [
+          "850"
+        ]
+      }
+    },
+    "era:messiah:stage-05:01": {
+      "id": "era:messiah:stage-05:01",
+      "title": "Triumphal entry on a colt",
+      "parent_id": "era:messiah:stage-05",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:messiah:stage-05:02": {
+      "id": "era:messiah:stage-05:02",
+      "title": "Temple courts are cleared again",
+      "parent_id": "era:messiah:stage-05",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:messiah:stage-05:03": {
+      "id": "era:messiah:stage-05:03",
+      "title": "Olivet teaching warns and comforts",
+      "parent_id": "era:messiah:stage-05",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:messiah:stage-05:04": {
+      "id": "era:messiah:stage-05:04",
+      "title": "Last Supper reframes Passover",
+      "parent_id": "era:messiah:stage-05",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:messiah:stage-05:05": {
+      "id": "era:messiah:stage-05:05",
+      "title": "Gethsemane vigil and arrest",
+      "parent_id": "era:messiah:stage-05",
+      "attributes": {
+        "order": [
+          "050"
+        ]
+      }
+    },
+    "era:messiah:stage-05:06": {
+      "id": "era:messiah:stage-05:06",
+      "title": "Trials unfold before council and Pilate",
+      "parent_id": "era:messiah:stage-05",
+      "attributes": {
+        "order": [
+          "060"
+        ]
+      }
+    },
+    "era:messiah:stage-05:07": {
+      "id": "era:messiah:stage-05:07",
+      "title": "Crucifixion outside the city",
+      "parent_id": "era:messiah:stage-05",
+      "attributes": {
+        "order": [
+          "070"
+        ]
+      }
+    },
+    "era:messiah:stage-05:08": {
+      "id": "era:messiah:stage-05:08",
+      "title": "Burial in a garden tomb",
+      "parent_id": "era:messiah:stage-05",
+      "attributes": {
+        "order": [
+          "080"
+        ]
+      }
+    },
+    "era:messiah:stage-06": {
+      "id": "era:messiah:stage-06",
+      "title": "Resurrection & commission",
+      "parent_id": "era:messiah",
+      "attributes": {
+        "order": [
+          "860"
+        ]
+      }
+    },
+    "era:messiah:stage-06:01": {
+      "id": "era:messiah:stage-06:01",
+      "title": "Women find the stone rolled away",
+      "parent_id": "era:messiah:stage-06",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:messiah:stage-06:02": {
+      "id": "era:messiah:stage-06:02",
+      "title": "Angels announce \u201cHe is risen\u201d",
+      "parent_id": "era:messiah:stage-06",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:messiah:stage-06:03": {
+      "id": "era:messiah:stage-06:03",
+      "title": "Jesus meets Mary in the garden",
+      "parent_id": "era:messiah:stage-06",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:messiah:stage-06:04": {
+      "id": "era:messiah:stage-06:04",
+      "title": "Emmaus travelers recognize Jesus at the table",
+      "parent_id": "era:messiah:stage-06",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:messiah:stage-06:05": {
+      "id": "era:messiah:stage-06:05",
+      "title": "Upper room gathering receives peace",
+      "parent_id": "era:messiah:stage-06",
+      "attributes": {
+        "order": [
+          "050"
+        ]
+      }
+    },
+    "era:messiah:stage-06:06": {
+      "id": "era:messiah:stage-06:06",
+      "title": "Thomas touches wounds and believes",
+      "parent_id": "era:messiah:stage-06",
+      "attributes": {
+        "order": [
+          "060"
+        ]
+      }
+    },
+    "era:messiah:stage-06:07": {
+      "id": "era:messiah:stage-06:07",
+      "title": "Breakfast by the sea restores Peter",
+      "parent_id": "era:messiah:stage-06",
+      "attributes": {
+        "order": [
+          "070"
+        ]
+      }
+    },
+    "era:messiah:stage-06:08": {
+      "id": "era:messiah:stage-06:08",
+      "title": "Great Commission sends disciples globally",
+      "parent_id": "era:messiah:stage-06",
+      "attributes": {
+        "order": [
+          "080"
+        ]
+      }
+    },
+    "era:messiah:stage-06:09": {
+      "id": "era:messiah:stage-06:09",
+      "title": "Ascension blesses and points to return",
+      "parent_id": "era:messiah:stage-06",
+      "attributes": {
+        "order": [
+          "090"
         ]
       }
     }
