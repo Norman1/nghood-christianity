@@ -149,9 +149,6 @@ class BibleEventGraphPage extends HTMLElement {
                 <header class="page-header">
                     <p class="eyebrow">Event-first Bible harmony</p>
                     <h1>Bible Storyline Explorer</h1>
-                    <p class="helper-text">
-                        Start from high-level events and expand rows to drill into each branch—no Scripture text, just milestones you can open as needed.
-                    </p>
                 </header>
 
                 <div id="graph-status" class="callout callout-warning">
@@ -162,7 +159,6 @@ class BibleEventGraphPage extends HTMLElement {
                     <div class="controls">
                         <button type="button" id="expand-all">Expand all</button>
                         <button type="button" id="collapse-all">Collapse all</button>
-                        <p class="helper-text">Tip: stay zoomed out for the big picture, then open only the journeys you care about.</p>
                     </div>
 
                     <table>
@@ -177,14 +173,6 @@ class BibleEventGraphPage extends HTMLElement {
                     </table>
                 </section>
 
-                <section>
-                    <h2>How to read this outline</h2>
-                    <ul>
-                        <li>Rows are nested: each indent represents a deeper part of the storyline.</li>
-                        <li>Scan the top anchors for the era you want, then open only the scenes you need.</li>
-                        <li>Each toggle button reveals more detail without overwhelming the full timeline.</li>
-                    </ul>
-                </section>
             </div>
         `;
 
@@ -248,7 +236,7 @@ class BibleEventGraphPage extends HTMLElement {
 
             const manifest = await response.json();
             this.applyManifest(manifest);
-            this.setStatus('callout-success', `Loaded ${Object.keys(this.events).length} events. Expand rows to explore.`);
+            this.setStatus('callout-success', 'Outline ready.');
             this.renderTable();
         } catch (error) {
             console.error('Failed to load Bible Storyline Explorer manifest:', error);
