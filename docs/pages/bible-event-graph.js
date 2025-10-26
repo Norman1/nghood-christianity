@@ -236,7 +236,7 @@ class BibleEventGraphPage extends HTMLElement {
 
             const manifest = await response.json();
             this.applyManifest(manifest);
-            this.setStatus('callout-success', 'Outline ready.');
+            this.statusCallout?.remove();
             this.renderTable();
         } catch (error) {
             console.error('Failed to load Bible Storyline Explorer manifest:', error);
