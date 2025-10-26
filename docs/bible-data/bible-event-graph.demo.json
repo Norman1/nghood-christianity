@@ -1,0 +1,2054 @@
+{
+  "events": {
+    "root:gospel-harmony": {
+      "id": "root:gospel-harmony",
+      "title": "Gospel Harmony Overview",
+      "parent_id": null,
+      "attributes": {
+        "order": [
+          "000"
+        ]
+      }
+    },
+    "era:prologue": {
+      "id": "era:prologue",
+      "title": "Prologue & Announcements",
+      "parent_id": "root:gospel-harmony",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "era:birth-boyhood": {
+      "id": "era:birth-boyhood",
+      "title": "Birth & Boyhood",
+      "parent_id": "root:gospel-harmony",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "era:early-ministry": {
+      "id": "era:early-ministry",
+      "title": "Early Ministry Sparks",
+      "parent_id": "root:gospel-harmony",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "era:rise-momentum": {
+      "id": "era:rise-momentum",
+      "title": "Growing Crowds & Conflicts",
+      "parent_id": "root:gospel-harmony",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "era:training-circle": {
+      "id": "era:training-circle",
+      "title": "Training the Twelve",
+      "parent_id": "root:gospel-harmony",
+      "attributes": {
+        "order": [
+          "050"
+        ]
+      }
+    },
+    "era:jerusalem-shift": {
+      "id": "era:jerusalem-shift",
+      "title": "Jerusalem Tension Builds",
+      "parent_id": "root:gospel-harmony",
+      "attributes": {
+        "order": [
+          "060"
+        ]
+      }
+    },
+    "era:farewell-prep": {
+      "id": "era:farewell-prep",
+      "title": "Upper Room & Farewells",
+      "parent_id": "root:gospel-harmony",
+      "attributes": {
+        "order": [
+          "070"
+        ]
+      }
+    },
+    "era:trial": {
+      "id": "era:trial",
+      "title": "Trials & Condemnation",
+      "parent_id": "root:gospel-harmony",
+      "attributes": {
+        "order": [
+          "080"
+        ]
+      }
+    },
+    "era:passion": {
+      "id": "era:passion",
+      "title": "Cross & Tomb",
+      "parent_id": "root:gospel-harmony",
+      "attributes": {
+        "order": [
+          "090"
+        ]
+      }
+    },
+    "era:resurrection": {
+      "id": "era:resurrection",
+      "title": "Resurrection & Ascension",
+      "parent_id": "root:gospel-harmony",
+      "attributes": {
+        "order": [
+          "100"
+        ]
+      }
+    },
+    "sec-001": {
+      "id": "sec-001",
+      "title": "A. Luke’s Prologue: The Sources of Knowledge The Sources of Knowledge Luke 1:1-4 <<<PAGE 39>>> 1 Forasmuch as many have taken in hand to draw up a narrative concerning those matters which have been fulfilled among us, 2 even as they delivered them unto us, who from the beginning were eyewitnesses and ministers of the word, 3 it seemed good to me also, having traced the course of all things accurately from the first, to write unto you in order, most excellent Theo- philus; 4 that you might know the certainty concerning the things wherein you were instructed. <<<PAGE 40>>>",
+      "parent_id": "era:prologue",
+      "attributes": {
+        "order": [
+          "001"
+        ]
+      }
+    },
+    "sec-002": {
+      "id": "sec-002",
+      "title": "B. The Prologue in the Gospel of John: The Preexistence of the Messiah I. The Introduction of the King -§§ 3-27 - the Gospel of John: The Preexistence of the Messiah John 1:1-18 1 In the beginning was the Word, and the Word was with God, and the Word was God. 2 The same was in the beginning with God. 3 All things were made through him; and without him was not anything made that has been made. 4 In him was life; and the life was the light of men. 5 And the light shines in the darkness; and the darkness apprehended it not. 6 <<<PAGE 41>>> There came a man, sent from God, whose name was Yochanan. 7 The same came for witness, that he might bear witness of the light, that all might believe through him. 8 He was not the light, but <came> that he might bear witness of the light. 9 There was the true light, <even the light> which lights every man, coming into the world. 10 He was in the world, and the world was made through him, and the world knew him not. 11 He came unto his own, and they that were his own received him not. 12 But as many as received him, to them gave he the right to become children of God, <even> to them that believe on his name: <<<PAGE 42>>> 13 who were born, not of blood, nor of the will of the flesh, nor of the will of man, but of God. 14 And the Word became flesh, and dwelled[3] among us (and we beheld his glory, glory as of the only begotten from the Father), full of grace and truth. 15 Yochanan bore witness of him, and cried, saying, This was he of whom I said, He that comes after me is become before me: for he was before me. 16 For of his fullness we all received, and grace for grace. 17 For the law was given through Mosheh; grace and truth came through Yeshua the Messiah. 18 No man has seen God at any time; the only begotten Son, who is in the <<<PAGE 43>>> bosom of the Father, he has declared <him>. <<<PAGE 44>>> I. The Introduction of the King -§§ 3-27 -",
+      "parent_id": "era:prologue",
+      "attributes": {
+        "order": [
+          "002"
+        ]
+      }
+    },
+    "sec-003": {
+      "id": "sec-003",
+      "title": "A. The Arrival of the King Matthew 1:1-17 1 The book of the generation of Yeshua the Messiah, the son of David, the son of Avraham. 2 Avraham begat Yitzchak; and Yitzchak begat Yaakov; and Yaakov begat Yehudah and his brethren; 3 and Yehudah begat Peretz and Zerach of Tamar; and Peretz begat Chetzron; andLuke 3:23d-38 23d being the son (as was supposed) of Yoseph, the <son> of Eili, 24 the <son> of Mattat, the <son> of Levi, the <son> of Malchi, the <son> of Yannai, the <son> of Yoseph, 25 the <son> of Mattithyahu, the <son> of Amotz, the <son> of Nachum, the <son> of <<<PAGE 45>>> Chetzron begat Ram; 4 and Ram begat Amminadav; and Amminadav begat Nachshon; and Nachshon begat Salmon; 5 and Salmon begat Boaz of Rachav; and Boaz begat Oved of Ruth; and Oved begat Yishai; 6 and Yishai begat David the king. And David begat Shlomoh of her <that had been the wife> of Uriyah; 7 and Shlomoh begat Rahavam; and Rahavam begat Aviyah; and Aviyah begat Asa; 8 and Asa begat Yehoshaphat; and Yehoshaphat begat Yoram; and Yoram begat Uziyahu; 9 and Uziyahu begat Yotam; and Yotam begat Achaz; and Achaz begat Chizkiyahu; 10 and Chizkiyahu begat Menasheh; and Menasheh begat Amon; and Amon begat Yoshiyahu; 11 and Yoshiyahu begat Yechanyahu and his brethren, at the time of the carrying away to Babylon. 12 And after the carrying away to Babylon, Yechanyahu begat Shealtiel; and Shealtiel begat Zerubbavel; 13 and Zerubbavel begat Avihud; and Avihud begat Elyakim;Chesli, the <son> of Naggai, 26 the <son> of Machat, the <son> of Mattithyahu, the <son> of Shmi, the <son> of Yoseph, the <son> of Yodah, 27 the <son> of Yochanan, the <son> of Reisha, the <son> of Zerubbavel, the <son> of Shealtiel, the <son> of Neiri, 28 the <son> of Malchi, the <son> of Addi, the <son> of Kosam, the <son> of Elmadan, the <son> of Eir, 29 the <son> of Yeshua, the <son> of Eliezer, the <son> of Yorim, the <son> of Mattiat, the <son> of Levi, 30 the <son> of Shmion, the <son> of Yehudah, the <son> of Yoseph, the <son> of Yonam, the <son> of Eliakim, 31 the <son> of Malah, the <son> of Manna, the <son> of Mattatah, the <son> of Natan, the <son> of David, 32 the <son> of Yishai, the <son> of Oved, the <son> of Boaz, the <son> of Salmon, the <son> of Nachshon, 33 the <son> of Amminadav, the <son> of Arni, the <son> of Chetzron, the <son> of Peretz, the <son> of <<<PAGE 46>>> and Elyakim begat Azur; 14 and Azur begat Zadok; and Zadok begat Achim; and Achim begat Eliud; 15 and Eliud begat Eleazar; and Eleazar begat Matthan; and Matthan begat Yaakov; 16 and Yaakov begat Yoseph the husband of Miriam, of whom was born Yeshua, who is called Messiah. 17 So all the generations from Avraham unto David are fourteen generations; and from David unto the carrying away to Babylon fourteen generations; and from the carrying away to Babylon unto the Messiah fourteen generations.[4]Yehudah, 34 the <son> of Yaakov, the <son> of Yitzchak, the <son> of Avraham, the <son> of Terach, the <son> of Nachor, 35 the <son> of Serug, the <son> of Reu, the <son> of Peleg, the <son> of Eiver, the <son> of Shelach 36 the <son> of Cainan, the <son> of Arpachshad, the <son> of Shem, the <son> of Noach, the <son> of Lemech, 37 the <son> of Metushelach, the <son> of Chanoch, the <son> of Yered, the <son> of Mahalaleel, the <son> of Kainan, 38 the <son> of Enosh, the <son> of Shet, the <son> of Adam, the <son> of God.[5]",
+      "parent_id": "era:prologue",
+      "attributes": {
+        "order": [
+          "003"
+        ]
+      }
+    },
+    "sec-004": {
+      "id": "sec-004",
+      "title": "2. The Advent of the King Zecharyah Yochanan’s Birth to Zecharyah Luke 1:5-25 5 There was in the days of Herod, king of Yehudah, a certain priest named Zecharyah, of the course of Aviyah: and he had a wife of the daughters of Aharon, and her name was Elisheva. <<<PAGE 47>>> 6 And they were both righteous before God, walking in all the commandments and ordinances of the Lord blameless. 7 And they had no child, because that Elisheva was barren, and they both were <now> well stricken in years. 8 Now it came to pass, while he executed the priest’s office before God in the order of his course, 9 according to the custom of the priest’s office, his lot was to enter into the temple of the Lord and burn incense. 10 And the whole multitude of the people were praying without at the hour of incense. 11 And there appeared unto him an angel of the Lord standing on the right side of the altar of incense. 12 And Zecharyah was troubled when he saw <him>, and fear fell upon him. 13 But the angel said unto him, Fear not, Zecharyah: because your supplication is heard, and your wife Elisheva shall bear you a son, and you shall call his name Yochanan. 14 And you shall have joy and gladness; and many shall rejoice at his birth. 15 For he shall be great in the sight of the Lord, and he shall drink no wine nor strong drink; and he shall be filled with the Holy Spirit, even from his mother’s womb. 16 And many of the children of Yisrael shall be turned unto the Lord their God. 17 And he shall go before his face in the spirit and power of Eliyahu, to turn the hearts of the fathers to the children, and the disobedient <to walk> in the wisdom of the just; to make ready for the Lord a people prepared <for him>. 18 And <<<PAGE 48>>> Zecharyah said unto the angel, Whereby shall I know this? for I am an old man, and my wife well stricken in years. 19 And the angel answering said unto him, I am Gavriel, that stands in the presence of God; and I was sent to speak unto you, and to bring you these good tidings. 20 And behold, you shall be silent and not able to speak, until the day that these things shall come to pass, because you believed not my words, which shall be fulfilled in their season. 21 And the people were waiting for Zecharyah, and they marvelled while he tarried in the temple. 22 And when he came out, he could not speak unto them: and they perceived that he had seen a vision in the temple: and he continued making signs unto them, and remained dumb. 23 And it came to pass, when the days of his ministration were fulfilled, he departed unto his house. 24 And after these days Elisheva his wife conceived; and she hid herself five months, saying, 25 Thus has the Lord done unto me in the days wherein he looked upon <me>, to take away my reproach among men.",
+      "parent_id": "era:prologue",
+      "attributes": {
+        "order": [
+          "004"
+        ]
+      }
+    },
+    "sec-005": {
+      "id": "sec-005",
+      "title": "b. The Annunciation of Yeshua’s Birth to Miriam Birth to Miriam Luke 1:26-38 <<<PAGE 49>>> 26 Now in the sixth month the angel Gavriel was sent from God unto a city of Galil, named Natzeret, 27 to a virgin betrothed to a man whose name was Yoseph, of the house of David; and the virgin's name was Miriam. 28 And he came in unto her, and said, Hail, you that are highly favored, the Lord <is> with you. 29 But she was greatly troubled at the saying, and cast in her mind what manner of salutation this might be. 30 And the angel said unto her, Fear not, Miriam: for you have found favor with God. 31 And behold, you shall conceive in your womb, and bring forth a son, and shall call his name YESHUA. 32 He shall be great, and shall be called the Son of the Most High: and the Lord God shall give unto him the throne of his father David: 33 and he shall reign over the house of Yaakov forever; and of his kingdom there shall be no end. 34 And Miriam said unto the angel, How shall this be, seeing I know not a man? 35 And the angel answered and said unto her, The Holy Spirit shall come upon you, and the power of the Most High shall overshadow you: wherefore also the holy thing which is begotten shall be called the Son of God. 36 And behold, Elisheva your kinswoman, she also has conceived a son in her old age; and this is the sixth month with her that was called barren. 37 For no word from God shall be void of power. 38 And Miriam said, Behold, the handmaid <<<PAGE 50>>> of the Lord; be it unto me according to your word. And the angel departed from her.",
+      "parent_id": "era:prologue",
+      "attributes": {
+        "order": [
+          "005"
+        ]
+      }
+    },
+    "sec-006": {
+      "id": "sec-006",
+      "title": "c. The Visit of Miriam to Elisheva Luke 1:39-45 39 And Miriam arose in these days and went into the hill country with haste, into a city of Judah; 40 and entered into the house of Zecharyah and saluted Elisheva. 41 And it came to pass, when Elisheva heard the salutation of Miriam, the babe leaped in her womb; and Elisheva was filled with the Holy Spirit; 42 and she lifted up her voice with a loud cry, and said, Blessed <are> you among women, and blessed <is> the fruit of your womb. 43 And whence is this to me, that the mother of my Lord should come unto me? 44 For behold, when the voice of your salutation came into mine ears, the babe leaped in my womb for joy. 45 And blessed <is> she that believed; for there shall be a fulfillment of the things which have been spoken to her from the Lord.",
+      "parent_id": "era:prologue",
+      "attributes": {
+        "order": [
+          "006"
+        ]
+      }
+    },
+    "sec-007": {
+      "id": "sec-007",
+      "title": "d. The Song of Miriam Luke 1:46-56 46   And Miriam said, My soul does magnify the Lord, <<<PAGE 51>>> 47 And my spirit has rejoiced in God my Savior. 48 For he has looked upon the low estate of his handmaid: For behold, from henceforth all generations shall call me blessed. 49   For he that is mighty has done to me great things; And holy is his name. 50   And his mercy is unto generations and generations on them that fear him. 51   He has showed strength with his arm; He has scattered the proud in the imagination of their heart. 52   He has put down princes from <their> thrones, And has exalted them of low degree. 53   The hungry he has filled with good things; And the rich he has sent empty away. 54   He has given help to Yisrael his servant, That he might remember mercy 55   (As he spoke unto our fathers) Toward Avraham and his seed forever. 56   And Miriam abode with her about three months, and returned unto her house. <<<PAGE 52>>>",
+      "parent_id": "era:prologue",
+      "attributes": {
+        "order": [
+          "007"
+        ]
+      }
+    },
+    "sec-008": {
+      "id": "sec-008",
+      "title": "e. The Birth of Yochanan Luke 1:57-80 57 Now Elisheva's time was fulfilled that she should be delivered; and she brought forth a son. 58 And her neighbors and her kinsfolk heard that the Lord had magnified his mercy towards her; and they rejoiced with her. 59 And it came to pass on the eighth day, that they came to circumcise the child; and they would have called him Zecharyah, after the name of the father. 60 And his mother answered and said, Not so; but he shall be called Yochanan.  61 And they said unto her, There is none of your kindred that is called by this name. 62 And they made signs to his father, what he would have him called. 63 And he asked for a writing tablet, and wrote, saying, His name is Yochanan. And they marvelled all. 64 And his mouth was opened immediately, and his tongue <loosed>, and he spoke, blessing God. 65 And fear came on all that dwelled round about them: and all these sayings were noised abroad throughout all the hill country of Yehudah. 66 And all that heard them laid them up in their heart, saying, What then shall this child be? For the hand of the Lord was with him. 67 And his father Zecharyah was filled with the Holy Spirit, and prophesied, saying, <<<PAGE 53>>> 68   Blessed <be> the Lord, the God of Yisrael; For he has visited and wrought redemption for his people, 69   And has raised up a horn of salvation for us In the house of his servant David 70   (As he spoke by the mouth of his holy prophets that have been from of old), 71   Salvation from our enemies, and from the hand of all that hate us; 72   To show mercy towards, our fathers, And to remember his holy covenant; 73   The oath which he spoke unto Avraham our father, 74   To grant unto us that we being delivered out of the hand of our enemies Should serve him without fear, 75   In holiness and righteousness before him all our days. 76   Yea and you, child, shall be called the prophet of the Most High: For you shall go before the face of the Lord to make ready his ways; <<<PAGE 54>>> 77   To give knowledge of salvation unto his people In the remission of their sins, 78   Because of the tender mercy of our God, Whereby the dayspring from on high shall visit us, 79   To shine upon them that sit in darkness and the shadow of death; To guide our feet into the way of peace. 80 And the child grew, and waxed strong in spirit, and was in the deserts till the day of his showing unto Yisrael.",
+      "parent_id": "era:prologue",
+      "attributes": {
+        "order": [
+          "008"
+        ]
+      }
+    },
+    "sec-009": {
+      "id": "sec-009",
+      "title": "f. The Annunciation of Yeshua’s Birth to Yoseph <<<PAGE 13>>> Birth to Yoseph Matthew 1:18-25 18 Now the birth of Yeshua the Messiah was on this wise: When his mother Miriam had been betrothed to Yoseph, before they came together she was found with child of the Holy Spirit. 19 And Yoseph her husband, being a righteous man, and not willing to make her a public example, was minded to put her away privately. 20 But when he thought on these things, behold, an angel of the Lord appeared unto him in a dream, saying, Yoseph, you son of David, fear not to take unto you Miriam your wife: for that which is conceived <<<PAGE 55>>> in her is of the Holy Spirit. 21 And she shall bring forth a son; and you shall call his name YESHUA; for it is he that shall save his people from their sins. 22 Now all this is come to pass that it might be fulfilled which was spoken by the Lord through the prophet, saying, 23   Behold, the virgin shall be with child, and shall bring forth a son, And they shall call his name Immanuel; which is, being interpreted, God with us. 24 And Yoseph arose from his sleep, and did as the angel of the Lord commanded him, and took unto him his wife; 25 and knew her not till she had brought forth a son: and he called his name YESHUA.",
+      "parent_id": "era:prologue",
+      "attributes": {
+        "order": [
+          "009"
+        ]
+      }
+    },
+    "sec-010": {
+      "id": "sec-010",
+      "title": "g. The Birth of the King Luke 2:1-7 1 Now it came to pass in those days, there went out a decree from Caesar Augustus, that all the world should be enrolled. 2 This was the first enrolment made when Quirinius was governor of Syria. 3 And all went to enrol themselves, everyone to his own city. 4 And Yoseph also went up from Galil, out of the city of Natzeret, into Yehudah, to the city of David, which is called Beit Lechem, because he was of the house and family of David; 5 to enroll himself with Miriam, who was <<<PAGE 56>>> betrothed to him, being great with child. 6 And it came to pass, while they were there, the days were fulfilled that she should be delivered. 7 And she brought forth her firstborn son; and she wrapped him in swaddling clothes, and laid him in a manger, because there was no room for them in the inn.",
+      "parent_id": "era:prologue",
+      "attributes": {
+        "order": [
+          "010"
+        ]
+      }
+    },
+    "sec-011": {
+      "id": "sec-011",
+      "title": "h. The Announcement to the Shepherds Shepherds Luke 2:8-20 8 And there were shepherds in the same country abiding in the field, and keeping watch by night over their flock. 9 And an angel of the Lord stood by them, and the glory of the Lord shone round about them: and they were sore afraid. 10 And the angel said unto them, Be not afraid; for behold, I bring you good tidings of great joy which shall be to all the people: 11 for there is born to you this day in the city of David a Savior, who is Messiah the Lord. 12 And this <is> the sign unto you: Ye shall find a babe wrapped in swaddling clothes, and lying in a manger. 13 And suddenly there was with the angel a multitude of the heavenly host praising God, and saying, 14   Glory to God in the highest, <<<PAGE 57>>> And on earth peace among men in whom he is well pleased. 15 And it came to pass, when the angels went away from them into heaven, the shepherds said one to another, Let us now go even unto Beit Lechem, and see this thing that is come to pass, which the Lord has made known unto us. 16 And they came with haste, and found both Miriam and Yoseph, and the babe lying in the manger. 17 And when they saw it, they made known concerning the saying which was spoken to them about this child. 18 And all that heard it wondered at the things which were spoken unto them by the shepherds. 19 But Miriam kept all these sayings, pondering them in her heart. 20 And the shepherds returned, glorifying and praising God for all the things that they had heard and seen, even as it was spoken unto them.",
+      "parent_id": "era:prologue",
+      "attributes": {
+        "order": [
+          "011"
+        ]
+      }
+    },
+    "sec-012": {
+      "id": "sec-012",
+      "title": "3. His Infancy and Childhood Childhood Luke 2:21 21 And when eight days were fulfilled for circumcising him, his name was called YESHUA, <<<PAGE 58>>> which was so called by the angel before he was conceived in the womb.",
+      "parent_id": "era:birth-boyhood",
+      "attributes": {
+        "order": [
+          "012"
+        ]
+      }
+    },
+    "sec-013": {
+      "id": "sec-013",
+      "title": "b. The Presentation Luke 2:22-38 22 And when the days of their purification according to the law of Mosheh were fulfilled, they brought him up to Yerushalayim, to present him to the Lord 23 (as it is written in the law of the Lord, Every male that opens the womb shall be called holy to the Lord), 24 and to offer a sacrifice according to that which is said in the law of the Lord, A pair of turtledoves, or two young pigeons. 25 And behold, there was a man in Yerushalayim whose name was Simeon; and this man was righteous and devout, looking for the consolation of Yisrael: and the Holy Spirit was upon him. 26 And it had been revealed unto him by the Holy Spirit, that he should not see death, before he had seen the Lord's Messiah. 27 And he came in the Spirit into the temple: and when the parents brought in the child Yeshua, that they might do concerning him after the custom of the law, 28 then he received him into his arms, and blessed God, and said, 29   Now let you your servant depart, Lord, According to your word, in peace; <<<PAGE 59>>> 30   For mine eyes have seen your salvation, 31   Which you have prepared before the face of all peoples; 32   A light for revelation to the Gentiles, And the glory of your people Yisrael. 33 And his father and his mother were marveling at the things which were spoken concerning him; 34 and Simeon blessed them, and said unto Miriam his mother, Behold, this <child> is set for the falling and the rising of many in Yisrael; and for a sign which is spoken against; 35 yea and a sword shall pierce through your own soul; that thoughts out of many hearts may be revealed. 36 And there was one Hannah, a prophetess, the daughter of Penuel, of the tribe of Asher (she was of a great age, having lived with a husband seven years from her virginity, 37 and she had been a widow even unto eighty and four years), who departed not from the temple, worshipping with fastings and supplications night and day. 38 And coming up at that very hour she gave thanks unto God, and spoke of him to all them that were looking for the redemption of Yerushalayim. <<<PAGE 60>>>",
+      "parent_id": "era:birth-boyhood",
+      "attributes": {
+        "order": [
+          "013"
+        ]
+      }
+    },
+    "sec-014": {
+      "id": "sec-014",
+      "title": "c. His Infancy Matthew 2:1-12 1 Now when Yeshua was born in Beit Lechem of Yehudah in the days of Herod the king, behold, Wisemen[6] from the east came to Yerushalayim, saying, 2 Where is he that is born King of the Jews? for we saw his star in the east, and are come to worship him. 3 And when Herod the king heard it, he was troubled, and all Yerushalayim with him. 4 And gathering together all the chief priests and scribes of the people, he inquired of them where the Messiah should be born. 5 And they said unto him, In Beit Lechem of Yehudah: for thus it is written through the prophet, 6 And you Beit Lechem, land of Yehudah, are in no wise least among the princes of Yehudah: For out of you shall come forth a governor, who shall be shepherd of my people Yisrael. 7 Then Herod privately called the Wisemen, and learned of them exactly what time the star appeared. 8 And he sent them to Beit Lechem, and said, Go and search out exactly concerning the young child; and when ye have found <him>, bring me word, that I also may come and worship <<<PAGE 61>>> him. 9 And they, having heard the king, went their way; and lo, the star, which they saw in the east, went before them, till it came and stood over where the young child was. 10 And when they saw the star, they rejoiced with exceeding great joy. 11 And they came into the house and saw the young child with Miriam his mother; and they fell down and worshipped him; and opening their treasures they offered unto him gifts, gold and frankincense and myrrh. 12 And being warned <of God> in a dream that they should not return to Herod, they departed into their own country another way.",
+      "parent_id": "era:birth-boyhood",
+      "attributes": {
+        "order": [
+          "014"
+        ]
+      }
+    },
+    "sec-015": {
+      "id": "sec-015",
+      "title": "(2) In Egypt Matthew 2:13-18 13 Now when they were departed, behold, an angel of the Lord appeared to Yoseph in a dream, saying, Arise and take the young child and his mother, and flee into Egypt[7], and be you there until I tell you: for Herod will seek the young child to destroy him. 14 And he arose and took the young child and his mother by night, and departed into Egypt; 15 and was there until the death of Herod: that it might be fulfilled which was spoken by the Lord through the prophet, saying, Out of Egypt did I call my son. 16 Then Herod, when he saw that he was mocked of the Wisemen, was exceedingly angry, and sent forth, <<<PAGE 62>>> and slew all the male children that were in Beit Lechem, and in all the borders thereof, from two years old and under, according to the time which he had exactly learned of the Wisemen. 17 Then was fulfilled that which was spoken through Yermiyahu the prophet, saying, 18 A voice was heard in Ramah, weeping and great mourning, Rachel weeping for her children; And she would not be comforted, because they are not.",
+      "parent_id": "era:birth-boyhood",
+      "attributes": {
+        "order": [
+          "015"
+        ]
+      }
+    },
+    "sec-016": {
+      "id": "sec-016",
+      "title": "(3) In Natzeret Matthew 2:19-23 19 But when Herod was dead, behold, an angel of the Lord appeared in a dream to Yoseph in Egypt, saying, 20 Arise and take the young child and his mother, and go into the land of Yisrael: for they are dead that sought the young child's life. 21 And he arose and took the young child and his mother, and came into theLuke 2:39 39 And when they had accomplished all things that were according to the law of the Lord, they returned into Galil, to their own city Natzeret. <<<PAGE 63>>> land of Yisrael. 22 But when he heard that Archelaus was reigning over Yehudah in the room of his father Herod, he was afraid to go thither; and being warned <of God> in a dream, he withdrew into the parts of Galil, 23 and came and dwelled in a city called Natzeret; that it might be fulfilled which was spoken through the prophets, that he should be called a Nazarene.",
+      "parent_id": "era:birth-boyhood",
+      "attributes": {
+        "order": [
+          "016"
+        ]
+      }
+    },
+    "sec-017": {
+      "id": "sec-017",
+      "title": "d. His Boyhood Luke 2:40 40 And the child grew, and waxed strong, filled with wisdom: and the grace of God was upon him.",
+      "parent_id": "era:birth-boyhood",
+      "attributes": {
+        "order": [
+          "017"
+        ]
+      }
+    },
+    "sec-018": {
+      "id": "sec-018",
+      "title": "(2) The Visit to Yerushalayim Luke 2:41-50 41 And his parents went every year to Yerushalayim at the feast of the Passover. 42 And when he was twelve years old, they went up after <<<PAGE 64>>> the custom of the feast; 43 and when they had fulfilled the days, as they were returning, the boy Yeshua tarried behind in Yerushalayim; and his parents knew it not; 44 but supposing him to be in the company, they went a day's journey; and they sought for him among their kinsfolk and acquaintance: 45 and when they found him not, they returned to Yerushalayim, seeking for him. 46 And it came to pass, after three days they found him in the temple, sitting in the midst of the teachers, both hearing them, and asking them questions: 47 and all that heard him were amazed at his understanding and his answers. 48 And when they saw him, they were astonished; and his mother said unto him, Son, why have you thus dealt with us? behold, your father and I sought you sorrowing. 49 And he said unto them, How is it that ye sought me? knew ye not that I must be in my Father's house[8]? 50 And they understood not the saying which he spoke unto them.",
+      "parent_id": "era:birth-boyhood",
+      "attributes": {
+        "order": [
+          "018"
+        ]
+      }
+    },
+    "sec-019": {
+      "id": "sec-019",
+      "title": "(3) His Development Luke 2:51-52 51 And he went down with them, and came to Natzeret; and he was subject unto them: and his mother kept all <these> sayings in her heart. 52 And Yeshua advanced in wisdom and stature, and in favor with God and men. <<<PAGE 65>>>",
+      "parent_id": "era:birth-boyhood",
+      "attributes": {
+        "order": [
+          "019"
+        ]
+      }
+    },
+    "sec-020": {
+      "id": "sec-020",
+      "title": "B. The Forerunner and Herald of the King Herald of the King Mark 1:1 1 The beginning of the gospel of Yeshua Messiah[9], the Son of God.Luke 3:1-2 1 Now in the fifteenth year of the reign of Tiberius Caesar, Pontius Pilate being governor of Yehudah, and Herod being tetrarch of Galil, and his brother Philip tetrarch of the region of Ituraea and Trachonitis, and Lysanias tetrarch of Abilene, 2 in the high priesthood of Chanan and Kayapha, the word of God came unto Yochanan the son of Zecharyah in the wilderness.",
+      "parent_id": "era:birth-boyhood",
+      "attributes": {
+        "order": [
+          "020"
+        ]
+      }
+    },
+    "sec-021": {
+      "id": "sec-021",
+      "title": "2. The Message by Yochanan Matthew 3:1-6 1 And in those days came Yochanan the Baptizer,Mark 1:2-6 Luke 3:3-6 3 And he came into all the region round about the <<<PAGE 66>>> preaching in the wilderness of Yehudah, saying, 2 Repent ye; for the kingdom of heaven is at hand.Yarden, preaching the baptism of repentance unto remission of sins; 3 For this is he that was spoken of through Yeshayahu the prophet, saying,2 Even as it is written in Yeshayahu the prophet,4 as it is written in the book of the words of Yeshayahu the prophet Behold, I send my messenger before your face, Who shall prepare your way. The voice of one crying in the wilderness, Make ye ready the way of the Lord, make his3 The voice of one crying in the wilderness, Make ye ready the way of the Lord, MakeThe voice of one crying in the wilderness, Make ye ready the way of the Lord, Make <<<PAGE 67>>> paths straight.his paths straight;his paths straight. 5 Every valley shall be filled, And every mountain and hill shall be brought low; And the crooked shall become straight, And the rough ways smooth; 6 And all flesh shall see the salvation of God. 4 Now Yochanan himself had his raiment of camel's hair, and a leathern girdle about his loins; and his4 Yochanan came, who baptized in the wilderness and preached the baptism of repentance unto remission <<<PAGE 68>>> food was locusts and wild honey.of sins. 6 And Yochanan was clothed with camel's hair, and <had> a leathern girdle about his loins, and did eat locusts and wild honey. 5 Then went out unto him Yerushalayim, and all Yehudah, and all the region round about the Yarden; 6 and they were baptized of him in the river Yarden, confessing their sins.5 And there went out unto him all the country of Yehudah, and all they of Yerushalayim; And they were baptized of him in the river Yarden, confessing their sins.",
+      "parent_id": "era:birth-boyhood",
+      "attributes": {
+        "order": [
+          "021"
+        ]
+      }
+    },
+    "sec-022": {
+      "id": "sec-022",
+      "title": "3. The Explanation by Yochanan Matthew 3:7-10 7 But when he saw many of the Pharisees and Sadducees coming to his baptism, he said unto them,Luke 3:7-14 7 He said therefore to the multitudes that went out to be baptized of him, Ye offspring of vipers, who <<<PAGE 69>>> Ye offspring of vipers, who warned you to flee from the wrath to come?warned you to flee from the wrath to come? 8 Bring forth therefore fruit worthy of repentance: 9 and think not to say within yourselves, We have Avraham to our father: for I say unto you, that God is able of these stones to raise up children unto Avraham.8 Bring forth therefore fruits worthy of repentance, and begin not to say within yourselves, We have Avraham to our father: for I say unto you, that God is able of these stones to raise up children unto Avraham. 10 And even now the axe lies at the root of the trees: every tree therefore that brings not forth good fruit is hewn down, and cast into the fire.9 And even now the axe also lies at the root of the trees: every tree therefore that brings not forth good fruit is hewn down, and cast into the fire. 10 And the multitudes asked him, saying, What then must we do? 11 And he answered and said unto them, He that has two coats, let him impart to him that has none; and he that has food, let him do likewise. 12 And there came also publicans to be baptized, <<<PAGE 70>>> and they said unto him, Teacher, what must we do? 13 And he said unto them, Extort no more than that which is appointed you. 14 And soldiers also asked him, saying, And we, what must we do? And he said unto them, Extort from no man by violence, neither accuse <anyone> wrongfully; and be content with your wages.",
+      "parent_id": "era:birth-boyhood",
+      "attributes": {
+        "order": [
+          "022"
+        ]
+      }
+    },
+    "sec-023": {
+      "id": "sec-023",
+      "title": "4. The Promise by Yochanan Matthew 3:11-12Mark 1:7-8 Luke 3:15-18 15 And as the people were in expectation, and all men reasoned in their hearts concerning Yochanan, whether haply he were the Messiah; <<<PAGE 71>>> 7 And he preached, saying,16 Yochanan answered, saying unto them all, 11 I indeed baptize you in water unto repentance: but he that comes after me is mightier than I, whose shoes I am not worthy to bear: he shall baptize you in the Holy Spirit and <in> fire:There comes after me he that is mightier than I, the latchet of whose shoes I am not worthy to stoop down and unloose. 8 I baptized you in water; But he shall baptize you in the Holy Spirit.I indeed baptize you with water; but there comes he that is mightier than I, the latchet of whose shoes I am not worthy to unloose: he shall baptize you in the Holy Spirit and <in> fire: 12 whose fan is in his hand, and he will thoroughly cleanse his threshing floor; and he will gather his wheat into the garner, but the chaff he will burn up with17 whose fan is in his hand, thoroughly to cleanse his threshing floor, and to gather the wheat into his garner; but the chaff he will burn up with unquenchable fire. <<<PAGE 72>>> unquenchable fire. 18 With many other exhortations therefore preached he good tidings unto the people; (Luke 3:19-20 in § 35)",
+      "parent_id": "era:birth-boyhood",
+      "attributes": {
+        "order": [
+          "023"
+        ]
+      }
+    },
+    "sec-024": {
+      "id": "sec-024",
+      "title": "C. The Approval of the King Matthew 3:13-17 13 Then came Yeshua from Galil to the Yarden unto Yochanan, to be baptized of him. 14 But Yochanan would have hindered him, saying, I have need to be baptized of you, and you come toMark 1:9-11 9 And it came to pass in those days, that Yeshua came from Natzeret of Galil, and was baptized of Yochanan in the Yarden.Luke 3:21-23c 21 Now it came to pass, when all the people were baptized, <<<PAGE 73>>> me? 15 But Yeshua answering said unto him, Suffer <it> now: for thus it becomes us to fulfill all righteousness. Then he suffered him. 16 And Yeshua when he was baptized, went up straightway from the water: and lo, the heavens were opened unto him,10 And straightway coming up out of the water, he saw the heavens rent asunder,that, Yeshua also having been baptized, and praying, the heaven was opened, and he saw the Spirit of God descending as a dove, and coming upon him;and the Spirit as a dove descending upon him:22 and the Holy Spirit descended in a bodily form, as a dove, upon him, 17 and lo, a voice out of the heavens, saying, This is my beloved Son, in whom I am well pleased.11 And a voice came out of the heavens, You are my beloved Son, in you I am well pleased.and a voice came out of heaven, You are my beloved Son; in you I am well pleased. <<<PAGE 74>>> 23 And Yeshua himself, when he began <to teach>, was about thirty years of age, (Luke 23d-38 in § 3)",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "024"
+        ]
+      }
+    },
+    "sec-025": {
+      "id": "sec-025",
+      "title": "2. Through the Temptation Matthew 4:1-11 1 Then was Yeshua led up of the Spirit into the wilderness to be tempted of the devil. 2 And when he had fasted forty days and forty nights, he afterward hungered.Mark 1:12-13 12 And straightway the Spirit drives him forth into the wilderness.13 And he was in the wilderness forty days tempted of Satan; And he was with the wild beasts; And the angels ministered unto him.Luke 4:1-13 1 And Yeshua, full of the Holy Spirit, returned from the Yarden, and was led in the Spirit in the wilderness 2 during forty days, being tempted of the devil. And he did eat nothing in those days: and when <<<PAGE 75>>> they were completed, he hungered. 3 And the tempter came and said unto him, If you are the Son of God, command that these stones become bread.3 And the devil said unto him, if you are the Son of God, command this stone that it become bread. 4 But he answered and said, It is written,4 And Yeshua answered unto him, It is written, Man shall not live by bread alone, but by every word that proceeds out of the mouth of God.Man shall not live by bread alone. Mt. cont.: 5 Then the devil takes him into the holy city; and he set him on theLk. Cont.: 5 And he led him up, and showed him all the kingdoms of the world <<<PAGE 76>>> pinnacle of the temple, 6 and said unto him, If you are the Son of God, cast yourself down: for it is written, He shall give his angels charge concerning you: and, On their hands they shall bear you up, Lest haply you dash your foot against a stone.in a moment of time. 6 And the devil said unto him, To you will I give all this authority, and the glory of them: for it has been delivered unto me; and to whomsoever I will I give it. 7 If you therefore will worship before me, it shall all be yours. 7 Yeshua said unto him, Again it is written,8 And Yeshua answered and said unto him, It is written, You shall not make trial of the Lord your God.You shall worship the Lord your God, and him only shall you serve. 8 Again, the devil takes him unto an exceeding high mountain, and shows him all the kingdoms of the world, and the glory of them; 9 and he said unto him, All these things will I give you, if you will fall down and worship me.9 And he led him to Yerushalayim, and set him on the pinnacle of the temple, and said unto him, If you are the Son of God, cast yourself down from hence: 10 for it is written, He shall give his angels charge concerning you, to guard you: <<<PAGE 77>>> 10 Then said Yeshua unto him, Get you hence, Satan: for it is written, You shall worship the Lord your God, and him only shall you serve.11 and, On their hands they shall bear you up, Lest haply you dash your foot against a stone. 12 And Yeshua answering said unto him, It is said, You shall not make trial of the Lord your God. 11 Then the devil left him; and behold, angels came and ministered unto him.13 And when the devil had completed every temptation, he departed from him for a season.",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "025"
+        ]
+      }
+    },
+    "sec-026": {
+      "id": "sec-026",
+      "title": "3. By His Herald Leaders John 1:19-28 19 And this is the witness of Yochanan,  when the Jews sent unto him from Yerushalayim priests and Levites to ask him, Who are you? 20 And he confessed, and denied not; and he confessed, I am not the Messiah. 21 And they asked him, What then? Are you Eliyahu? And he said, I am not. Are you the prophet? And he answered, No. <<<PAGE 78>>> 22 They said therefore unto him, Who are you? that we may give an answer to them that sent us. What do you say of yourself? 23 He said, I am the voice of one crying in the wilderness, Make straight the way of the Lord, as said Yeshayahu the prophet. 24 And they had been sent from the Pharisees. 25 And they asked him, and said unto him, Why then do you baptize, if you are not the Messiah, neither Eliyahu, neither the prophet? 26 Yochanan answered them, saying, I baptize in water: in the midst of you stands one whom ye know not, 27 <even> he that comes after me, the latchet of whose shoe I am not worthy to unloose. 28 These things were done in Beit Anyah beyond the Yarden, where Yochanan was baptizing.",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "026"
+        ]
+      }
+    },
+    "sec-027": {
+      "id": "sec-027",
+      "title": "b. Yochanan’s Testimony to Yeshua II. The Authentication of the King Yeshua John 1:29-34 29 On the morrow he sees Yeshua coming unto him, and said, Behold, the Lamb of God, that takes away the sin of the world! 30 This is he of whom I said, After me comes a man who is become before me: for he was before me. 31 And I knew him not; but that he should be made manifest to Yisrael, for this cause came I baptizing in water. 32 And Yochanan bore witness, <<<PAGE 79>>> saying, I have beheld the Spirit descending as a dove out of heaven; and it abode upon him. 33 And I knew him not: but he that sent me to baptize in water, he said unto me, Upon whomsoever you shall see the Spirit descending, and abiding upon him, the same is he that baptizes in the Holy Spirit. 34 And I have seen, and have borne witness that this is the Son of God.",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "027"
+        ]
+      }
+    },
+    "sec-028": {
+      "id": "sec-028",
+      "title": "A. Acceptance of His Person <<<PAGE 14>>>",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "028"
+        ]
+      }
+    },
+    "sec-029": {
+      "id": "sec-029",
+      "title": "2. The Belief Through the First Miracle",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "029"
+        ]
+      }
+    },
+    "sec-030": {
+      "id": "sec-030",
+      "title": "3. The Sojourn in Kfar Nachum",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "030"
+        ]
+      }
+    },
+    "sec-031": {
+      "id": "sec-031",
+      "title": "4. The First Possession of the Temple",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "031"
+        ]
+      }
+    },
+    "sec-032": {
+      "id": "sec-032",
+      "title": "5. Acceptance in Yehuda",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "032"
+        ]
+      }
+    },
+    "sec-033": {
+      "id": "sec-033",
+      "title": "b. The Explanation to Nakdimon",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "033"
+        ]
+      }
+    },
+    "sec-034": {
+      "id": "sec-034",
+      "title": "6. Yochanan’s Witness",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "034"
+        ]
+      }
+    },
+    "sec-035": {
+      "id": "sec-035",
+      "title": "7. Yochanan’s Imprisonment",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "035"
+        ]
+      }
+    },
+    "sec-036": {
+      "id": "sec-036",
+      "title": "8. The Acceptance in Shomron",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "036"
+        ]
+      }
+    },
+    "sec-037": {
+      "id": "sec-037",
+      "title": "9. The Acceptance in Galil",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "037"
+        ]
+      }
+    },
+    "sec-038": {
+      "id": "sec-038",
+      "title": "B. The Authority of the King",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "038"
+        ]
+      }
+    },
+    "sec-039": {
+      "id": "sec-039",
+      "title": "2. The Messiah’s Authority to Heal",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "039"
+        ]
+      }
+    },
+    "sec-040": {
+      "id": "sec-040",
+      "title": "3. The Initial Rejection in Natzeret",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "040"
+        ]
+      }
+    },
+    "sec-041": {
+      "id": "sec-041",
+      "title": "4. The Headquarters in Kfar Nachum",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "041"
+        ]
+      }
+    },
+    "sec-042": {
+      "id": "sec-042",
+      "title": "5. Messiah’s Authority over Demons",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "042"
+        ]
+      }
+    },
+    "sec-043": {
+      "id": "sec-043",
+      "title": "6. Messiah’s Authority over Disease",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "043"
+        ]
+      }
+    },
+    "sec-044": {
+      "id": "sec-044",
+      "title": "7. Messiah’s Authority to Preach",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "044"
+        ]
+      }
+    },
+    "sec-045": {
+      "id": "sec-045",
+      "title": "8. Messiah’s Authority over Nature",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "045"
+        ]
+      }
+    },
+    "sec-046": {
+      "id": "sec-046",
+      "title": "9. Messiah’s Authority over Defilement: The Healing of the Jewish Leper",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "046"
+        ]
+      }
+    },
+    "sec-047": {
+      "id": "sec-047",
+      "title": "10. Messiah’s Authority to Forgive Sin",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "047"
+        ]
+      }
+    },
+    "sec-048": {
+      "id": "sec-048",
+      "title": "11. Messiah’s Authority over Men",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "048"
+        ]
+      }
+    },
+    "sec-049": {
+      "id": "sec-049",
+      "title": "12. Messiah’s Authority over Tradition",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "049"
+        ]
+      }
+    },
+    "sec-050": {
+      "id": "sec-050",
+      "title": "13. Messiah’s Authority over the Sabbath <<<PAGE 15>>>",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "050"
+        ]
+      }
+    },
+    "sec-051": {
+      "id": "sec-051",
+      "title": "b. Through the Controversy over Grain",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "051"
+        ]
+      }
+    },
+    "sec-052": {
+      "id": "sec-052",
+      "title": "c. Through the Healing of a Man with a Withered Hand",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "052"
+        ]
+      }
+    },
+    "sec-053": {
+      "id": "sec-053",
+      "title": "14. Messiah’s Authority to Heal",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "053"
+        ]
+      }
+    },
+    "sec-054": {
+      "id": "sec-054",
+      "title": "15. The Choosing of the Twelve",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "054"
+        ]
+      }
+    },
+    "sec-055": {
+      "id": "sec-055",
+      "title": "16. Messiah’s Authority to Interpret the Law a. The Occasion b. The Characteristics of True Righteousness (1) Characteristics of Those Who Attain (2) Characteristics of Those Who Fail (3) Characteristics in Relation to the World c. The Code of True Righteousness (1) Introduction (2) The Examples i. The Law of Murder ii. The Law of Adultery iii. The Law of Divorce iv. The Law of Oaths v. The Law of Non-Resistance d. The Conduct of True Righteousness (1) Introduction (2) The Examples i. The Giving of Alms ii. Public Prayer iii. Fasting e. The Practice of True Righteousness <<<PAGE 16>>> (1) Concerning Money (2) Concerning Anxiety (3) Concerning Judging (4) Concerning Prayer (5) The Core of Practice of True Righteousness f. The Warnings Concerning True Righteousness (1) The Two Ways (2) The Two Trees (3) The Two Professions (4) The Two Builders g. The Conclusion",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "055"
+        ]
+      }
+    },
+    "sec-056": {
+      "id": "sec-056",
+      "title": "17. Recognition of Authority in Kfar Nachum",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "056"
+        ]
+      }
+    },
+    "sec-057": {
+      "id": "sec-057",
+      "title": "18. Recognition of Authority Throughout the Land III. The Controversy Over the King -§§ 58-73 -",
+      "parent_id": "era:early-ministry",
+      "attributes": {
+        "order": [
+          "057"
+        ]
+      }
+    },
+    "sec-058": {
+      "id": "sec-058",
+      "title": "A. The Rejection of the Hearld",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "058"
+        ]
+      }
+    },
+    "sec-059": {
+      "id": "sec-059",
+      "title": "B. Curses on Cities of Galil 1. The Condemnation for Unbelief 2. The Explanation of Unbelief 3. The Invitation to Belief and Discipleship",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "059"
+        ]
+      }
+    },
+    "sec-060": {
+      "id": "sec-060",
+      "title": "C. The Reception by a Sinner",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "060"
+        ]
+      }
+    },
+    "sec-061": {
+      "id": "sec-061",
+      "title": "D. The Witness of the King to Women",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "061"
+        ]
+      }
+    },
+    "sec-062": {
+      "id": "sec-062",
+      "title": "E. The Rejection of the King by the Leaders a. The Rejection <<<PAGE 17>>> b. The Defense c. The Judgment",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "062"
+        ]
+      }
+    },
+    "sec-063": {
+      "id": "sec-063",
+      "title": "2. The New Policy Concerning Signs a. The Sign for that Generation b. The Judgment of that Generation",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "063"
+        ]
+      }
+    },
+    "sec-064": {
+      "id": "sec-064",
+      "title": "F. Revelation in View of Rejection the Present Age a. Introduction b. Parable of the Sower c. Parable of the Seed d. Parable of the Tares e. Parable of the Mustard Seed f. Parable of the Leaven",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "064"
+        ]
+      }
+    },
+    "sec-065": {
+      "id": "sec-065",
+      "title": "2. The Repudiation of all Earthly Relations",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "065"
+        ]
+      }
+    },
+    "sec-066": {
+      "id": "sec-066",
+      "title": "3. The Course of the Kingdom Program in the Present Age a. Explanation of the Parable of the Tares b. The Parable of the Hidden Treasure c. The Parable of the Pearl of Great Price d. The Parable of the Net e. The Parable of the Householder",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "066"
+        ]
+      }
+    },
+    "sec-067": {
+      "id": "sec-067",
+      "title": "4. Power over Nature",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "067"
+        ]
+      }
+    },
+    "sec-068": {
+      "id": "sec-068",
+      "title": "5. Power over Demons",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "068"
+        ]
+      }
+    },
+    "sec-069": {
+      "id": "sec-069",
+      "title": "6. Power over Disease and Death",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "069"
+        ]
+      }
+    },
+    "sec-070": {
+      "id": "sec-070",
+      "title": "7. Power over Blindness",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "070"
+        ]
+      }
+    },
+    "sec-071": {
+      "id": "sec-071",
+      "title": "G. The Final Rejection in Natzeret <<<PAGE 18>>>",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "071"
+        ]
+      }
+    },
+    "sec-072": {
+      "id": "sec-072",
+      "title": "H. Witness in View of Rejection 1. Introduction 2. Practical Instructions for the Mission 3. Instructions in View of the Coming Persecution 4. Instruction in View of Rejection 5. The Results of the Rejection 6. Rewards for Individuals Who Accept 7. The Fulfillment",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "072"
+        ]
+      }
+    },
+    "sec-073": {
+      "id": "sec-073",
+      "title": "I. The Death of the Herald IV. The Training of the Twelve by the King -§§ 74-98 -",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "073"
+        ]
+      }
+    },
+    "sec-074": {
+      "id": "sec-074",
+      "title": "A. The Feeding of the Five Thousand",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "074"
+        ]
+      }
+    },
+    "sec-075": {
+      "id": "sec-075",
+      "title": "B. Messiah’s Rejection of the Galileans’ Offer to Make Him King",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "075"
+        ]
+      }
+    },
+    "sec-076": {
+      "id": "sec-076",
+      "title": "C. The Training through the Storm",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "076"
+        ]
+      }
+    },
+    "sec-077": {
+      "id": "sec-077",
+      "title": "D. The Reception in Ginosar",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "077"
+        ]
+      }
+    },
+    "sec-078": {
+      "id": "sec-078",
+      "title": "E. Instruction Concerning the Bread of Life",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "078"
+        ]
+      }
+    },
+    "sec-079": {
+      "id": "sec-079",
+      "title": "F. Instruction Concerning Defilement",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "079"
+        ]
+      }
+    },
+    "sec-080": {
+      "id": "sec-080",
+      "title": "G. The Reception in Tzor and Tzidon",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "080"
+        ]
+      }
+    },
+    "sec-081": {
+      "id": "sec-081",
+      "title": "H. The Reception in Decapolis",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "081"
+        ]
+      }
+    },
+    "sec-083": {
+      "id": "sec-083",
+      "title": "J. The Warning again st Rejection",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "083"
+        ]
+      }
+    },
+    "sec-084": {
+      "id": "sec-084",
+      "title": "K. The Healing of the Blind Man",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "084"
+        ]
+      }
+    },
+    "sec-085": {
+      "id": "sec-085",
+      "title": "L. The Confession of Peter",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "085"
+        ]
+      }
+    },
+    "sec-086": {
+      "id": "sec-086",
+      "title": "M. Instruction Concerning the Death of the King",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "086"
+        ]
+      }
+    },
+    "sec-087": {
+      "id": "sec-087",
+      "title": "N. Instruction Concerning the Kingdom <<<PAGE 19>>>",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "087"
+        ]
+      }
+    },
+    "sec-088": {
+      "id": "sec-088",
+      "title": "2. The Transfiguration: The Revelation of the Kingdom",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "088"
+        ]
+      }
+    },
+    "sec-089": {
+      "id": "sec-089",
+      "title": "O. Instruction Concerning Eliyahu",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "089"
+        ]
+      }
+    },
+    "sec-090": {
+      "id": "sec-090",
+      "title": "P. Instruction Concerning Faith",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "090"
+        ]
+      }
+    },
+    "sec-091": {
+      "id": "sec-091",
+      "title": "Q. Instruction Concerning the Death of the King",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "091"
+        ]
+      }
+    },
+    "sec-092": {
+      "id": "sec-092",
+      "title": "R. Instruction Concerning Sonship",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "092"
+        ]
+      }
+    },
+    "sec-093": {
+      "id": "sec-093",
+      "title": "S. Instruction Concerning Humility",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "093"
+        ]
+      }
+    },
+    "sec-094": {
+      "id": "sec-094",
+      "title": "T. Instruction Concerning Exclusiveness and Pride",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "094"
+        ]
+      }
+    },
+    "sec-095": {
+      "id": "sec-095",
+      "title": "U. Instruction Concerning Forgiveness",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "095"
+        ]
+      }
+    },
+    "sec-096": {
+      "id": "sec-096",
+      "title": "V. The Challenge by the Brothers",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "096"
+        ]
+      }
+    },
+    "sec-097": {
+      "id": "sec-097",
+      "title": "W. The Journey to Yerushalayim",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "097"
+        ]
+      }
+    },
+    "sec-098": {
+      "id": "sec-098",
+      "title": "X. Instruction Concerning Discipleship V. The Opposition to the King -§§ 99-112 -",
+      "parent_id": "era:rise-momentum",
+      "attributes": {
+        "order": [
+          "098"
+        ]
+      }
+    },
+    "sec-099": {
+      "id": "sec-099",
+      "title": "A. The Conflict at the Feast of Tabernacles 1. Messiah’s Authority Questioned 2. Messiah’s Answer 3. Messiah’s Person Questioned 4. Messiah’s Explanation 5. The People’s Response 6. Messiah’s Invitation 7. The Pharisaic Response",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "099"
+        ]
+      }
+    },
+    "sec-100": {
+      "id": "sec-100",
+      "title": "B. The Conflict over the Law",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "100"
+        ]
+      }
+    },
+    "sec-101": {
+      "id": "sec-101",
+      "title": "C. The Conflict over the Light",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "101"
+        ]
+      }
+    },
+    "sec-102": {
+      "id": "sec-102",
+      "title": "D. The Conflict over His Person <<<PAGE 20>>> 1. Messiah the True Object of Faith 2. Messiah the True Deliverer a. From Sin b. From Satan c. From Death",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "102"
+        ]
+      }
+    },
+    "sec-103": {
+      "id": "sec-103",
+      "title": "E. The Conflict over Healing of the Man Born Blind 1. Physical Healing 2. The First Interrogation 3. The Interrogation of the Parents 4. The Second Interrogation 5. Spiritual Healing",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "103"
+        ]
+      }
+    },
+    "sec-104": {
+      "id": "sec-104",
+      "title": "F. The Conflict over the Shepherd 1. Messiah the True Shepherd 2. Messiah the Door 3. Messiah the Good Shepherd 4. Division § 105]-G. The Witness of the Seventy 1. The Seventy Sent 2. The Seventy Return 3. Messiah’s Prayer",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "104"
+        ]
+      }
+    },
+    "sec-106": {
+      "id": "sec-106",
+      "title": "H. The Conflict over the Question of Eternal Life",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "106"
+        ]
+      }
+    },
+    "sec-107": {
+      "id": "sec-107",
+      "title": "I. The Example of Fellowship",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "107"
+        ]
+      }
+    },
+    "sec-108": {
+      "id": "sec-108",
+      "title": "J. Instruction in Prayer",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "108"
+        ]
+      }
+    },
+    "sec-109": {
+      "id": "sec-109",
+      "title": "K. Conflict over the Healing of the Dumb Man <<<PAGE 21>>> 1. The Charge 2. The Defense 3. The Condition of the Nation 4. The Sign to that Generation 5. The Call to the Nation",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "109"
+        ]
+      }
+    },
+    "sec-110": {
+      "id": "sec-110",
+      "title": "L. The Conflict over Pharisaic Ritualism",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "110"
+        ]
+      }
+    },
+    "sec-111": {
+      "id": "sec-111",
+      "title": "M. Instruction of the Disciples 1. Hypocrisy 2. Covetousness a. Occasion b. Instruction c. Application 3. Watchfulness 4. Faithfulness 5. The Effects of His Coming 6. The Signs of the Times 7. Concerning Repentance 8. Concerning Yisrael’s Need 9. Concerning the Kingdom Program",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "111"
+        ]
+      }
+    },
+    "sec-112": {
+      "id": "sec-112",
+      "title": "N. The Conflict at the Feast of Dedication VI. The Preparation of the Disciples by the King -§§ 113-131 -",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "112"
+        ]
+      }
+    },
+    "sec-113": {
+      "id": "sec-113",
+      "title": "A. The Withdrawal from Yehudah",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "113"
+        ]
+      }
+    },
+    "sec-114": {
+      "id": "sec-114",
+      "title": "B. Instruction Concerning Entrance into the Kingdom",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "114"
+        ]
+      }
+    },
+    "sec-115": {
+      "id": "sec-115",
+      "title": "C. Instruction in a Pharisee’s House 1. True Sabbath Rest <<<PAGE 22>>> 2. Humility 3. Respect of Persons 4. The Rejection of the Invitation",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "115"
+        ]
+      }
+    },
+    "sec-116": {
+      "id": "sec-116",
+      "title": "D. Instruction Concerning Discipleship",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "116"
+        ]
+      }
+    },
+    "sec-117": {
+      "id": "sec-117",
+      "title": "E. Instruction Concerning God’s Attitude towards Sinners 1. The Occasion 2. The Three Parables a. The Parable of the Lost Sheep b. The Parable of the Lost Coin c. The Parable of the Prodigal Son",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "117"
+        ]
+      }
+    },
+    "sec-118": {
+      "id": "sec-118",
+      "title": "F. Instruction Concerning Wealth 1. The Parable of the Unjust Steward 2. The Conflict with the Pharisees 3. The Story of the Rich Man and Elazar",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "118"
+        ]
+      }
+    },
+    "sec-119": {
+      "id": "sec-119",
+      "title": "G. Instruction Concerning Forgiveness",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "119"
+        ]
+      }
+    },
+    "sec-120": {
+      "id": "sec-120",
+      "title": "H. Instruction Concerning Service",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "120"
+        ]
+      }
+    },
+    "sec-121": {
+      "id": "sec-121",
+      "title": "I. The Resurrection of Elazar: The First Sign of Yonah a. The Death of Elazar b. Yeshua and Marta c. Yeshua and Miriam d. Yeshua and Elazar",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "121"
+        ]
+      }
+    },
+    "sec-122": {
+      "id": "sec-122",
+      "title": "2. The Rejection of the First Sign of Yonah",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "122"
+        ]
+      }
+    },
+    "sec-123": {
+      "id": "sec-123",
+      "title": "3. Instruction in Light of Rejection a. The Personal Witness to Kayapha <<<PAGE 23>>> b. The New Form of the Kingdom Program c. Instruction Concerning the Second Coming",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "123"
+        ]
+      }
+    },
+    "sec-124": {
+      "id": "sec-124",
+      "title": "J. Instruction in Prayer",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "124"
+        ]
+      }
+    },
+    "sec-125": {
+      "id": "sec-125",
+      "title": "K. Instruction on Divorce",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "125"
+        ]
+      }
+    },
+    "sec-126": {
+      "id": "sec-126",
+      "title": "L. Instruction on Entrance into the Kingdom",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "126"
+        ]
+      }
+    },
+    "sec-127": {
+      "id": "sec-127",
+      "title": "M. Instruction on Eternal Life",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "127"
+        ]
+      }
+    },
+    "sec-128": {
+      "id": "sec-128",
+      "title": "N. Instruction Concerning His Death § 129]-O. The Healing of the Blind Men",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "128"
+        ]
+      }
+    },
+    "sec-130": {
+      "id": "sec-130",
+      "title": "P. Instruction Concerning the Kingdom Program",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "130"
+        ]
+      }
+    },
+    "sec-131": {
+      "id": "sec-131",
+      "title": "2. Postponed Kingdom VII. The Official Presentation of the King -§§ 132-144 -",
+      "parent_id": "era:training-circle",
+      "attributes": {
+        "order": [
+          "131"
+        ]
+      }
+    },
+    "sec-132": {
+      "id": "sec-132",
+      "title": "A. The Arrival in Beit Anyah",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "132"
+        ]
+      }
+    },
+    "sec-133": {
+      "id": "sec-133",
+      "title": "B. The Triumphal Entry: The Setting Aside of the Passover Lamb",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "133"
+        ]
+      }
+    },
+    "sec-134": {
+      "id": "sec-134",
+      "title": "C. The Authority of the King",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "134"
+        ]
+      }
+    },
+    "sec-135": {
+      "id": "sec-135",
+      "title": "2. The Second Possession of the Temple",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "135"
+        ]
+      }
+    },
+    "sec-136": {
+      "id": "sec-136",
+      "title": "D. The Invitations by the King 1. The Two Invitations 2. Yochanan’s Summary of Messiah’s Ministry a. Summary of Yisrael b. Summary of Yeshua",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "136"
+        ]
+      }
+    },
+    "sec-137": {
+      "id": "sec-137",
+      "title": "E. The Proof of Authority <<<PAGE 24>>>",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "137"
+        ]
+      }
+    },
+    "sec-138": {
+      "id": "sec-138",
+      "title": "F. The Authority of the King Challenged: The Testing of the Lamb a. The Attack b. The Answer (1) The Parable of the Two Sons (2) The Parable of the Householder (3) The Parable of the Wedding",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "138"
+        ]
+      }
+    },
+    "sec-139": {
+      "id": "sec-139",
+      "title": "2. By Pharisees and Herodians a. The Attack b. The Answer",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "139"
+        ]
+      }
+    },
+    "sec-140": {
+      "id": "sec-140",
+      "title": "3. By Sadducees a. The Attack b. The Answer",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "140"
+        ]
+      }
+    },
+    "sec-141": {
+      "id": "sec-141",
+      "title": "3. By Pharisees a. The Attack b. The Answer",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "141"
+        ]
+      }
+    },
+    "sec-142": {
+      "id": "sec-142",
+      "title": "G. The Challenge by the King",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "142"
+        ]
+      }
+    },
+    "sec-143": {
+      "id": "sec-143",
+      "title": "H. The Judgment by the King 1. To the Disciples and Multitudes 2. To the Pharisees 3. The Lament",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "143"
+        ]
+      }
+    },
+    "sec-144": {
+      "id": "sec-144",
+      "title": "I. Instruction at the Treasury VIII.The Preparation of the Death of the King -§§ 145-164 -",
+      "parent_id": "era:jerusalem-shift",
+      "attributes": {
+        "order": [
+          "144"
+        ]
+      }
+    },
+    "sec-145": {
+      "id": "sec-145",
+      "title": "A. The Olivet Discourse: <<<PAGE 25>>> The Prophecies of the King 1. The Historical Setting 2. The Three Questions 3. The General Characteristics of the Age Between the Two Comings 4. The Sign of the End of the Age 5. The Personal Experiences of the Apostles 6. The Sign of the Fall of Yerushalayim 7. The Great Tribulation a. The First Half b. The Second Half 8. The Second Coming 9. The Regathering of Yisrael 10. The Exhortation 11. The Parable of the Fig Tree 12. The Rapture 13. Parables Urging Watchfulness, Readiness, and Labor a. The Parable of the Porter b. The Parable of the Master of the House c. The Parable of the Faithful Servant and the Evil Servant d. The Parable of the Ten Virgins e. The Parable of the Talents 14. The Judgment of the Gentiles 15. Luke’s Summary <<<PAGE 26>>>",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "145"
+        ]
+      }
+    },
+    "sec-146": {
+      "id": "sec-146",
+      "title": "B. The Preparation for Messiah’s Death",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "146"
+        ]
+      }
+    },
+    "sec-147": {
+      "id": "sec-147",
+      "title": "2. The Conspiracy of the Rulers",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "147"
+        ]
+      }
+    },
+    "sec-148": {
+      "id": "sec-148",
+      "title": "3. The Pouring of Ointment",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "148"
+        ]
+      }
+    },
+    "sec-149": {
+      "id": "sec-149",
+      "title": "4. The Promise to Betray",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "149"
+        ]
+      }
+    },
+    "sec-150": {
+      "id": "sec-150",
+      "title": "The Last Passover & First Lord's Supper",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "150"
+        ]
+      }
+    },
+    "sec-151": {
+      "id": "sec-151",
+      "title": "b. The Start of the Passover Observance",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "151"
+        ]
+      }
+    },
+    "sec-152": {
+      "id": "sec-152",
+      "title": "c. The First Cup",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "152"
+        ]
+      }
+    },
+    "sec-153": {
+      "id": "sec-153",
+      "title": "d. The Washing of the Feet and the First Prediction of the Betrayal by Yehudah",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "153"
+        ]
+      }
+    },
+    "sec-154": {
+      "id": "sec-154",
+      "title": "e. Karpas:[49] The Second Prediction of the Betrayal by Yehudah",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "154"
+        ]
+      }
+    },
+    "sec-155": {
+      "id": "sec-155",
+      "title": "f. The Breaking of the Middle Matzah",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "155"
+        ]
+      }
+    },
+    "sec-156": {
+      "id": "sec-156",
+      "title": "g. The Sop:[50] The Third Prediction of the Betrayal by Yehudah",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "156"
+        ]
+      }
+    },
+    "sec-157": {
+      "id": "sec-157",
+      "title": "h. The Third Cup",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "157"
+        ]
+      }
+    },
+    "sec-158": {
+      "id": "sec-158",
+      "title": "i. A Lesson in Greatness",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "158"
+        ]
+      }
+    },
+    "sec-159": {
+      "id": "sec-159",
+      "title": "j. The Prediction of Peter’s Denial",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "159"
+        ]
+      }
+    },
+    "sec-160": {
+      "id": "sec-160",
+      "title": "k. The Hallel[51]",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "160"
+        ]
+      }
+    },
+    "sec-161": {
+      "id": "sec-161",
+      "title": "- C. The Promises and Admonitions by the King",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "161"
+        ]
+      }
+    },
+    "sec-162": {
+      "id": "sec-162",
+      "title": "2. On the Way to Gethsemane",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "162"
+        ]
+      }
+    },
+    "sec-163": {
+      "id": "sec-163",
+      "title": "D. The High Priestly Prayer <<<PAGE 27>>> 1. Concerning Himself 2. Concerning the Apostles a. Preservation b. Protection c. Sanctification 3. Concerning All Believers a. Unity b. Glorification",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "163"
+        ]
+      }
+    },
+    "sec-164": {
+      "id": "sec-164",
+      "title": "E. The Agony of Gat Shemen IX.The Trial of the King -§§ 165-175 -",
+      "parent_id": "era:farewell-prep",
+      "attributes": {
+        "order": [
+          "164"
+        ]
+      }
+    },
+    "sec-165": {
+      "id": "sec-165",
+      "title": "A. The Arrest",
+      "parent_id": "era:trial",
+      "attributes": {
+        "order": [
+          "165"
+        ]
+      }
+    },
+    "sec-166": {
+      "id": "sec-166",
+      "title": "B. The Religious Trial",
+      "parent_id": "era:trial",
+      "attributes": {
+        "order": [
+          "166"
+        ]
+      }
+    },
+    "sec-167": {
+      "id": "sec-167",
+      "title": "2. The Trial Before Kayapha",
+      "parent_id": "era:trial",
+      "attributes": {
+        "order": [
+          "167"
+        ]
+      }
+    },
+    "sec-168": {
+      "id": "sec-168",
+      "title": "3. The Denial by Peter",
+      "parent_id": "era:trial",
+      "attributes": {
+        "order": [
+          "168"
+        ]
+      }
+    },
+    "sec-169": {
+      "id": "sec-169",
+      "title": "4. The Mockery and Beating",
+      "parent_id": "era:trial",
+      "attributes": {
+        "order": [
+          "169"
+        ]
+      }
+    },
+    "sec-170": {
+      "id": "sec-170",
+      "title": "5. The Condemnation by the Sanhedrin",
+      "parent_id": "era:trial",
+      "attributes": {
+        "order": [
+          "170"
+        ]
+      }
+    },
+    "sec-171": {
+      "id": "sec-171",
+      "title": "C. The Death of Yehudah",
+      "parent_id": "era:trial",
+      "attributes": {
+        "order": [
+          "171"
+        ]
+      }
+    },
+    "sec-172": {
+      "id": "sec-172",
+      "title": "D. The Civil Trial",
+      "parent_id": "era:trial",
+      "attributes": {
+        "order": [
+          "172"
+        ]
+      }
+    },
+    "sec-173": {
+      "id": "sec-173",
+      "title": "2. The Trial before Herod Antipas",
+      "parent_id": "era:trial",
+      "attributes": {
+        "order": [
+          "173"
+        ]
+      }
+    },
+    "sec-174": {
+      "id": "sec-174",
+      "title": "3. The Second Trial before Pilate",
+      "parent_id": "era:trial",
+      "attributes": {
+        "order": [
+          "174"
+        ]
+      }
+    },
+    "sec-175": {
+      "id": "sec-175",
+      "title": "4. The Mockery X.The Death of the King -§§ 176-181 -",
+      "parent_id": "era:trial",
+      "attributes": {
+        "order": [
+          "175"
+        ]
+      }
+    },
+    "sec-176": {
+      "id": "sec-176",
+      "title": "A. The Procession to Golgota <<<PAGE 28>>>",
+      "parent_id": "era:passion",
+      "attributes": {
+        "order": [
+          "176"
+        ]
+      }
+    },
+    "sec-177": {
+      "id": "sec-177",
+      "title": "B. The Crucifixion",
+      "parent_id": "era:passion",
+      "attributes": {
+        "order": [
+          "177"
+        ]
+      }
+    },
+    "sec-178": {
+      "id": "sec-178",
+      "title": "2. The Second Three Hours: The Wrath of God",
+      "parent_id": "era:passion",
+      "attributes": {
+        "order": [
+          "178"
+        ]
+      }
+    },
+    "sec-179": {
+      "id": "sec-179",
+      "title": "3. The Accompanying Signs",
+      "parent_id": "era:passion",
+      "attributes": {
+        "order": [
+          "179"
+        ]
+      }
+    },
+    "sec-180": {
+      "id": "sec-180",
+      "title": "C. The Burial of the Messiah",
+      "parent_id": "era:passion",
+      "attributes": {
+        "order": [
+          "180"
+        ]
+      }
+    },
+    "sec-181": {
+      "id": "sec-181",
+      "title": "D. The Sealing of the Tomb XI.The Resurrection and Ascension of the King -§§ 182-197 -",
+      "parent_id": "era:passion",
+      "attributes": {
+        "order": [
+          "181"
+        ]
+      }
+    },
+    "sec-182": {
+      "id": "sec-182",
+      "title": "A. The Dawning of Resurrection Day",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "182"
+        ]
+      }
+    },
+    "sec-183": {
+      "id": "sec-183",
+      "title": "B. The Opening of the Tomb",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "183"
+        ]
+      }
+    },
+    "sec-184": {
+      "id": "sec-184",
+      "title": "C. The Visit of the Women",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "184"
+        ]
+      }
+    },
+    "sec-185": {
+      "id": "sec-185",
+      "title": "D. The Report to the Apostles",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "185"
+        ]
+      }
+    },
+    "sec-186": {
+      "id": "sec-186",
+      "title": "E. The First Appearance: To Miriam Magdalit",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "186"
+        ]
+      }
+    },
+    "sec-187": {
+      "id": "sec-187",
+      "title": "F. The Second Appearance: To the Women",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "187"
+        ]
+      }
+    },
+    "sec-188": {
+      "id": "sec-188",
+      "title": "G. The Report of the Guard: The Rejection of the Second Sign of Yonah",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "188"
+        ]
+      }
+    },
+    "sec-189": {
+      "id": "sec-189",
+      "title": "H. The Third Appearance: To the Two on the Emmaus Road",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "189"
+        ]
+      }
+    },
+    "sec-190": {
+      "id": "sec-190",
+      "title": "I. The Fourth Appearance: To Peter",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "190"
+        ]
+      }
+    },
+    "sec-191": {
+      "id": "sec-191",
+      "title": "J. The Fifth Appearance: To the Ten",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "191"
+        ]
+      }
+    },
+    "sec-192": {
+      "id": "sec-192",
+      "title": "K. The Sixth Appearance: To the Eleven",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "192"
+        ]
+      }
+    },
+    "sec-193": {
+      "id": "sec-193",
+      "title": "L. The Seventh Appearance: To the Seven",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "193"
+        ]
+      }
+    },
+    "sec-194": {
+      "id": "sec-194",
+      "title": "M. The Eighth Appearance: To the Five Hundred",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "194"
+        ]
+      }
+    },
+    "sec-195": {
+      "id": "sec-195",
+      "title": "N. The Ninth Appearance: To Yaakov <<<PAGE 29>>>",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "195"
+        ]
+      }
+    },
+    "sec-196": {
+      "id": "sec-196",
+      "title": "O. The Tenth Appearance: To the Eleven",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "196"
+        ]
+      }
+    },
+    "sec-197": {
+      "id": "sec-197",
+      "title": "P. The Ascension of the King Appendices Appendix 1: The Laws of the Sanhedrin Regarding Trials Appendix 2: Maps and Illustrations Notes <<<PAGE 30>>> Forward By Dr. Arnold G. Fruchtenbaum Very little of Ariel’s Harmony of the Gospels originated with me; it is largely based on the harmony of A. T. Robertson,[1] which in turn was based on a previous harmony by John A. Broadus. But there are some differences: First, where more than one Gospel is listed, the verses will be placed in parallel columns, as in A. T. Robertson’s harmony. The one difference is that whereas the first column in his harmony was Mark, reflecting Robertson’s view of a Markan priority, this work will follow the present New Testament order of the Gospels: Matthew, Mark, Luke, and John. <<<PAGE 31>>> Second, Robertson largely followed a geographical approach, whereas I have chosen a thematic approach. The advantage of a thematic approach is that correlations can be seen between a teaching and an event, and vice versa. Therefore, this approach provides a better overall picture as to how things in the life of the Messiah were related to each other. The significance of details which may have seemed to be casually mentioned becomes clear. Third, I follow Luke’s order of events, as did Robertson, but in those places where Robertson chose to deviate from that Gospel, this harmony will continue to follow Luke’s order. Fourth, the division titles largely, but not exclusively, follow the outline of J. <<<PAGE 32>>> Dwight Pentecost that was handed out to his students at Dallas Theological Seminary.[2] The translation used in this work is the American Standard Version of 1901. However, the archaic language (e.g., thee, thou, hast, wast, etc.) has been modernized. One exception is the pronoun you. In modern English, you is used as both a singular and plural second person pronoun. Therefore, to more accurately translate the original Greek text, the archaic second person plural pronoun ye has been retained in the Scripture quotations. Furthermore, the reader will find the names of persons and places transliterated in accordance with Hebrew pronunciation. An index with the most important names can be found on the next page. <<<PAGE 33>>> Index of Names This harmony of the Gospels uses the Hebrew names of the people and places mentioned in the accounts, albeit in a transliterated form. This index contains the names of the most important persons and leaves out those that are only mentioned in Matthew’s and Luke’s genealogies. Aharon = Aaron Andrei = Andrew Avraham = Abraham Bar Abba = Barabbas Bar Talmai = Bartholomew Bartimai = Bartimaeus Beit Anyah = Bethany Beit Chesda = Bethesda Beit Lechem = Bethlehem <<<PAGE 34>>> Beit Tzaida = Bethsaida Berechyah = Barachiah Bnei Regesh = Boanerges Chakeil D'ma = Akeldama Chalphi = Alphaeus Chanan = Annas Kirenyah = Cyrene Dalmanuta = Dalmanutha Didymos = Didymus Einon = Aenon Elazar = Lazarus Elisheva = Elizabeth Eliyahu = Elijah Gavriel = Gabriel Galil = Galilee Gat Shemen = Gethsemane Ginosar = Gennesaret Golgota = Calvary Hevel = Abel Kayapha = Caiaphas Keipha = Cephas <<<PAGE 35>>> Kfar Nachum = Capernaum Kliyopas = Cleopas Magdalit = Magdalene Marta = Martha Mattai = Matthew Miriam = Mary Mosheh = Moses Nakdimon = Nicodemus Natzeret = Nazareth Netanel = Nathanael Noach = Noah Ramatayim = Arimathaea Shaleim = Salim Shiloach = Siloam Shimon = Simon Shlomoh = Solomon Shomron = Samaria Shoshanah = Susanna Taddai = Thaddaeus Talyeta = Talitha Timai = Timaeus <<<PAGE 36>>> Toma = Thomas Tverya = Tiberias Tzarfat = Zarephath Tzidon = Sidon Tzor = Tyre Yaakov = Jacob, James Yair = Jairus Yarden = Jordan Yehudah = Judea, Judah, Judas Yehudah Ish Kriyot = Judas Iscariot Yerushalayim = Jerusalem Yeshayahu = Isaiah Yeshua = Jesus Yirmeyahu = Jeremiah Yishai = Jesse Yisrael = Israel Yitzchak = Isaac Yochanah = Joanna Yochanan = John Yonah = Jonah Yosei = Joses <<<PAGE 37>>> Yoseph = Joseph Zakkai = Zacchaeus Zavdi = Zebedee Zecharyah = Zechariah Zvulun = Zebulun <<<PAGE 38>>> Introductory Material -§§ 1-2 -",
+      "parent_id": "era:resurrection",
+      "attributes": {
+        "order": [
+          "197"
+        ]
+      }
+    }
+  }
+}

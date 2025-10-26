@@ -6,6 +6,7 @@ const routes = {
     '/bible-reading-plan': 'bible-reading-plan',
     '/bible-verse-game': 'bible-verse-game-page',
     '/bible-atlas': 'bible-atlas-page',
+    '/bible-event-graph': 'bible-event-graph-page',
     '/components-gallery': 'components-gallery',
     '/plain-meaning-bible': 'plain-meaning-bible-page',
     
