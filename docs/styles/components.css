@@ -905,9 +905,9 @@ quiz-card .message-error {
 }
 
 /* List styling enhancements */
-li strong {
-    color: #ffc649;
-}
+/*li strong {*/
+/*    color: #ffc649;*/
+/*}*/
 
 /* Documentation-specific components */
 .intro-section {
