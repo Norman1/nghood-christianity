@@ -16,9 +16,9 @@ const pageMetadata = {
         keywords: 'bible atlas, biblical map, bible geography, biblical timeline, holy land map'
     },
     '/bible-event-graph': {
-        title: 'Bible Event Graph | nghood Christianity',
-        description: 'Prototype the event-first Bible harmony explorer with hierarchical drill-downs, filters, and scoped results.',
-        keywords: 'bible harmony, bible explorer, gospel harmony, event graph'
+        title: 'Bible Storyline Explorer | nghood Christianity',
+        description: 'Navigate an event-first outline of Scripture with collapsible eras that drill from creation through the apostolic era.',
+        keywords: 'bible storyline, bible harmony, gospel harmony, event explorer'
     },
     '/components-gallery': {
         title: 'Components Gallery | nghood Christianity',

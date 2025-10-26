@@ -45,6 +45,7 @@ class NavSidebar extends HTMLElement {
             topLevel: [
                 { href: '/bible-reading-plan', title: 'Bible Reading Plan' },
                 { href: '/bible-verse-game', title: 'Bible Verse Game' },
+                { href: '/bible-event-graph', title: 'Bible Storyline Explorer' },
             ],
             
             // Categories with optional subcategories
@@ -63,7 +64,6 @@ class NavSidebar extends HTMLElement {
                     pages: [
                         { href: '/components-gallery', title: 'Components Gallery' },
                         { href: '/bible-atlas', title: 'Bible Atlas' },
-                        { href: '/bible-event-graph', title: 'Bible Event Graph' },
                         { href: '/plain-meaning-bible', title: 'Plain Meaning Bible' },
                         { href: '/profile', title: 'My Profile' },
                         { href: '/backend-test', title: 'Backend Test' },

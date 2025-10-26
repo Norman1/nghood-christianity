@@ -1,12 +1,8 @@
-import '../components/auth-guard.js';
-import { authService } from '../utils/auth-service.js';
-
 const MANIFEST_PATH = './bible-data/bible-event-graph.demo.json';
 
 class BibleEventGraphPage extends HTMLElement {
     constructor() {
         super();
-        this.handleAuthSuccess = this.handleAuthSuccess.bind(this);
 
         this.state = {
             expanded: new Set(),
@@ -22,21 +18,6 @@ class BibleEventGraphPage extends HTMLElement {
         this.layout = document.querySelector('main-layout');
         this.layout?.removeAttribute('with-right');
         this.layout?.querySelectorAll('[slot="right"]').forEach((el) => el.remove());
-
-        if (!authService.isAuthenticated()) {
-            this.innerHTML = '<auth-guard></auth-guard>';
-            this.addEventListener('auth-success', this.handleAuthSuccess);
-            return;
-        }
-
-        this.render();
-    }
-
-    disconnectedCallback() {
-        this.removeEventListener('auth-success', this.handleAuthSuccess);
-    }
-
-    handleAuthSuccess() {
         this.render();
     }
 
@@ -167,9 +148,9 @@ class BibleEventGraphPage extends HTMLElement {
             <div class="content-area event-graph">
                 <header class="page-header">
                     <p class="eyebrow">Event-first Bible harmony</p>
-                    <h1>Collapsible Canon Outline</h1>
+                    <h1>Bible Storyline Explorer</h1>
                     <p class="helper-text">
-                        Start from high-level events and expand rows to drill into each branch—no Scripture text, just milestones.
+                        Start from high-level events and expand rows to drill into each branch—no Scripture text, just milestones you can open as needed.
                     </p>
                 </header>
 
@@ -270,7 +251,7 @@ class BibleEventGraphPage extends HTMLElement {
             this.setStatus('callout-success', `Loaded ${Object.keys(this.events).length} events. Expand rows to explore.`);
             this.renderTable();
         } catch (error) {
-            console.error('Failed to load Bible Event Graph manifest:', error);
+            console.error('Failed to load Bible Storyline Explorer manifest:', error);
             this.setStatus('callout-error', `Failed to load manifest: ${error.message}`);
             if (this.tableBody) {
                 this.tableBody.innerHTML = '<tr><td colspan="2" class="helper-text">Unable to render outline.</td></tr>';

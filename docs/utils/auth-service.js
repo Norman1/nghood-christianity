@@ -50,7 +50,7 @@ class AuthService {
 
     handleLogout() {
         // If user is on a protected page, redirect to home
-        const protectedRoutes = ['/profile', '/backend-test', '/components-gallery', '/bible-event-graph'];
+        const protectedRoutes = ['/profile', '/backend-test', '/components-gallery'];
         const currentPath = window.location.pathname;
         
         if (protectedRoutes.includes(currentPath)) {
