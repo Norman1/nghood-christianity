@@ -174,17 +174,22 @@ class WebNumerologyPage extends HTMLElement {
                 <div class="miracle-card">
                     <div class="miracle-header">
                         <div class="miracle-number">7</div>
-                        <h2 class="miracle-title">The Johannine Sevens</h2>
+                        <h2 class="miracle-title">The Sevenfold Seal of Revelation</h2>
                     </div>
                     <div class="miracle-text">
-                        <p>The Apostle John, the beloved disciple, seemingly placed a hidden watermark on his writings (Gospel of John, 1-3 John, Revelation).</p>
-                        <p>In the WEB, John's writings contain exactly:</p>
-                        <ul>
-                            <li><strong>7</strong> instances of <span class="highlight">Grace</span></li>
-                            <li><strong>7</strong> instances of <span class="highlight">Israel</span></li>
-                            <li><strong>7</strong> instances of <span class="highlight">Pray</span></li>
-                        </ul>
-                        <p>Furthermore, in the book of Revelation—the 66th and final book—the word <span class="highlight">Word</span> appears exactly <strong>7 times</strong>, mirroring the 7 seals and 7 trumpets.</p>
+                        <p>The book of Revelation is structured around sevens (churches, seals, trumpets, bowls). But the World English Bible reveals a hidden layer of "Micro-Sevens" woven into the very vocabulary of the text.</p>
+                        <p>The following words appear exactly <strong>7 times</strong> in the book of Revelation:</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 1rem; font-family: monospace; font-size: 0.95rem;">
+                            <div>• Prophecy</div>
+                            <div>• Spirits</div>
+                            <div>• Servants</div>
+                            <div>• Satan</div>
+                            <div>• Abyss</div>
+                            <div>• Sickle</div>
+                            <div>• Earthquake</div>
+                            <div>• Bowl</div>
+                        </div>
+                        <p style="margin-top: 1rem;">Even the phrase <span class="highlight">"Spirit says"</span> appears exactly 7 times. Coincidence? Or a divine watermark?</p>
                     </div>
                 </div>
 
@@ -196,6 +201,21 @@ class WebNumerologyPage extends HTMLElement {
                     <div class="miracle-text">
                         <p>The number <strong>40</strong> represents trial and testing in scripture (Moses, Elijah, Jesus in the wilderness).</p>
                         <p>In the book of Revelation, the word <span class="highlight">Heaven</span> appears exactly <strong>40 times</strong> (case-insensitive match). This signifies that the final trial of humanity is inextricably linked to the heavenly reality.</p>
+                    </div>
+                <div class="miracle-card">
+                    <div class="miracle-header">
+                        <div class="miracle-number">7</div>
+                        <h2 class="miracle-title">The Perfect Actions of Christ</h2>
+                    </div>
+                    <div class="miracle-text">
+                        <p>In the Gospels, the actions of the Messiah are mathematically perfected. The following phrases appear exactly <strong>7 times</strong> in the account of His life:</p>
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li><span class="highlight">"Jesus took"</span> (He takes our burden)</li>
+                            <li><span class="highlight">"Jesus spoke"</span> (He is the Word)</li>
+                            <li><span class="highlight">"Jesus did"</span> (He finished the work)</li>
+                            <li><span class="highlight">"Saw Jesus"</span> (The witness of faith)</li>
+                        </ul>
+                        <p>Each action is stamped with the number of perfection.</p>
                     </div>
                 </div>
 

@@ -3,43 +3,26 @@ const path = require('path');
 
 const BIBLE_DIR = path.join(__dirname, '../backend/src/main/resources/data/bible');
 
-// Canonical order is important for "First X books", "Last X books" logic.
-// I'll infer it from a standard list or just read directory (alphabetical is bad, but for frequency it doesn't matter).
-// To be precise, let's use a hardcoded list of filenames to ensure OT/NT split is correct.
 const BOOKS_ORDER = [
-    // Pentateuch
     "genesis", "exodus", "leviticus", "numbers", "deuteronomy",
-    // History
     "joshua", "judges", "ruth", "1samuel", "2samuel", "1kings", "2kings", "1chronicles", "2chronicles", "ezra", "nehemiah", "esther",
-    // Poetry
     "job", "psalms", "proverbs", "ecclesiastes", "songofsolomon",
-    // Major Prophets
     "isaiah", "jeremiah", "lamentations", "ezekiel", "daniel",
-    // Minor Prophets
     "hosea", "joel", "amos", "obadiah", "jonah", "micah", "nahum", "habakkuk", "zephaniah", "haggai", "zechariah", "malachi",
-    // NT Gospels
     "matthew", "mark", "luke", "john",
-    // History
     "acts",
-    // Paul's Epistles
     "romans", "1corinthians", "2corinthians", "galatians", "ephesians", "philippians", "colossians", "1thessalonians", "2thessalonians", "1timothy", "2timothy", "titus", "philemon",
-    // General Epistles
     "hebrews", "james", "1peter", "2peter", "1john", "2john", "3john", "jude",
-    // Prophecy
     "revelation"
 ];
 
-const MAGIC_NUMBERS = [
-    7, 12, 21, 40, 70, 77, 120, 144, 153, 365, 666, 777, 888, 1000, 144000
+// Numbers that are "cool" if they appear exactly
+const EXACT_MATCH_TARGETS = [
+    7, 12, 40, 70, 120, 144, 153, 365, 666, 777, 888, 1000, 144000
 ];
 
-const HOLY_WORDS = [
-    "God", "Lord", "Jesus", "Christ", "Spirit", "Father", "Son", "Holy", 
-    "Love", "Light", "Life", "Faith", "Grace", "Truth", "Word", "Lamb", 
-    "King", "Kingdom", "Heaven", "Cross", "Blood", "Saved", "Salvation",
-    "Gospel", "Church", "Israel", "Jerusalem", "Temple", "Pray", "Prayer",
-    "Sin", "Death", "Hell", "Devil", "Satan", "Beast", "Dragon"
-];
+// Divisors we care about (finding multiples of these)
+const DIVINE_DIVISORS = [7, 153, 666];
 
 function loadBible() {
     const bible = [];
@@ -51,7 +34,6 @@ function loadBible() {
         }
         const content = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
         
-        // Extract verses
         const verses = [];
         for (const item of content) {
             if (item.type === 'paragraph text') {
@@ -69,67 +51,92 @@ function loadBible() {
 }
 
 function tokenize(text) {
-    // "Grinding" Trick: Simple regex.
-    // Remove punctuation, lowercase.
     return text.toLowerCase()
-        .replace(/['’]/g, '') // Remove apostrophes (God's -> gods) - debatable, but standard for counts
-        .replace(/[.,;:"?!()[\]]/g, ' ') // Replace punct with space
+        .replace(/['’]/g, '') 
+        .replace(/[.,;:\"?!()\[\]]/g, ' ')
         .split(/\s+/)
         .filter(w => w.length > 0);
 }
 
-function analyzeSubset(subsetName, verses) {
-    let wordCounts = {};
-    let totalWords = 0;
-    let totalVerses = verses.length;
-    let totalChars = 0;
+function getPhrases(tokens, n) {
+    const phrases = [];
+    if (tokens.length < n) return phrases;
+    for (let i = 0; i <= tokens.length - n; i++) {
+        phrases.push(tokens.slice(i, i + n).join(' '));
+    }
+    return phrases;
+}
 
+function analyzeSubset(subsetName, verses) {
+    console.log(`\n--- Analyzing Subset: ${subsetName} (${verses.length} verses) ---`);
+    
+    const wordCounts = {};
+    const phrase2Counts = {};
+    const phrase3Counts = {};
+
+    let totalWords = 0;
+
+    // Pass 1: Count everything
     for (const v of verses) {
         const tokens = tokenize(v.text);
         totalWords += tokens.length;
-        totalChars += v.text.length;
         
         for (const t of tokens) {
             wordCounts[t] = (wordCounts[t] || 0) + 1;
         }
+        
+        const p2 = getPhrases(tokens, 2);
+        for (const p of p2) phrase2Counts[p] = (phrase2Counts[p] || 0) + 1;
+
+        const p3 = getPhrases(tokens, 3);
+        for (const p of p3) phrase3Counts[p] = (phrase3Counts[p] || 0) + 1;
     }
 
-    const findings = [];
+    // Check Totals
+    checkAndPrint(subsetName, "TOTAL_WORDS", totalWords);
+    checkAndPrint(subsetName, "TOTAL_VERSES", verses.length);
 
-    // Check total words/verses for magic
-    checkMagic(findings, subsetName, "Total Verses", totalVerses);
-    checkMagic(findings, subsetName, "Total Words", totalWords);
-    checkMagic(findings, subsetName, "Total Characters", totalChars);
+    // Pass 2: Check Words
+    // Sort by frequency to group output somewhat? No, streaming is better.
+    // But we want to filter out boring stuff.
+    const boringWords = ['the', 'and', 'of', 'to', 'in', 'a', 'that', 'he', 'it', 'was', 'for', 'is', 'his', 'as', 'with', 'not', 'they', 'be', 'on', 'from'];
 
-    // Check Holy Words
-    for (const word of HOLY_WORDS) {
-        const key = word.toLowerCase();
-        const count = wordCounts[key] || 0;
-        checkMagic(findings, subsetName, `Word count: "${word}"`, count);
-    }
+    Object.entries(wordCounts).forEach(([word, count]) => {
+        if (boringWords.includes(word)) return;
+        if (count < 7) return; // Ignore very rare words unless they are exact matches for 7
+        checkAndPrint(subsetName, `Word[${word}]`, count);
+    });
 
-    return findings;
+    // Pass 3: Check Phrases (2-grams)
+    Object.entries(phrase2Counts).forEach(([phrase, count]) => {
+        if (count < 7) return;
+        checkAndPrint(subsetName, `Phrase[${phrase}]`, count);
+    });
+    
+     // Pass 4: Check Phrases (3-grams)
+    Object.entries(phrase3Counts).forEach(([phrase, count]) => {
+        if (count < 3) return; // Lower threshold for 3-grams
+        checkAndPrint(subsetName, `Phrase[${phrase}]`, count);
+    });
 }
 
-function checkMagic(findings, context, label, value) {
-    // 1. Exact Match
-    if (MAGIC_NUMBERS.includes(value)) {
-        findings.push(`[EXACT MATCH] ${context} - ${label}: ${value}`);
+function checkAndPrint(context, label, value) {
+    // Exact Match
+    if (EXACT_MATCH_TARGETS.includes(value)) {
+        console.log(`[!!! EXACT MATCH !!!] ${context} | ${label}: ${value}`);
+        return; // Prioritize exact match
     }
 
-    // 2. Divisible by 7 (The "heptadic structure")
-    if (value > 0 && value % 7 === 0) {
-        findings.push(`[DIVISIBLE BY 7] ${context} - ${label}: ${value} (7 x ${value/7})`);
-    }
-
-    // 3. Divisible by 153 (Fish)
-    if (value > 0 && value % 153 === 0) {
-        findings.push(`[DIVISIBLE BY 153] ${context} - ${label}: ${value} (153 x ${value/153})`);
-    }
-    
-    // 4. Divisible by 666 (Beast)
-    if (value > 0 && value % 666 === 0) {
-        findings.push(`[DIVISIBLE BY 666] ${context} - ${label}: ${value} (666 x ${value/666})`);
+    // Divisors
+    for (const div of DIVINE_DIVISORS) {
+        if (value > 0 && value % div === 0) {
+            // Filter out boring divisions: e.g. divisible by 7 is common.
+            // Only print if it's somewhat rare or significant.
+            // For 7: Only if count > 20 to filter trivial "7" or "14".
+            if (div === 7 && value < 21) continue; 
+            
+            console.log(`[Divisible by ${div}] ${context} | ${label}: ${value} (${div} x ${value/div})`);
+        }
     }
 }
 
@@ -137,7 +144,6 @@ function main() {
     console.log("Loading Bible Data...");
     const bible = loadBible();
     
-    // Define Subsets
     const allVerses = bible.flatMap(b => b.verses);
     const otVerses = bible.slice(0, 39).flatMap(b => b.verses);
     const ntVerses = bible.slice(39).flatMap(b => b.verses);
@@ -152,20 +158,23 @@ function main() {
         ...bible.find(b => b.name === 'revelation').verses
     ];
 
-    console.log("Grinding numbers...");
-    
-    let hits = [];
-    hits.push(...analyzeSubset("WHOLE BIBLE", allVerses));
-    hits.push(...analyzeSubset("OLD TESTAMENT", otVerses));
-    hits.push(...analyzeSubset("NEW TESTAMENT", ntVerses));
-    hits.push(...analyzeSubset("GOSPELS", gospels));
-    hits.push(...analyzeSubset("REVELATION", revelation));
-    hits.push(...analyzeSubset("PENTATEUCH", pentateuch));
-    hits.push(...analyzeSubset("JOHN'S WRITINGS", johnsWritings));
+    // Subsets to run
+    const subsets = [
+        { name: "REVELATION", data: revelation },
+        { name: "GOSPELS", data: gospels },
+        { name: "JOHN_WRITINGS", data: johnsWritings },
+        { name: "NEW_TESTAMENT", data: ntVerses },
+        { name: "OLD_TESTAMENT", data: otVerses },
+        // { name: "WHOLE_BIBLE", data: allVerses } // Too noisy for console, maybe run last?
+    ];
 
-    // Filter for the most impressive ones (e.g., specific word counts that are exact matches or 7x)
-    console.log("\n=== TOP HITS ===\n");
-    hits.forEach(h => console.log(h));
+    console.log("Starting Deep Grind...");
+    
+    for (const sub of subsets) {
+        analyzeSubset(sub.name, sub.data);
+    }
+    
+    console.log("\n--- Deep Grind Complete ---");
 }
 
 main();
