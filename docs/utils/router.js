@@ -12,6 +12,7 @@ const routes = {
     
     // Articles
     '/why-homosexuality-misleads-christian-ethics': 'why-homosexuality-misleads-page',
+    '/web-numerology': 'web-numerology-page',
     
     // Account
     '/profile': 'user-profile',

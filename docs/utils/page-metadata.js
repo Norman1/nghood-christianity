@@ -30,6 +30,11 @@ const pageMetadata = {
         description: 'Explore why the umbrella term homosexuality blurs attraction, behavior, and identity, and how to teach with biblical precision.',
         keywords: 'homosexuality, christian ethics, same-sex attraction, pastoral care, bible'
     },
+    '/web-numerology': {
+        title: 'WEB Numerology | nghood Christianity',
+        description: 'A satirical exploration of mathematical patterns in the World English Bible, demonstrating the art of data dredging in biblical numerology.',
+        keywords: 'bible numerology, satire, web bible, gematria, biblical math, kjv only'
+    },
     
     // Legacy routes (for backwards compatibility)
     '/page1': {

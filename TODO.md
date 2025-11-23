@@ -22,3 +22,12 @@ Goal: surface the entire World English Bible on the Plain Meaning Bible page usi
 - Smart “go to reference” input (e.g., `Hos 12`, `John 3:16`).
 - Optional preprocessing pipeline when we need lighter per-chapter payloads.
 - Commentary panes, cross-reference toggles, or backend-powered navigation once available.
+
+## WEB Numerology (Counter-Apologetics)
+
+Goal: Create an article demonstrating "divine patterns" in the World English Bible (WEB) to counter KJVO numerology arguments by showing similar coincidences exist in other translations.
+
+### Planned Scope
+- [x] Define target numerological patterns (word counts, verse indices, ASCII sums, etc.).
+- [x] Develop analysis scripts/tools to scan the WEB dataset for "hits" (`scripts/numerology-grinder.js`).
+- [x] Create a new frontend page to showcase the "miraculous" findings (`docs/pages/web-numerology.js`).

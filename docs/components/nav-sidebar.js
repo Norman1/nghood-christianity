@@ -54,6 +54,7 @@ class NavSidebar extends HTMLElement {
                     id: 'articles',
                     title: 'Articles',
                     pages: [
+                        { href: '/web-numerology', title: 'WEB Numerology (Satire)' },
                         { href: '/why-homosexuality-misleads-christian-ethics', title: 'Why "Homosexuality" Misleads Christian Ethics' }
                     ],
                     subcategories: []
