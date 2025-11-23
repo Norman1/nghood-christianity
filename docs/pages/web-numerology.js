@@ -1,17 +1,23 @@
 import { loadTemplate, createLoadingElement } from '../utils/template-loader.js';
+import { generateTOC } from '../utils/toc-generator.js';
 
 class WebNumerologyPage extends HTMLElement {
     async connectedCallback() {
-        // Optional: We can enable the TOC if we want, though the article is short. 
-        // Let's keep it simple for now, or enable it to match other articles.
-        // The satire format might be better as a single flow. 
-        // Let's just render the template.
+        const layout = document.querySelector('main-layout');
+        layout?.setAttribute('with-right', '');
+        layout?.querySelectorAll('[slot="right"]').forEach((el) => el.remove());
         
         this.appendChild(createLoadingElement());
 
         try {
             const templateContent = await loadTemplate('./templates/web-numerology.html');
             this.innerHTML = templateContent;
+
+            const toc = generateTOC(this);
+            const sidebar = document.createElement('div');
+            sidebar.setAttribute('slot', 'right');
+            sidebar.appendChild(toc);
+            layout?.appendChild(sidebar);
         } catch (error) {
             console.error('Error loading article:', error);
             this.innerHTML = `
