@@ -16,22 +16,15 @@ const BOOKS_ORDER = [
     "revelation"
 ];
 
-// Numbers that are "cool" if they appear exactly
-const EXACT_MATCH_TARGETS = [
-    7, 12, 40, 70, 120, 144, 153, 365, 666, 777, 888, 1000, 144000
-];
+const MAGIC_NUMBERS = [7, 12, 40, 70, 153, 365, 666, 777, 888, 1000, 144000];
+const DIVISORS = [7, 153, 666, 888];
 
-// Divisors we care about (finding multiples of these)
-const DIVINE_DIVISORS = [7, 153, 666];
-
+// 1. Load Data
 function loadBible() {
     const bible = [];
     for (const filename of BOOKS_ORDER) {
         const fullPath = path.join(BIBLE_DIR, `${filename}.json`);
-        if (!fs.existsSync(fullPath)) {
-            console.error(`Missing file: ${filename}`);
-            continue;
-        }
+        if (!fs.existsSync(fullPath)) continue;
         const content = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
         
         const verses = [];
@@ -50,131 +43,122 @@ function loadBible() {
     return bible;
 }
 
-function tokenize(text) {
-    return text.toLowerCase()
-        .replace(/['’]/g, '') 
-        .replace(/[.,;:\"?!()\[\]]/g, ' ')
-        .split(/\s+/)
-        .filter(w => w.length > 0);
+// 2. Gematria Utilities
+function getSimpleGematria(text) {
+    // A=1, B=2... Z=26
+    let sum = 0;
+    const clean = text.toUpperCase().replace(/[^A-Z]/g, '');
+    for (let i = 0; i < clean.length; i++) {
+        sum += clean.charCodeAt(i) - 64;
+    }
+    return sum;
 }
 
-function getPhrases(tokens, n) {
-    const phrases = [];
-    if (tokens.length < n) return phrases;
-    for (let i = 0; i <= tokens.length - n; i++) {
-        phrases.push(tokens.slice(i, i + n).join(' '));
-    }
-    return phrases;
+function getEnglishGematria(text) {
+    // A=6, B=12... Z=156
+    return getSimpleGematria(text) * 6;
 }
 
-function analyzeSubset(subsetName, verses) {
-    console.log(`\n--- Analyzing Subset: ${subsetName} (${verses.length} verses) ---`);
-    
-    const wordCounts = {};
-    const phrase2Counts = {};
-    const phrase3Counts = {};
-
-    let totalWords = 0;
-
-    // Pass 1: Count everything
-    for (const v of verses) {
-        const tokens = tokenize(v.text);
-        totalWords += tokens.length;
-        
-        for (const t of tokens) {
-            wordCounts[t] = (wordCounts[t] || 0) + 1;
-        }
-        
-        const p2 = getPhrases(tokens, 2);
-        for (const p of p2) phrase2Counts[p] = (phrase2Counts[p] || 0) + 1;
-
-        const p3 = getPhrases(tokens, 3);
-        for (const p of p3) phrase3Counts[p] = (phrase3Counts[p] || 0) + 1;
+function getASCII(text) {
+    let sum = 0;
+    for (let i = 0; i < text.length; i++) {
+        sum += text.charCodeAt(i);
     }
-
-    // Check Totals
-    checkAndPrint(subsetName, "TOTAL_WORDS", totalWords);
-    checkAndPrint(subsetName, "TOTAL_VERSES", verses.length);
-
-    // Pass 2: Check Words
-    // Sort by frequency to group output somewhat? No, streaming is better.
-    // But we want to filter out boring stuff.
-    const boringWords = ['the', 'and', 'of', 'to', 'in', 'a', 'that', 'he', 'it', 'was', 'for', 'is', 'his', 'as', 'with', 'not', 'they', 'be', 'on', 'from'];
-
-    Object.entries(wordCounts).forEach(([word, count]) => {
-        if (boringWords.includes(word)) return;
-        if (count < 7) return; // Ignore very rare words unless they are exact matches for 7
-        checkAndPrint(subsetName, `Word[${word}]`, count);
-    });
-
-    // Pass 3: Check Phrases (2-grams)
-    Object.entries(phrase2Counts).forEach(([phrase, count]) => {
-        if (count < 7) return;
-        checkAndPrint(subsetName, `Phrase[${phrase}]`, count);
-    });
-    
-     // Pass 4: Check Phrases (3-grams)
-    Object.entries(phrase3Counts).forEach(([phrase, count]) => {
-        if (count < 3) return; // Lower threshold for 3-grams
-        checkAndPrint(subsetName, `Phrase[${phrase}]`, count);
-    });
+    return sum;
 }
 
-function checkAndPrint(context, label, value) {
-    // Exact Match
-    if (EXACT_MATCH_TARGETS.includes(value)) {
-        console.log(`[!!! EXACT MATCH !!!] ${context} | ${label}: ${value}`);
-        return; // Prioritize exact match
+// 3. Analysis Logic
+function check(context, label, value) {
+    if (MAGIC_NUMBERS.includes(value)) {
+        console.log(`[EXACT MATCH] ${context} | ${label}: ${value}`);
     }
-
-    // Divisors
-    for (const div of DIVINE_DIVISORS) {
+    for (const div of DIVISORS) {
         if (value > 0 && value % div === 0) {
-            // Filter out boring divisions: e.g. divisible by 7 is common.
-            // Only print if it's somewhat rare or significant.
-            // For 7: Only if count > 20 to filter trivial "7" or "14".
-            if (div === 7 && value < 21) continue; 
-            
+            // Filter noise
+            if (div === 7 && value < 50) continue;
             console.log(`[Divisible by ${div}] ${context} | ${label}: ${value} (${div} x ${value/div})`);
         }
     }
 }
 
+function analyzeGematria(context, verses) {
+    // Check sum of FIRST verse, LAST verse, MIDDLE verse
+    if (verses.length === 0) return;
+
+    const first = verses[0];
+    const last = verses[verses.length - 1];
+    const middle = verses[Math.floor(verses.length / 2)];
+
+    const metrics = [
+        { name: "First Verse Simple Gematria", val: getSimpleGematria(first.text) },
+        { name: "Last Verse Simple Gematria", val: getSimpleGematria(last.text) },
+        { name: "Middle Verse Simple Gematria", val: getSimpleGematria(middle.text) },
+        { name: "Total Verses", val: verses.length }
+    ];
+
+    metrics.forEach(m => check(context, m.name, m.val));
+}
+
+function analyzeVocabulary(context, verses) {
+    const words = new Set();
+    let totalWords = 0;
+    
+    verses.forEach(v => {
+        const tokens = v.text.toLowerCase().replace(/[^a-z\s]/g, '').split(/\s+/).filter(x => x);
+        totalWords += tokens.length;
+        tokens.forEach(t => words.add(t));
+    });
+
+    check(context, "Unique Vocabulary Count", words.size);
+    check(context, "Total Word Count", totalWords);
+}
+
+// 4. Main
 function main() {
-    console.log("Loading Bible Data...");
+    console.log("Loading Bible...");
     const bible = loadBible();
-    
     const allVerses = bible.flatMap(b => b.verses);
-    const otVerses = bible.slice(0, 39).flatMap(b => b.verses);
-    const ntVerses = bible.slice(39).flatMap(b => b.verses);
-    const gospels = bible.slice(39, 43).flatMap(b => b.verses);
-    const revelation = bible.slice(65, 66).flatMap(b => b.verses);
-    const pentateuch = bible.slice(0, 5).flatMap(b => b.verses);
-    const johnsWritings = [
-        ...bible.find(b => b.name === 'john').verses,
-        ...bible.find(b => b.name === '1john').verses,
-        ...bible.find(b => b.name === '2john').verses,
-        ...bible.find(b => b.name === '3john').verses,
-        ...bible.find(b => b.name === 'revelation').verses
-    ];
 
-    // Subsets to run
-    const subsets = [
-        { name: "REVELATION", data: revelation },
-        { name: "GOSPELS", data: gospels },
-        { name: "JOHN_WRITINGS", data: johnsWritings },
-        { name: "NEW_TESTAMENT", data: ntVerses },
-        { name: "OLD_TESTAMENT", data: otVerses },
-        // { name: "WHOLE_BIBLE", data: allVerses } // Too noisy for console, maybe run last?
-    ];
+    console.log(`Loaded ${allVerses.length} verses.`);
 
-    console.log("Starting Deep Grind...");
+    // A. Whole Bible Analysis
+    console.log("\n--- WHOLE BIBLE ---");
+    analyzeGematria("BIBLE", allVerses);
+    analyzeVocabulary("BIBLE", allVerses);
+
+    // B. Middle Verse Calculation
+    const middleIndex = Math.floor(allVerses.length / 2);
+    const middleVerse = allVerses[middleIndex];
+    console.log(`\n--- CENTER OF THE BIBLE ---`);
+    console.log(`Verse: ${middleVerse.book} ${middleVerse.chapter}:${middleVerse.verse}`);
+    console.log(`Text: "${middleVerse.text}"`);
     
-    for (const sub of subsets) {
-        analyzeSubset(sub.name, sub.data);
-    }
+    const midSimple = getSimpleGematria(middleVerse.text);
+    const midEng = getEnglishGematria(middleVerse.text);
+    const midAscii = getASCII(middleVerse.text);
     
-    console.log("\n--- Deep Grind Complete ---");
+    console.log(`Simple Gematria: ${midSimple}`);
+    check("CENTER VERSE", "Simple Gematria", midSimple);
+    check("CENTER VERSE", "English Gematria", midEng);
+    check("CENTER VERSE", "ASCII Sum", midAscii);
+
+    // C. Book-by-Book "Panin" check
+    console.log("\n--- BOOK ANALYSIS (Sampling) ---");
+    bible.forEach(book => {
+        analyzeVocabulary(book.name.toUpperCase(), book.verses);
+        analyzeGematria(book.name.toUpperCase(), book.verses);
+    });
+
+    // D. Specific "Holy" phrases Gematria
+    console.log("\n--- HOLY PHRASES GEMATRIA ---");
+    const phrases = ["Jesus", "Christ", "Jesus Christ", "Lord Jesus", "Holy Spirit", "God", "Lord", "Love"];
+    phrases.forEach(p => {
+        const s = getSimpleGematria(p);
+        const e = getEnglishGematria(p);
+        console.log(`"${p}" -> Simple: ${s}, English: ${e}`);
+        check(`Phrase "${p}"`, "Simple", s);
+        check(`Phrase "${p}"`, "English", e);
+    });
 }
 
 main();

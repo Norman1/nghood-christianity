@@ -136,6 +136,44 @@ class WebNumerologyPage extends HTMLElement {
 
                 <div class="miracle-card">
                     <div class="miracle-header">
+                        <div class="miracle-number">153</div>
+                        <h2 class="miracle-title">The Ephesian Catch</h2>
+                    </div>
+                    <div class="miracle-text">
+                        <p>Scholars know that the number <strong>153</strong> (from John 21) represents the full number of the Church, gathered from the nations.</p>
+                        <p>Which epistle is the primary theological treatise on the Church? <strong>Ephesians</strong>.</p>
+                        <p>In the World English Bible, the Book of Ephesians contains exactly <span class="highlight">153 verses</span>.</p>
+                        <p>Furthermore, the last verse of Philemon has a Simple Gematria value of <strong>612</strong> (4 × 153), mirroring the count of "Jesus" in the Gospels. The structure is fractal.</p>
+                    </div>
+                </div>
+
+                <div class="miracle-card">
+                    <div class="miracle-header">
+                        <div class="miracle-number">700</div>
+                        <h2 class="miracle-title">The Mark of Perfection</h2>
+                    </div>
+                    <div class="miracle-text">
+                        <p>The Gospel of Mark is the action-oriented gospel. In the WEB, it contains exactly <strong>700 verses</strong>.</p>
+                        <p>7 × 100. Perfection multiplied by fullness.</p>
+                        <p>Meanwhile, the Book of Acts—the history of the Spirit's work—contains exactly <strong>1008 verses</strong> (7 × 144). The number 144 represents the 12 tribes multiplied by the 12 apostles. The math is undeniable.</p>
+                    </div>
+                </div>
+
+                <div class="miracle-card">
+                    <div class="miracle-header">
+                        <div class="miracle-number">77</div>
+                        <h2 class="miracle-title">The Geometric Christ</h2>
+                    </div>
+                    <div class="miracle-text">
+                        <p>Using Simple English Gematria (A=1, B=2...), the name <span class="highlight">Christ</span> sums to exactly <strong>77</strong>.</p>
+                        <p>Double perfection. </p>
+                        <p>But it goes deeper. In English Gematria (A=6, B=12...), the word <span class="highlight">Lord</span> sums to <strong>294</strong>.</p>
+                        <p>294 is <strong>7 × 42</strong>. (42 is the number of generations from Abraham to Christ). The very letters of the name trace the genealogy of the Savior.</p>
+                    </div>
+                </div>
+
+                <div class="miracle-card">
+                    <div class="miracle-header">
                         <div class="miracle-number">612</div>
                         <h2 class="miracle-title">The Jesus-Fish Connection</h2>
                     </div>
