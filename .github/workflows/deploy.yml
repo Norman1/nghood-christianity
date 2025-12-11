@@ -111,7 +111,7 @@ jobs:
         host: ${{ secrets.LIGHTSAIL_HOST }}
         username: ubuntu
         key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
-        source: "docs/*,nginx/nginx.conf"
+        source: "docs/*,nginx/nginx.conf,docker-compose.yml"
         target: "~/app/temp"
         rm: true
     
@@ -133,6 +133,9 @@ jobs:
           
           # Move nginx config
           cp ~/app/temp/nginx/nginx.conf ~/app/nginx/nginx.conf
+
+          # Move docker-compose.yml
+          cp ~/app/temp/docker-compose.yml ~/app/docker-compose.yml
           
           # Clean up temp directory
           rm -rf ~/app/temp
@@ -205,7 +208,19 @@ jobs:
           
           echo "=== Starting new containers ==="
           export NGINX_CONFIG_FILE=nginx.conf
-          export SSL_CERTS=/etc/letsencrypt
+          export FRONTEND_PATH=./frontend
+          export DOCKER_IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/nghood-backend:latest
+          
+          # Copy fresh SSL certificates from host to app directory
+          echo "=== Refreshing SSL certificates ==="
+          mkdir -p ~/app/nginx/ssl
+          sudo cp -L /etc/letsencrypt/live/christianity.nghood.com/fullchain.pem ~/app/nginx/ssl/
+          sudo cp -L /etc/letsencrypt/live/christianity.nghood.com/privkey.pem ~/app/nginx/ssl/
+          
+          # Ensure docker can read them
+          sudo chmod 644 ~/app/nginx/ssl/fullchain.pem
+          sudo chmod 644 ~/app/nginx/ssl/privkey.pem
+          
           docker-compose up -d
           echo ""
           
