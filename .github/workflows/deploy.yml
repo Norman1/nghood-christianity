@@ -111,7 +111,7 @@ jobs:
         host: ${{ secrets.LIGHTSAIL_HOST }}
         username: ubuntu
         key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
-        source: "docs/*,nginx/nginx.conf,docker-compose.yml"
+        source: "docs/*,nginx/nginx.conf,docker-compose.yml,infrastructure/renew-ssl.sh"
         target: "~/app/temp"
         rm: true
     
@@ -136,6 +136,10 @@ jobs:
 
           # Move docker-compose.yml
           cp ~/app/temp/docker-compose.yml ~/app/docker-compose.yml
+          
+          # Setup renewal script
+          cp ~/app/temp/infrastructure/renew-ssl.sh ~/app/renew-ssl.sh
+          chmod +x ~/app/renew-ssl.sh
           
           # Clean up temp directory
           rm -rf ~/app/temp
