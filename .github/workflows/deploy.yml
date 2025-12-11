@@ -204,6 +204,7 @@ jobs:
           cd ~/app
           
           echo "=== Starting new containers ==="
+          export NGINX_CONFIG_FILE=nginx.conf
           docker-compose up -d
           echo ""
           
